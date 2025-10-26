@@ -1,0 +1,244 @@
+name: Archive Old Reports (Multi-Project)
+
+on:
+  schedule:
+    # Every Sunday at 02:00 UTC [h:min UTC]
+    - cron: '0 2 * * 0'
+  workflow_dispatch:  # Manual trigger button in Actions tab
+    inputs:
+      age_threshold:
+        description: 'Archive reports older than N days [d]'
+        required: false
+        default: '7'
+        type: string
+      project_name:
+        description: 'Specific project to archive (leave empty for all)'
+        required: false
+        default: ''
+        type: string
+
+# Ensure only ONE instance runs at a time
+concurrency:
+  group: archive-reports
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # Full history for proper file dates
+      
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Archive old reports
+        env:
+          AGE_THRESHOLD: ${{ github.event.inputs.age_threshold || '7' }}
+          PROJECT_FILTER: ${{ github.event.inputs.project_name || '' }}
+        run: |
+          # Script to archive reports older than AGE_THRESHOLD days [d]
+          
+          REPORTS_DIR="reports"
+          ARCHIVED_COUNT=0
+          
+          echo "=== Archiving reports older than ${AGE_THRESHOLD} days ==="
+          echo ""
+          
+          # Find all project directories
+          if [ -n "${PROJECT_FILTER}" ]; then
+            PROJECTS=("${REPORTS_DIR}/${PROJECT_FILTER}")
+          else
+            PROJECTS=($(find "${REPORTS_DIR}" -mindepth 1 -maxdepth 1 -type d ! -name ".*"))
+          fi
+          
+          for PROJECT_DIR in "${PROJECTS[@]}"; do
+            PROJECT_NAME=$(basename "${PROJECT_DIR}")
+            PROGRESS_DIR="${PROJECT_DIR}/progress"
+            ARCHIVE_BASE="${PROJECT_DIR}/archive"
+            
+            echo "Processing project: ${PROJECT_NAME}"
+            
+            # Skip if progress directory doesn't exist
+            if [ ! -d "${PROGRESS_DIR}" ]; then
+              echo "  ⊘ No progress directory, skipping"
+              continue
+            fi
+            
+            # Find old markdown files (excluding latest.md symlink)
+            OLD_FILES=$(find "${PROGRESS_DIR}" -type f -name "*.md" -mtime +${AGE_THRESHOLD} 2>/dev/null || true)
+            
+            if [ -z "${OLD_FILES}" ]; then
+              echo "  ✓ No reports to archive"
+              continue
+            fi
+            
+            # Archive each old file
+            echo "${OLD_FILES}" | while IFS= read -r file; do
+              # Get file modification date for archive folder structure
+              # Use different date command syntax for Linux vs macOS
+              if date --version >/dev/null 2>&1; then
+                # GNU date (Linux)
+                MONTH=$(date -r "${file}" +%Y-%m 2>/dev/null || echo "unknown")
+              else
+                # BSD date (macOS) - but GitHub Actions uses Linux
+                MONTH=$(stat -f %Sm -t %Y-%m "${file}" 2>/dev/null || echo "unknown")
+              fi
+              
+              # Fallback: use current month if date extraction fails
+              if [ "${MONTH}" = "unknown" ]; then
+                MONTH=$(date +%Y-%m)
+              fi
+              
+              ARCHIVE_DIR="${ARCHIVE_BASE}/${MONTH}"
+              mkdir -p "${ARCHIVE_DIR}"
+              
+              FILENAME=$(basename "${file}")
+              
+              # Move file to archive
+              mv "${file}" "${ARCHIVE_DIR}/${FILENAME}"
+              
+              echo "  → Archived: ${FILENAME} to ${MONTH}/"
+              ARCHIVED_COUNT=$((ARCHIVED_COUNT + 1))
+            done
+          done
+          
+          echo ""
+          echo "=== Archived ${ARCHIVED_COUNT} reports ==="
+          
+          # Store count for later steps
+          echo "ARCHIVED_COUNT=${ARCHIVED_COUNT}" >> $GITHUB_ENV
+      
+      - name: Generate summary indices
+        run: |
+          # Generate summary_index.md for each project
+          
+          REPORTS_DIR="reports"
+          
+          for PROJECT_DIR in $(find "${REPORTS_DIR}" -mindepth 1 -maxdepth 1 -type d ! -name ".*"); do
+            PROJECT_NAME=$(basename "${PROJECT_DIR}")
+            PROGRESS_DIR="${PROJECT_DIR}/progress"
+            ARCHIVE_BASE="${PROJECT_DIR}/archive"
+            INDEX_FILE="${PROJECT_DIR}/summary_index.md"
+            
+            echo "Generating index for: ${PROJECT_NAME}"
+            
+            # Start index file
+            cat > "${INDEX_FILE}" <<EOF
+# ${PROJECT_NAME} - Progress Report Index
+
+*Auto-generated: $(date -Iseconds)*  
+*Repository: [misc-tests](https://github.com/hansschepers/misc-tests)*
+
+---
+
+## 📋 Active Reports
+
+EOF
+            
+            # List active reports (if any)
+            if [ -d "${PROGRESS_DIR}" ] && [ -n "$(ls -A "${PROGRESS_DIR}"/*.md 2>/dev/null)" ]; then
+              # Sort by modification time (newest first)
+              ls -1t "${PROGRESS_DIR}"/*.md 2>/dev/null | while read -r file; do
+                FILENAME=$(basename "${file}")
+                
+                # Skip symlinks in listing (but keep them in repo)
+                if [ -L "${file}" ]; then
+                  continue
+                fi
+                
+                # Get file size [kB]
+                SIZE=$(du -h "${file}" | cut -f1)
+                
+                # Calculate age [d]
+                if date --version >/dev/null 2>&1; then
+                  # GNU date
+                  FILE_TIME=$(stat -c %Y "${file}")
+                  NOW_TIME=$(date +%s)
+                  AGE_DAYS=$(( (NOW_TIME - FILE_TIME) / 86400 ))
+                else
+                  # Fallback
+                  AGE_DAYS="?"
+                fi
+                
+                # Relative path for link
+                REL_PATH="progress/${FILENAME}"
+                
+                echo "- [${FILENAME}](${REL_PATH}) - ${AGE_DAYS} days old, ${SIZE}" >> "${INDEX_FILE}"
+              done
+            else
+              echo "*No active reports*" >> "${INDEX_FILE}"
+            fi
+            
+            # Add archived reports section
+            cat >> "${INDEX_FILE}" <<EOF
+
+---
+
+## 📦 Archived Reports
+
+EOF
+            
+            if [ -d "${ARCHIVE_BASE}" ]; then
+              # List archive directories (sorted newest first)
+              find "${ARCHIVE_BASE}" -mindepth 1 -maxdepth 1 -type d | sort -r | while read -r month_dir; do
+                MONTH_NAME=$(basename "${month_dir}")
+                FILE_COUNT=$(find "${month_dir}" -name "*.md" -type f | wc -l)
+                
+                echo "### ${MONTH_NAME} (${FILE_COUNT} reports)" >> "${INDEX_FILE}"
+                echo "" >> "${INDEX_FILE}"
+              done
+            else
+              echo "*No archived reports*" >> "${INDEX_FILE}"
+            fi
+            
+            # Add footer
+            cat >> "${INDEX_FILE}" <<EOF
+
+---
+
+## ℹ️ About
+
+Reports are automatically archived when older than 7 days.  
+**Manual archiving**: [Run workflow](https://github.com/hansschepers/misc-tests/actions/workflows/archive-reports.yml)
+
+EOF
+          done
+      
+      - name: Commit and push if changes exist
+        run: |
+          git add reports/
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            if [ "${ARCHIVED_COUNT}" -gt 0 ]; then
+              git commit -m "Archive ${ARCHIVED_COUNT} old reports (>7d) [skip ci]"
+            else
+              git commit -m "Update report indices [skip ci]"
+            fi
+            git push
+            echo "✓ Changes pushed successfully"
+          fi
+      
+      - name: Create workflow summary
+        run: |
+          echo "## Archive Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Reports archived**: ${ARCHIVED_COUNT}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Threshold**: ${AGE_THRESHOLD:-7} days" >> $GITHUB_STEP_SUMMARY
+          echo "- **Timestamp**: $(date -Iseconds)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${ARCHIVED_COUNT}" -gt 0 ]; then
+            echo "✓ Reports successfully archived and committed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ No reports needed archiving" >> $GITHUB_STEP_SUMMARY
+          fi
