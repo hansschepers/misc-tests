@@ -1,0 +1,20 @@
+Package: ftlLLMtools
+Type: Package
+Title: logs and tools
+Version: 0.0.1-9001
+Date: 2025-10-28
+Author: Hans Schepers
+Maintainer: Hans Schepers <hans.schepers@gmail.com>
+Description: claude code logs and tools
+License: What license is it under?
+Encoding: UTF-8
+Imports:
+		data.table,
+		deSolve,
+		glue,
+		ggplot2,
+		logger,
+		lubridate,
+		readxl,
+		stringi
+RoxygenNote: 7.3.2
