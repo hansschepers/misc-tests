@@ -1,0 +1,92 @@
+digraph crop_water_salinity {
+  rankdir = LR;
+  graph [fontname = "Helvetica", nodesep = 0.35, ranksep = 0.55];
+  node  [fontname = "Helvetica", fontsize = 10, style = filled];
+  edge  [fontname = "Helvetica", fontsize = 9];
+
+  subgraph cluster_drivers {
+    label = "w(t) uncontrolled drivers"; color = grey70; style = dashed;
+    node [shape = parallelogram, fillcolor = "#EEEEEE"];
+    radiation      [label = "global radiation\n[MJ m-2 d-1]"];
+    reference_et   [label = "reference ET\n[mm d-1]"];
+    temperature    [label = "air temperature\n[degC]"];
+    rainfall       [label = "rainfall\n[mm d-1]"];
+    water_quality  [label = "irrigation water\nEC [dS m-1], alkalinity [mmol_c L-1]"];
+  }
+
+  subgraph cluster_states {
+    label = "X states"; color = "#2166AC"; style = dashed;
+    node [shape = box, fillcolor = "#D1E5F0"];
+    dry_mass    [label = "crop dry mass\n[g DM m-2]"];
+    leaf_area   [label = "leaf area index\n[m2 m-2]"];
+    zone_water  [label = "root zone water\n[mm]"];
+    zone_salt   [label = "root zone salt\n[g m-2]"];
+    leaf_sodium [label = "leaf sodium\n[mmol_c m-2]"];
+    substrate_ph [label = "substrate pH\n[-]"];
+  }
+
+  subgraph cluster_control {
+    label = "u(t) = h_r(X, p_u, w)"; color = "#B2182B"; style = dashed;
+    node [shape = box, fillcolor = "#FDDBC7"];
+    perceived_deficit [label = "perceived deficit\n[-] sensor lag 0.5 d"];
+    perceived_ec      [label = "perceived EC\n[dS m-1] lag 2 d"];
+    irrigation        [label = "irrigation rate\n[mm d-1]"];
+    leaching          [label = "leaching fraction\n[-]"];
+    acid              [label = "acid dose\n[mmol_c m-2 d-1]"];
+  }
+
+  subgraph cluster_soil {
+    label = "soil / substrate type p"; color = "#762A83"; style = dashed;
+    node [shape = ellipse, fillcolor = "#E7D4E8"];
+    retention  [label = "retention exponent\n[-] sand 4 .. clay 9"];
+    buffering  [label = "pH buffer capacity\n[mmol_c m-2 pH-1]"];
+  }
+
+  node [shape = ellipse, fillcolor = "#D9F0D3"];
+  matric   [label = "matric potential\n[MPa]"];
+  osmotic  [label = "osmotic potential\n[MPa]"];
+  stress_sto [label = "stomatal stress\n[-]"];
+  stress_exp [label = "expansion stress\n[-]"];
+  transpiration [label = "transpiration\n[mm d-1]"];
+  assimilation  [label = "gross assimilation\n[g DM m-2 d-1]"];
+
+  node [shape = doubleoctagon, fillcolor = "#FEE08B"];
+  yield [label = "Y: yield [g DM m-2],\ndrain EC [dS m-1]"];
+
+  radiation    -> assimilation;
+  temperature  -> assimilation;
+  reference_et -> transpiration;
+  rainfall     -> zone_water;
+  water_quality -> zone_salt;
+  water_quality -> substrate_ph;
+
+  zone_water -> matric;      retention -> matric;
+  zone_salt  -> osmotic;     zone_water -> osmotic [label = "concentration"];
+  matric  -> stress_sto;  osmotic -> stress_sto;
+  matric  -> stress_exp;  osmotic -> stress_exp;
+
+  stress_sto -> transpiration;
+  stress_sto -> assimilation;
+  stress_exp -> leaf_area [label = "fast, days"];
+  leaf_area  -> assimilation [label = "1-exp(-k LAI)"];
+  assimilation -> dry_mass;
+  dry_mass -> assimilation [label = "maintenance, -", color = "#B2182B"];
+  dry_mass -> leaf_area;
+
+  transpiration -> zone_water [label = "-"];
+  transpiration -> zone_salt  [label = "concentrates, +", color = "#B2182B"];
+  transpiration -> leaf_sodium [label = "mass flow"];
+  leaf_sodium -> leaf_area [label = "senescence, weeks", color = "#B2182B"];
+
+  substrate_ph -> assimilation [label = "Fe/Mn, weeks"];
+  buffering -> substrate_ph;
+
+  zone_water -> perceived_deficit;  zone_salt -> perceived_ec;
+  perceived_deficit -> irrigation;  perceived_ec -> leaching;
+  leaching -> irrigation;
+  irrigation -> zone_water;  irrigation -> zone_salt;
+  leaching -> zone_salt [label = "flushes, -"];
+  substrate_ph -> acid;  acid -> substrate_ph [label = "-"];
+
+  dry_mass -> yield;  zone_salt -> yield;
+}

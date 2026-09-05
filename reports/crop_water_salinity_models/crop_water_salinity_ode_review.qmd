@@ -1,0 +1,1417 @@
+---
+title: "Assimilate production under water scarcity, EC, pH and salinity build-up"
+subtitle: "A structured literature review of crop- and field-level ODE models"
+author: "Hans Schepers"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: false
+    embed-resources: true
+  pdf:
+    toc: true
+    number-sections: true
+execute:
+  eval: false
+  echo: true
+bibliography: null
+---
+
+::: {.callout-important}
+## Provenance of this review
+
+This review was written **from memory (model training), without an internet search**, per
+standing instruction. Titles, journals and years are reported as recalled; DOI links are
+given so each can be verified in one click. Treat the reference list as a *checklist to
+verify*, not as a validated bibliography. Where I am unsure of a detail I say so explicitly
+in the text.
+:::
+
+# Scope and the common state-space frame
+
+## What is being reviewed
+
+Models that compute **assimilate production at the canopy / field / greenhouse-compartment
+level** — i.e. gross or net carbon gain of a whole stand — and that make that production
+depend on:
+
+1. **water scarcity** (matric limitation, hydraulic limitation, stomatal closure),
+2. **EC / osmotic potential** of the root-zone solution,
+3. **salinity build-up** in soil or substrate (a slow state, not a driver),
+4. **pH / alkalinity** of soil or nutrient solution,
+5. **soil or substrate type** (retention curve, buffering, sodicity response).
+
+Explicitly *out of scope*: biochemical detail below the leaf (Calvin cycle intermediates,
+mesophyll conductance partitioning, Rubisco activation kinetics). The Farquhar–von
+Caemmerer–Berry (FvCB) leaf model appears only as a plug-in submodel where a reviewed
+model uses it.
+
+## The state-space frame used throughout
+
+Every model below is re-expressed in the frame
+
+$$
+\frac{dX}{dt} = f\big(X,\; p,\; u(t),\; w(t)\big), \qquad
+Y(t) = g\big(X,\; p,\; u(t),\; w(t)\big),
+$$
+
+with the control generated *inside* the same system by a rule-based policy that has its own
+perception states:
+
+$$
+u(t) = h_r\big(X,\; p_u,\; w(t)\big).
+$$
+
+| Symbol | Role | Typical members in this literature | Typical units |
+|---|---|---|---|
+| $X$ | states | crop dry mass, leaf area index, root-zone water, root-zone salt, leaf sodium, substrate pH / alkalinity, sensor perception states | g DM m^-2^; m^2^ m^-2^; mm; g m^-2^; mmol~c~ m^-2^; pH unit; – |
+| $Y$ | outputs | harvestable yield, drainage volume, drain EC, transpiration, water productivity | g DM m^-2^; mm d^-1^; dS m^-1^; mm d^-1^; g DM L^-1^ |
+| $p$ | parameters | radiation use efficiency, extinction coefficient, specific leaf area, salinity 50 % point, buffer capacity | g DM MJ^-1^; –; m^2^ g^-1^; dS m^-1^; mmol~c~ m^-2^ pH-unit^-1^ |
+| $u$ | controls | irrigation rate, target leaching fraction, supply EC set point, acid dose, pH set point, CO~2~ set point, screen position | mm d^-1^; –; dS m^-1^; mmol~c~ m^-2^ d^-1^; –; umol mol^-1^; – |
+| $w$ | uncontrolled drivers | global radiation, reference evapotranspiration, air temperature, vapour pressure deficit, rainfall, irrigation-water EC and alkalinity | MJ m^-2^ d^-1^; mm d^-1^; degC; kPa; mm d^-1^; dS m^-1^; mmol~c~ L^-1^ |
+
+Note on the prefix convention used here: `u` is used for *micro* (umol, uS cm^-1^) and the
+symbol $u(t)$ is used for control. Context disambiguates; in code, control variables always
+carry the word `control_` or an explicit name such as `irrigation_rate`.
+
+## Structural remark: the canopy is a von Bertalanffy system
+
+Worth stating up front, because it organises the whole review. Canopy carbon balance has
+exactly the *supply-surface minus maintenance-mass* structure:
+
+$$
+\frac{dW}{dt} \;=\; a\!\Big(q(\cdot),\; \text{assimilation capacity}\Big) \;-\; \text{maintenance} \cdot W .
+$$
+
+- The **gain term is a surface term**: light capture saturates with leaf area,
+  $1 - \exp(-k \cdot \mathrm{LAI})$, which is the canopy analogue of $W^{2/3}$ — a
+  projected-area scaling, not a mass scaling.
+- The **loss term is a mass term**: maintenance respiration is proportional to standing
+  biomass (and to a $Q_{10}$-type temperature factor).
+- The gate $a(\cdot)$ is again a **smoothed minimum** of supply and demand: source-limited
+  (light, water, CO~2~) versus sink-limited (temperature-driven expansion, fruit load).
+- The food-quality function $q(\cdot)$ maps onto **solution quality**: EC, ion ratios, pH,
+  and the frequency/duration of irrigation events (the "meal pattern" of a drip-irrigated
+  crop is literally a meal-frequency problem).
+
+Where crop models differ from animal von Bertalanffy models is the *water* channel: water
+scarcity acts on the surface term through stomatal closure **and** shrinks the surface
+itself (leaf expansion, senescence) with different time constants. That split is the single
+most important structural difference among the models below.
+
+# How assimilate production is formulated: three backbones
+
+The whole literature reduces to three ways of writing the gain term. They are not
+equivalent, and they respond to water and salt stress differently.
+
+## Backbone A — radiation-driven (RUE / LUE)
+
+$$
+\frac{d\,\text{dry mass}}{dt} =
+\text{radiation use efficiency} \cdot \text{radiation}_{\text{PAR}} \cdot
+\big(1-e^{-\,\text{extinction} \cdot \text{leaf area index}}\big)
+\cdot \prod_i \text{stress}_i \;-\; \text{respiration}
+$$
+
+- **LINTUL** (Light INTerception and UtiLization), Spitters & Schapendonk (1990), potato
+  drought. The minimal member of the family: a single radiation use efficiency, and drought
+  entering as a multiplier derived from the transpiration ratio.
+- **SIMPLE** (Zhao et al. 2019) — deliberately reduced to ~13 parameters; water stress via
+  an ARID index.
+- **AquaCrop's** canopy-cover formulation is a cousin (it replaces LAI with green canopy
+  cover) but its gain term is Backbone C.
+
+Time step: daily. Spatial scale: field / uniform stand. Units: RUE in g DM MJ^-1^ PAR
+(typically 2.5–3.5 for C3 grain crops, 3.5–4.5 for C4, on an intercepted-PAR basis).
+
+**Where stress enters**: as a multiplicative dimensionless factor on RUE. This is
+computationally trivial but *physiologically wrong in one respect*: RUE is comparatively
+conservative under mild drought, because stomatal closure reduces both transpiration and
+assimilation roughly in proportion; the first-order drought effect is on **intercepted
+radiation** via leaf expansion, not on RUE. Models that put all the drought response on RUE
+recover too fast after re-watering, because the leaf area was never lost.
+
+## Backbone B — photosynthesis-driven (light response curve, integrated over canopy)
+
+$$
+\text{assimilation}(\text{depth}) = \text{assimilation}_{\max}
+\Big(1 - e^{-\,\text{initial slope} \;\cdot\; \text{irradiance}(\text{depth})
+\;/\; \text{assimilation}_{\max}}\Big)
+$$
+
+integrated over canopy depth and over the day (Gaussian quadrature, typically 3–5 points),
+then converted to CH~2~O and reduced by growth and maintenance respiration.
+
+- **SUCROS / WOFOST** — the Wageningen school; de Wit lineage. See van Ittersum et al.
+  (2003) for the family overview and de Wit et al. (2019) for 25 years of WOFOST.
+- **GECROS** (Yin & van Laar 2005) — same backbone with a much tighter carbon–nitrogen
+  coupling and an explicit stomatal/energy-balance layer.
+- **Greenhouse models**: reduced **TOMGRO** (Jones et al. 1999) and the
+  **Vanthoor** tomato yield model (2011), which is the crop half of a greenhouse
+  climate + crop model designed explicitly for control studies.
+- **Big-leaf / sun-shade scaling**: de Pury & Farquhar (1997) is the standard route from
+  FvCB leaf photosynthesis to a canopy flux without full multi-layer integration.
+
+Time step: daily with sub-daily (hourly or 3-point Gaussian) integration inside.
+Spatial scale: canopy layers, one dimension (depth), horizontally uniform.
+
+**Where stress enters**: on the maximum assimilation rate (umol CO~2~ m^-2^ s^-1^) and/or on the stomatal
+conductance that sets internal CO~2~. This is more mechanistic and permits a genuine
+VPD feedback, at the cost of a stiffer, faster subsystem embedded in a daily model.
+
+## Backbone C — transpiration-driven (normalised water productivity)
+
+$$
+\frac{d\,\text{dry mass}}{dt} =
+\text{normalised water productivity} \cdot
+\frac{\text{transpiration}}{\text{reference evapotranspiration}}
+$$
+
+- **AquaCrop** (Steduto et al. 2009 concepts; Raes et al. 2009 algorithms; Hsiao et al.
+  2009 maize parameterisation). $\mathrm{WP}^{*}$ is biomass water productivity normalised
+  for atmospheric evaporative demand and for CO~2~ concentration, in g DM m^-2^ mm^-1^
+  (roughly 15–20 for C3, 30–35 for C4).
+- The idea traces to the de Wit (1958) transpiration–production proportionality and to
+  Tanner & Sinclair (1983).
+
+**Where stress enters**: nowhere *extra* — it is built in, because transpiration already carries the
+water limitation. This is the cleanest formulation for water-limited production and the
+reason AquaCrop dominates irrigation-management applications. The price: CO~2~,
+temperature and radiation effects have to be smuggled back in through the normalisation, and
+the model has almost no purchase on a **salinity** effect that is not mediated by
+transpiration (i.e. it handles the osmotic phase well and the ionic-toxicity phase poorly).
+
+## Cross-model contrast worth flagging
+
+The three backbones disagree most sharply about **where a stress factor attaches**:
+
+| | Assimilation rate | Canopy expansion | Senescence | Transpiration |
+|---|---|---|---|---|
+| LINTUL / SIMPLE | primary | secondary | weak | diagnostic |
+| WOFOST / SUCROS | primary (on max assimilation rate) | secondary | via assimilate shortage | computed |
+| AquaCrop | via transpiration only | **primary** (Ks~exp~) | **explicit** (Ks~sen~) | primary |
+| Vanthoor / TOMGRO | primary + sink limitation | secondary | minor | computed |
+
+AquaCrop's deliberate separation of three stress coefficients — expansion, stomatal,
+senescence — each with its own depletion threshold and each with a *different sensitivity
+ordering* (expansion most sensitive, senescence least) is, in my view, the single most
+useful idea in this literature for anyone building a compact ODE model. It encodes the
+time-scale separation directly in the parameter set.
+
+# Water scarcity: from soil potential to stomata
+
+## The macroscopic sink-term tradition (Feddes)
+
+Feddes et al. (1978) reduce root water uptake to a piecewise-linear reduction function
+$\text{reduction}(\text{pressure head})$, with four breakpoints: anaerobiosis (too wet), the two
+ends of the optimal range, and wilting point. The optimal-range upper breakpoint is made
+**demand-dependent**, i.e. it shifts with potential transpiration — an often-overlooked
+feedback that makes the "threshold" itself a function of the driver.
+
+- Implemented in **SWAP** (Soil–Water–Atmosphere–Plant; van Dam, Kroes and co-workers) and
+  in **HYDRUS-1D** (Simunek et al. 2016).
+- Time scale: the sink term is quasi-instantaneous (minutes) but is normally evaluated at
+  the soil-solver time step (minutes to hours) inside a daily crop model.
+- Spatial scale: one-dimensional soil column, method of lines — i.e. the Richards PDE
+  discretised into 10–100 layers, which *is* a stiff ODE system in the frame of this review.
+
+## The hydraulic / signalling tradition
+
+Here stomatal conductance is a state-dependent control rather than a lookup:
+
+- **Tardieu & Davies (1993)**: conductance as a function of xylem ABA concentration *and*
+  leaf water potential, with the ABA sensitivity itself modulated by potential. This is the
+  cleanest example of a plant-internal $u(t)$ with a perception state (the ABA signal is an
+  integrator of root-zone status with a transport lag of hours).
+- **Tuzet, Perrier & Leuning (2003)**: a coupled stomatal–photosynthesis–hydraulic model in
+  which leaf water potential is solved from a soil-to-leaf resistance network and feeds a
+  sigmoidal conductance function. Quasi-steady in water potential (seconds) embedded in a
+  daily carbon model.
+- **Steppe et al. (2006)**: an explicit ODE for stem water storage and turgor — relevant
+  because it makes the capacitance (and hence the diurnal lag between transpiration and sap
+  flow, order 1–3 h) a real state rather than an assumption.
+- **SurEau / Cochard et al. (2021)**: hydraulic failure and cavitation dynamics; the
+  relevant regime for severe scarcity, where the response is no longer reversible.
+
+## The optimal-control tradition
+
+This is the branch that matches the $u(t)$-with-objective framing directly:
+
+- **Cowan & Farquhar (1977)**: stomata maximise carbon gain subject to a water cost,
+  $\max \int (\text{assimilation} - \text{water price} \cdot \text{transpiration})\,dt$.
+  The Lagrange multiplier "water price" (umol CO~2~ per mol H~2~O) is the marginal
+  water-use efficiency and is the natural price of water.
+- **Medlyn et al. (2011)**: derives from the same optimisation a unified stomatal model of
+  Ball–Berry form, which reconciles the empirical and optimality traditions — a genuinely
+  useful cross-check because it shows the empirical slope parameter behaves like the square root of the water price.
+- **Sperry et al. (2017)**: carbon-gain maximisation against hydraulic-risk, which
+  reproduces the observed behaviour that plants become more conservative as soil dries,
+  something a fixed water price cannot do.
+
+**Difference to highlight**: Feddes-type models make water stress a *state-dependent
+multiplier*; optimality models make it an *emergent control*. In the frame of this review,
+Feddes belongs in $f(\cdot)$ and Cowan–Farquhar belongs in $h_r(\cdot)$ with an explicit
+objective. They give similar answers under mild stress and diverge under severe or
+intermittent stress, and only the latter can represent a genotype that "chooses" to be
+isohydric.
+
+## Time scales (this is the part most compact models get wrong)
+
+| Process | Characteristic time | State it lives in |
+|---|---|---|
+| Stomatal aperture adjustment | 5–30 min | conductance (often quasi-steady) |
+| Leaf/stem capacitance discharge | 1–3 h | tissue water content |
+| ABA signal transport root to leaf | 2–12 h | xylem ABA concentration |
+| Osmotic adjustment (solute accumulation) | 1–7 d | tissue osmolality |
+| Leaf expansion suppression | hours to days | leaf area index |
+| Root:shoot allocation shift | 5–20 d | partitioning fractions |
+| Accelerated senescence / leaf shedding | 1–3 weeks | leaf area index, leaf sodium |
+| Root-zone salt accumulation | 2 weeks – 1 season | root-zone salt |
+| Sodicity / structural degradation | 1–10 seasons | exchangeable sodium percentage |
+| Soil pH change (mineral soil) | 1–10 years | base saturation, alkalinity |
+| Substrate pH change (rockwool, coir) | hours – days | solution alkalinity |
+
+A model that puts salinity stress on the same time scale as stomatal closure will
+systematically mispredict recovery after a leaching irrigation.
+
+# Salinity: osmotic phase, ionic phase, and how they are combined
+
+## The two-phase conceptual model
+
+Munns (1993) and Munns & Tester (2008) are the reference framing: a **fast osmotic phase**
+(within minutes to days of salt reaching the root, indistinguishable from drought in its
+effect on expansion and conductance) followed by a **slow ionic phase** (weeks; Na^+^ and
+Cl^-^ accumulate in old leaves beyond the compartmentation capacity, causing premature
+senescence and therefore loss of assimilating area).
+
+Implication for ODE structure, and this is important: **the two phases need different
+states**. The osmotic phase is a function of a driver-like quantity (root-zone EC now); the
+ionic phase requires an *integrator* state — leaf tissue sodium, whose derivative is
+transpiration times solution concentration times a bypass fraction. Almost no
+production-scale crop model carries this second state; AquaCrop, WOFOST and DSSAT do not.
+This is the clearest gap in the field-scale literature.
+
+## Static response functions (still the workhorse)
+
+- **Maas & Hoffman (1977)**: relative yield as threshold-and-slope in EC of the saturated
+  paste extract, $\text{relative yield} = 1 - \text{slope} \cdot
+  (\mathrm{EC}_e - \mathrm{EC}_{\text{threshold}})$. Still the
+  basis of FAO-29 tables. Piecewise-linear, hence non-differentiable — replace with a
+  smoothed version before putting it in a fixed-step integrator.
+- **van Genuchten & Hoffman (1984)** / van Genuchten (1987): the S-shaped alternative,
+  $\text{relative yield} = 1/\big(1 + (\mathrm{EC}/\mathrm{EC}_{50})^{\text{shape}}\big)$,
+  with the shape exponent typically 3. Smooth,
+  one fewer parameter, and better behaved near the threshold.
+- Both are **steady-state, whole-season** relationships. Using them as an instantaneous
+  reduction factor inside a dynamic model is a category error that the literature commits
+  routinely; Letey & Feng (2007) is the explicit critique (dynamic versus steady-state
+  salinity–yield modelling, and why the steady-state leaching requirement overestimates the
+  water needed).
+
+## Combining matric and osmotic stress: three incompatible formulations
+
+This is the point where models genuinely disagree, and it deserves the sharpest statement
+in this review.
+
+1. **Multiplicative**: $\text{reduction}_{\text{total}} =
+   \text{reduction}(\text{matric}) \cdot \text{reduction}(\text{osmotic})$.
+   Used in HYDRUS and SWAP by default. Assumes independence.
+2. **Additive in potential**: $\text{reduction}_{\text{total}} =
+   \text{reduction}(\text{matric} + \text{osmotic})$
+   (van Genuchten 1987). Assumes the plant responds to total water potential and cannot tell
+   the two apart.
+3. **Non-equivalent / weighted**: matric and osmotic potentials are *not* interchangeable,
+   because (a) osmotic potential is spatially uniform in the root zone while matric potential
+   develops steep gradients at the root surface, and (b) salinity itself reduces root
+   hydraulic conductance. Shani & Dudley (2001) and Shani et al. (2007) build an analytical
+   model integrating yield, water, **soil type** and salinity on this basis; Homaee, Feddes
+   & Dirksen (2002) test the alternatives and find the multiplicative form biased.
+   Skaggs et al. (2006) is the systematic comparison of macroscopic approaches.
+
+**My reading of the disagreement**: the multiplicative form is conservative (predicts more
+stress) and is defensible when matric stress is mild and salinity dominates — the typical
+drip-irrigated or soilless case. The additive form is defensible in dry-farmed saline soils
+where both potentials are large. The Shani/Ben-Gal line is the only one that gets the
+*soil-type interaction* right, because it recognises that in a coarse sand the matric
+component collapses quickly between irrigations while in a clay it does not, so the same
+seasonal EC produces different dynamics. If your question is about salinity build-up under
+irrigation management, use formulation 3 or at minimum make the choice a switch and report
+sensitivity to it — which is what the code backbone below does.
+
+## The salt balance and the build-up mechanism
+
+The build-up itself is a two-line ODE and is not controversial:
+
+$$
+\frac{d(\text{root-zone salt})}{dt} =
+  \text{conc}_{\text{irrigation}} \cdot \text{irrigation}
++ \text{conc}_{\text{rain}} \cdot \text{rainfall}
+- \text{conc}_{\text{soil}} \cdot \text{drainage}
+- \text{uptake fraction} \cdot \text{conc}_{\text{soil}} \cdot \text{transpiration}
+$$
+
+with the salt uptake fraction (one minus the exclusion fraction) typically 0.02–0.10 for
+glycophyte crops.
+**The mechanism is simply that transpiration removes water and leaves salt behind**: a crop
+transpiring 500 mm of water at 1.0 dS m^-1^ imports roughly 320 g m^-2^ of salt in a season
+and exports only a few percent of it in the harvest.
+
+At steady state with a leaching fraction defined as drainage divided by applied water, the
+classical result is $\text{conc}_{\text{drain}} = \text{conc}_{\text{irrigation}} /
+\text{leaching fraction}$, i.e. drain EC is inversely proportional to
+leaching fraction (Rhoades; the FAO-29 leaching-requirement framework). The transient to
+that steady state takes weeks to months in soil and **days** in a low-volume substrate,
+which is exactly why the greenhouse literature had to develop its own dynamic version.
+
+## Sodicity and the soil-type coupling (EC is not only an osmotic driver)
+
+Low EC combined with a high sodium adsorption ratio (SAR) causes clay swelling and
+dispersion, collapsing saturated hydraulic conductivity — so *reducing* EC by leaching with
+low-salinity water can make infiltration worse. The threshold electrolyte concentration
+(TEC) concept is from Quirk & Schofield (1955); the quantitative model is McNeal (1968),
+modernised by Ezlit et al. (2013). This coupling exists only in 2:1 clay soils
+(smectite/vermiculite dominated), is weak in kaolinitic and sandy soils, and is absent in
+inert substrates (rockwool, perlite) — which is the main reason soilless and field salinity
+models are not interchangeable.
+
+# EC and salinity build-up in soilless / greenhouse systems
+
+This is where the dynamics are fastest and the control is tightest, and where the ODE
+formulations are genuinely at their best.
+
+- **Sonneveld & Voogt (2009)**, *Plant Nutrition of Greenhouse Crops* — the conceptual
+  anchor: the **uptake concentration** $C_{\text{uptake}}$ (mmol per litre of water taken
+  up) for each ion. If supply concentration exceeds uptake concentration, that ion
+  accumulates; Na^+^ and Cl^-^ have near-zero uptake concentration in most crops, so they
+  accumulate fastest. This single concept explains virtually all observed EC drift.
+- **Carmassi et al. (2005, 2007)**: an explicit dynamic model of salinity build-up in
+  recirculating (closed) nutrient solution culture for greenhouse tomato, including the
+  discharge/refresh decision. Time scale: days; state: solution volume and per-ion mass;
+  control: discharge fraction and refresh EC.
+- **Massa, Incrocci, Pardossi and co-workers (2011)**: strategies to reduce drainage volume
+  and nitrate emission from soilless tomato — the same model used as a control-design tool,
+  with an explicit multi-objective trade-off (yield versus emission).
+- **Vanthoor et al. (2011)** plus the companion greenhouse climate model: the standard
+  crop-side backbone for control studies; the crop model is Backbone B with sink limitation.
+- **van Straten, van Willigenburg, van Henten & van Ooteghem (2010)**, *Optimal Control of
+  Greenhouse Cultivation* (CRC Press): the reference text for exactly the $u(t)$-with-
+  objective-function framing. Two-time-scale decomposition (fast climate, slow crop) with a
+  receding-horizon outer loop is the method of choice here.
+
+**Key structural difference versus field models**: in a substrate the root-zone water volume
+is small (rockwool slab: 6–10 L m^-2^; typical field root zone: 100–200 mm of available
+water = 100–200 L m^-2^), so the salt-balance ODE has a time constant of days rather than
+months, and the drain EC is measurable continuously. That makes closed-loop EC control
+feasible, and makes the drain EC an excellent *observable* $Y(t)$ for state estimation of
+the root-zone salt state — which the field case lacks entirely.
+
+# pH and alkalinity
+
+pH is the weakest-developed channel in the crop-model literature, and honesty requires
+saying so: in WOFOST, AquaCrop, CERES/DSSAT and STICS, pH does **not** affect assimilation
+at all. Where it does appear:
+
+- **EPIC / APEX** (Williams and co-workers): carries an **aluminium saturation stress
+  factor** that reduces crop growth in acid soils, and a pH-dependent phosphorus sorption
+  model. This is the main field-scale precedent for a genuine pH-to-growth pathway.
+- **UNSATCHEM** (Simunek & Suarez 1994; Suarez & Simunek 1997), available inside the HYDRUS
+  family: solves major-ion chemistry, CO~2~ production and transport, calcite
+  precipitation/dissolution, cation exchange and gypsum dynamics, and therefore computes pH,
+  EC and SAR as *states* rather than drivers. This is the most complete treatment I am aware
+  of at the profile scale.
+- **Greenhouse / soilless**: pH is a fast state governed by an alkalinity balance —
+  bicarbonate input from irrigation water, acid dosing (a genuine control), and
+  plant-driven proton excretion set by the cation:anion uptake ratio, which is dominated by
+  the ammonium:nitrate ratio of the supply. Nitrate-fed crops raise solution pH; ammonium-fed
+  crops lower it. Buffer capacity of the root environment differs by three orders of
+  magnitude between rockwool (essentially none) and a calcareous clay loam.
+- **Rhizosphere pH gradients**: Nye (1981) and later reactive-transport treatments; relevant
+  at the millimetre scale, and mostly out of scope here except as the mechanism behind the
+  bulk effect.
+
+**Mechanistic pathway to assimilation**, when it is represented at all, is indirect and
+slow: pH controls micronutrient availability (Fe, Mn, Zn); Fe deficiency reduces chlorophyll
+and therefore the maximum assimilation rate on a time scale of 1–3 weeks; at low pH, Al^3+^ toxicity restricts
+root elongation and therefore the explored soil volume, which feeds back into water and
+nutrient capture. Both are best modelled as slow multipliers on the maximum assimilation rate (or RUE) and on
+effective rooting depth, not as instantaneous stress factors.
+
+# Soil and substrate type: where it actually enters
+
+Four distinct entry points, often conflated:
+
+1. **Water retention and conductivity** — van Genuchten (1980) parameters; sets how quickly
+   matric potential falls between irrigations. Sand: steep, fast; clay: shallow, slow. In a
+   lumped ODE this shows up as the exponent of the retention curve and as the available
+   water capacity (mm per m of profile: coarse sand 60–100, loam 150–200, clay loam 160–220,
+   rockwool effectively a bucket with near-zero tension range).
+2. **Salt storage and buffering** — the same water-holding capacity sets the salt-balance
+   time constant. A soil with more water holds more salt at the same EC and responds more
+   slowly to a change in irrigation EC.
+3. **Chemical buffering** — cation exchange capacity and carbonate content set the pH
+   buffer capacity and the SAR–ESP relationship; also gypsum dissolution as a natural EC
+   floor in gypsiferous soils.
+4. **Structural response to EC/SAR** — the TEC/dispersion coupling above, present only in
+   2:1 clays.
+
+Only the Shani/Ben-Gal analytical line and the HYDRUS/UNSATCHEM family represent all four.
+Most crop models represent only (1).
+
+# Steering: controls, policies and objectives
+
+## Controls that appear in this literature
+
+| Control | Units | Time scale of decision | Where it acts |
+|---|---|---|---|
+| Irrigation amount | mm per event | hours – days | water balance |
+| Irrigation frequency / "meal pattern" | events d^-1^ | days | matric potential amplitude |
+| Target leaching fraction | – | season, adjusted weekly | salt balance |
+| Supply EC set point | dS m^-1^ | days | osmotic potential, fruit quality |
+| Drain/discharge fraction (soilless) | – | days | salt build-up |
+| Acid or base dosing | mmol~c~ m^-2^ d^-1^ | hours | alkalinity, pH |
+| Nitrate:ammonium ratio | – | days | proton balance, pH drift |
+| Deficit strategies: RDI, PRD | – | phenological stage | stomatal and expansion stress |
+| CO~2~ enrichment, screens, ventilation | umol mol^-1^, – | minutes | assimilation, VPD |
+
+## Rule-based policies with perception states
+
+The policies actually used are rule-based, not optimal, and they carry their own dynamics:
+
+- **Soil-moisture-triggered irrigation**: a tensiometer or capacitance sensor with a
+  first-order lag and a dead band. The lag constant (0.2–2 d, depending on sensor placement
+  and soil contact) is a genuine state, and it matters: a slow sensor in a coarse substrate
+  produces oscillatory over-irrigation.
+- **Drain-EC feedback**: increase leaching fraction when measured drain EC exceeds a set
+  point. This is the standard salinity policy in greenhouse horticulture and is a
+  proportional controller on a slow, well-observed state.
+- **Radiation-sum triggered irrigation**: the dominant rule in Dutch greenhouse practice —
+  irrigate after each accumulated radiation increment (e.g. every 100–150 J cm^-2^). This
+  is a *feedforward* controller on $w(t)$ with an integrator state, and it is remarkably
+  robust precisely because it anticipates transpiration rather than reacting to depletion.
+
+In the frame of this review all three are $h_r(X, p_u, w)$ with their own states appended to
+$X$, and $p_u$ (trigger thresholds, gains, lag constants, set points) is what gets optimised.
+
+## Objective functions used
+
+- Maximum yield subject to a water quota (the classical deficit-irrigation problem).
+- Maximum gross margin: yield value minus water, energy, fertiliser and disposal cost.
+- Multi-objective with an emission constraint (nitrate leaching), as in the Massa/Incrocci
+  work.
+- Cowan–Farquhar marginal water-use efficiency at the plant level, which is the same
+  problem one level down, and a useful consistency check: an irrigation policy that implies
+  a water price far from the plant's own is likely mis-specified.
+- Long-horizon sustainability: minimise root-zone salt at end of season subject to a yield
+  floor. This is the objective that makes the salt state worth carrying at all, since within
+  a single season leaching is almost always a net cost.
+
+# Model comparison table
+
+| Model | Backbone | Time step | Spatial scale | Water stress route | Salinity | pH | Soil/substrate type | Main control |
+|---|---|---|---|---|---|---|---|---|
+| LINTUL | A | day | field | RUE multiplier | none | none | bucket | irrigation |
+| WOFOST / SUCROS | B | day (Gaussian intra-day) | field, canopy layers | max assimilation rate + expansion | none native (via SWAP coupling) | none | retention curve | irrigation, sowing date |
+| AquaCrop | C | day | field | Ks~exp~, Ks~sto~, Ks~sen~ | Maas–Hoffman-type Ks~salt~ | none | AWC + drainage | irrigation, LF |
+| DSSAT / CERES | A/B hybrid | day | field | supply:demand ratio | limited | none | layered bucket | irrigation, N |
+| APSIM | A/B hybrid | day | field, layered | supply:demand + root `kl` | via root exploration factor | indirect | layered, well developed | irrigation, N, rotation |
+| STICS | A | day | field | turgor + stomatal | limited | none | layered | irrigation, N |
+| CropSyst | A | day | field | transpiration ratio | salinity module | none | layered | irrigation |
+| SWAP (+WOFOST) | B | day / soil sub-step | 1-D column | Feddes sink term | osmotic head, multiplicative | none | full van Genuchten | irrigation, drainage |
+| HYDRUS-1D | – (transport) | adaptive, minutes | 1-D/2-D | Feddes + osmotic | full transport | via UNSATCHEM | full | boundary flux |
+| UNSATCHEM | – | adaptive | 1-D | Feddes | full major-ion chemistry | **explicit state** | full + exchange | water quality, amendments |
+| SALTMED | A/C | day | field, 2-D-ish | reduction function | explicit, integrated | limited | layered | irrigation, LF, fertigation |
+| Shani et al. (2007) | analytical | season | root zone | combined potential | non-equivalent combination | none | **explicit soil type** | irrigation, EC |
+| TOMGRO / Vanthoor | B | hour–day | greenhouse compartment | via conductance/VPD | via EC set point | via solution | inert substrate | climate + fertigation |
+| Carmassi et al. | mass balance | day | slab / loop | – | **build-up as state** | solution | inert substrate | discharge fraction |
+| EPIC / APEX | A | day | field | water stress factor | salinity factor | **Al saturation** | full | management |
+| SahysMod | balance | season | polygon / region | – | regional salt + water table | – | aggregated | drainage, LF |
+
+# Model backbone as R code
+
+Deliberately compact: one lumped root zone, one crop, all four channels (water, EC, salt
+build-up, pH) present, and the irrigation/EC/pH policy inside the same state vector.
+Parameter *values* are placeholders, not calibrations — the point is the structure, the
+units and the switches that let the formulation disagreements above be tested.
+
+Every threshold is smoothed, because the integration is fixed-step Runge–Kutta 4.
+
+## Helper functions
+
+```{r}
+#| label: helpers
+
+library(deSolve)
+library(data.table)
+library(ggplot2)
+
+# --------------------------------------------------------------------------
+# Smooth replacements for min / max / step.
+# Fixed-step rk4 needs a continuously differentiable right-hand side; a hard
+# min() or an if() on a state creates a discontinuity that rk4 will silently
+# integrate across with an O(1) error.
+# --------------------------------------------------------------------------
+
+soft_min <- function(value_a, value_b, smoothing = 1e-3) {
+  # value_a, value_b [any, same units]; smoothing [same units] = corner radius
+  0.5 * (value_a + value_b - sqrt((value_a - value_b)^2 + smoothing^2))
+}
+
+soft_max <- function(value_a, value_b, smoothing = 1e-3) {
+  # value_a, value_b [any, same units]; smoothing [same units]
+  0.5 * (value_a + value_b + sqrt((value_a - value_b)^2 + smoothing^2))
+}
+
+soft_step <- function(value, threshold, steepness) {
+  # value, threshold [any, same units]; steepness [1 / units of value]
+  # returns [-] in (0, 1)
+  1 / (1 + exp(-steepness * (value - threshold)))
+}
+
+bell_factor <- function(value, optimum, width) {
+  # symmetric response, e.g. pH optimum; returns [-] in (0, 1]
+  exp(-((value - optimum) / width)^2)
+}
+```
+
+## The ODE system
+
+```{r}
+#| label: model-backbone
+
+crop_water_salinity_model <- function(time, state, parms) {
+
+  # time  [d] since emergence
+  # state named numeric vector, order must match the derivative vector returned
+  # parms list holding parameters, initial states and driver functions
+
+  list2env(c(parms, as.list(state)), envir = environment())
+
+  # ------------------------------------------------------------------------
+  # 1. Uncontrolled drivers w(time)
+  # ------------------------------------------------------------------------
+  global_radiation      <- driver_global_radiation(time)       # [MJ m-2 d-1] total shortwave
+  reference_et          <- driver_reference_et(time)           # [mm d-1] FAO-56 ET0
+  air_temperature       <- driver_air_temperature(time)        # [degC] daily mean
+  rainfall              <- driver_rainfall(time)               # [mm d-1]
+  irrigation_water_ec   <- driver_irrigation_water_ec(time)    # [dS m-1]
+  irrigation_alkalinity <- driver_irrigation_alkalinity(time)  # [mmol_c L-1] as HCO3-
+
+  # ------------------------------------------------------------------------
+  # 2. Root-zone status (algebraic, from states)
+  # ------------------------------------------------------------------------
+  water_capacity <- root_zone_depth * available_water_capacity
+  # root_zone_depth [m]; available_water_capacity [mm m-1] -> water_capacity [mm]
+
+  relative_water <- root_zone_water / water_capacity                    # [-] 0..1
+  water_deficit  <- 1 - relative_water                                  # [-]
+
+  solution_volume <- root_zone_water + water_volume_floor               # [mm] = [L m-2]
+  salt_concentration <- root_zone_salt / solution_volume                # [g L-1]
+  soil_ec <- salt_concentration / salt_per_ec                           # [dS m-1]
+  # salt_per_ec [g L-1 per dS m-1], about 0.64 for a mixed-salt solution
+
+  sodium_concentration <- soil_ec * charge_per_ec * sodium_fraction     # [mmol_c L-1]
+  # charge_per_ec [mmol_c L-1 per dS m-1], about 10
+
+  osmotic_potential <- -osmotic_per_ec * soil_ec                        # [MPa], negative
+  # osmotic_per_ec [MPa per dS m-1], about 0.036 (van 't Hoff, Richards 1954)
+
+  matric_potential <- matric_potential_at_capacity *
+    (relative_water + relative_water_floor)^(-retention_exponent)       # [MPa], negative
+  # matric_potential_at_capacity [MPa] about -0.01
+  # retention_exponent [-] about 4 for sand, 6 loam, 9 clay  <- SOIL TYPE ENTERS HERE
+
+  total_potential <- matric_potential + osmotic_potential               # [MPa]
+
+  # ------------------------------------------------------------------------
+  # 3. Stress factors  -- the three literature formulations as a switch
+  # ------------------------------------------------------------------------
+  # Individual factors, both S-shaped (van Genuchten 1987 form, smoothed
+  # Maas-Hoffman), all dimensionless in (0, 1]
+  stress_water_stomatal <- 1 / (1 + (water_deficit / deficit_50_stomatal)^stress_shape)
+  stress_water_expansion <- 1 / (1 + (water_deficit / deficit_50_expansion)^stress_shape)
+  stress_salt <- 1 / (1 + (soil_ec / ec_50)^salinity_shape)
+  stress_potential <- 1 / (1 + (abs(total_potential) / potential_50)^stress_shape)
+
+  if (stress_combination == "multiplicative") {
+    # HYDRUS / SWAP default: independence of matric and osmotic stress
+    stress_stomatal  <- stress_water_stomatal * stress_salt
+    stress_expansion <- stress_water_expansion * stress_salt
+  } else if (stress_combination == "additive_potential") {
+    # van Genuchten (1987): plant responds to total water potential only
+    stress_stomatal  <- stress_potential
+    stress_expansion <- stress_potential^expansion_sensitivity_ratio
+  } else {
+    # Non-equivalent / limiting-factor (Shani, Homaee): smoothed minimum,
+    # with osmotic stress additionally reducing root hydraulic conductance
+    root_conductance_factor <- 1 / (1 + (soil_ec / ec_50_conductance)^salinity_shape)
+    stress_stomatal  <- soft_min(value_a = stress_water_stomatal,
+                                 value_b = stress_salt, smoothing = 0.02) *
+      root_conductance_factor
+    stress_expansion <- soft_min(value_a = stress_water_expansion,
+                                 value_b = stress_salt, smoothing = 0.02)
+  }
+
+  # Ionic (Munns phase 2): slow, integrator-driven, acts on senescence not on
+  # instantaneous assimilation
+  leaf_water_volume <- leaf_area_index * leaf_water_per_area + water_volume_floor  # [L m-2]
+  leaf_sodium_concentration <- leaf_sodium / leaf_water_volume          # [mmol_c L-1]
+
+  # ------------------------------------------------------------------------
+  # 4. Canopy, water fluxes
+  # ------------------------------------------------------------------------
+  cover_fraction <- 1 - exp(-extinction_coefficient * leaf_area_index)  # [-]
+  # extinction_coefficient [m2 ground m-2 leaf], about 0.6-0.8
+
+  potential_transpiration <- reference_et * crop_coefficient_basal * cover_fraction  # [mm d-1]
+  actual_transpiration    <- potential_transpiration * stress_stomatal              # [mm d-1]
+  soil_evaporation <- reference_et * (1 - cover_fraction) * evaporation_factor      # [mm d-1]
+
+  # ------------------------------------------------------------------------
+  # 5. Control u(time) = h_r(X, p_u, w) -- rule based, with perception states
+  # ------------------------------------------------------------------------
+  # Leaching fraction: base value, raised proportionally when the PERCEIVED
+  # drain EC exceeds its set point (standard greenhouse salinity policy)
+  leaching_fraction <- soft_min(
+    value_a = base_leaching_fraction +
+      leaching_gain * soft_step(value = perceived_ec, threshold = ec_set_point,
+                                steepness = ec_steepness),
+    value_b = maximum_leaching_fraction, smoothing = 0.01)              # [-]
+
+  # Irrigation: triggered on perceived depletion, sized to replace transpiration
+  # and deliver the target leaching fraction, capped by system capacity
+  irrigation_trigger <- soft_step(value = perceived_deficit, threshold = deficit_trigger,
+                                  steepness = trigger_steepness)        # [-]
+  irrigation_rate <- soft_min(
+    value_a = irrigation_trigger * potential_transpiration / (1 - leaching_fraction),
+    value_b = maximum_irrigation_rate, smoothing = 0.05)                # [mm d-1]
+
+  # Acid dosing: proportional control on substrate pH above its set point
+  acid_dose <- acid_gain * soft_max(value_a = substrate_ph - ph_set_point,
+                                    value_b = 0, smoothing = 0.02)      # [mmol_c m-2 d-1]
+
+  # ------------------------------------------------------------------------
+  # 6. Assimilation -- von Bertalanffy structure:
+  #    surface-like gain (light capture saturates with leaf area)
+  #    minus mass-like loss (maintenance proportional to standing biomass)
+  # ------------------------------------------------------------------------
+  temperature_factor <- bell_factor(value = air_temperature, optimum = temperature_optimum,
+                                    width = temperature_width)          # [-]
+  micronutrient_factor <- bell_factor(value = substrate_ph, optimum = ph_optimum,
+                                      width = ph_width)                 # [-]
+  # pH acts slowly and indirectly (Fe/Mn availability -> chlorophyll -> Amax);
+  # applied here as a multiplier on the capacity term, not on conductance.
+
+  if (assimilation_mode == "radiation") {
+    # Backbone A: LINTUL / SIMPLE
+    intercepted_radiation <- global_radiation * par_fraction * cover_fraction  # [MJ PAR m-2 d-1]
+    supply_rate <- radiation_use_efficiency * intercepted_radiation *
+      temperature_factor * micronutrient_factor * stress_stomatal       # [g DM m-2 d-1]
+  } else {
+    # Backbone C: AquaCrop, transpiration driven
+    supply_rate <- normalised_water_productivity *
+      (actual_transpiration / (reference_et + reference_et_floor)) *
+      temperature_factor * micronutrient_factor                         # [g DM m-2 d-1]
+  }
+
+  # Sink capacity: temperature driven demand, saturating with existing mass
+  demand_rate <- maximum_sink_rate * temperature_factor *
+    crop_dry_mass / (crop_dry_mass + sink_half_saturation)              # [g DM m-2 d-1]
+
+  gross_assimilation <- soft_min(value_a = supply_rate, value_b = demand_rate,
+                                 smoothing = 0.2)  # the a() gate [g DM m-2 d-1]
+
+  maintenance_respiration <- maintenance_coefficient * crop_dry_mass *
+    q_ten^((air_temperature - reference_temperature) / 10)              # [g DM m-2 d-1]
+
+  net_growth <- soft_max(value_a = gross_assimilation - maintenance_respiration,
+                            value_b = 0, smoothing = 0.05)
+
+  # ------------------------------------------------------------------------
+  # 7. Derivatives
+  # ------------------------------------------------------------------------
+  senescence_rate <- (base_senescence_rate +
+    sodium_senescence_coefficient *
+      soft_max(value_a = leaf_sodium_concentration - sodium_tolerance,
+               value_b = 0, smoothing = 1)) *
+    leaf_area_index                                                     # [m2 m-2 d-1]
+
+  d_crop_dry_mass <- net_growth                                         # [g DM m-2 d-1]
+
+  d_leaf_area_index <- specific_leaf_area * leaf_fraction * net_growth *
+    stress_expansion - senescence_rate                                  # [m2 m-2 d-1]
+
+  drainage <- drainage_rate_constant *
+    soft_max(value_a = root_zone_water - water_capacity, value_b = 0,
+             smoothing = 0.5)                                           # [mm d-1]
+
+  d_root_zone_water <- irrigation_rate + rainfall - actual_transpiration -
+    soil_evaporation - drainage                                         # [mm d-1]
+
+  salt_input  <- irrigation_rate * irrigation_water_ec * salt_per_ec    # [g m-2 d-1]
+  salt_drained <- drainage * salt_concentration                         # [g m-2 d-1]
+  salt_taken_up <- actual_transpiration * salt_concentration * salt_uptake_fraction
+  d_root_zone_salt <- salt_input - salt_drained - salt_taken_up         # [g m-2 d-1]
+
+  d_leaf_sodium <- actual_transpiration * sodium_concentration * sodium_bypass_fraction -
+    leaf_sodium * senescence_rate / (leaf_area_index + leaf_area_floor) # [mmol_c m-2 d-1]
+
+  # Alkalinity balance expressed directly as a pH rate through a buffer capacity
+  proton_excretion <- proton_per_growth * net_growth *
+    (2 * ammonium_fraction - 1)                                         # [mmol_c m-2 d-1]
+  alkalinity_input   <- irrigation_rate * irrigation_alkalinity         # [mmol_c m-2 d-1]
+  alkalinity_drained <- drainage * irrigation_alkalinity * alkalinity_retention
+  d_substrate_ph <- (alkalinity_input - alkalinity_drained - acid_dose -
+    proton_excretion) / buffer_capacity                                 # [pH unit d-1]
+  # buffer_capacity [mmol_c m-2 per pH unit]: rockwool ~5, sandy soil ~200,
+  # calcareous clay loam ~5000   <- SOIL / SUBSTRATE TYPE ENTERS HERE AS WELL
+
+  # Perception states of the controller (first order sensor lag)
+  d_perceived_deficit <- (water_deficit - perceived_deficit) / sensor_time_constant_water
+  d_perceived_ec      <- (soil_ec - perceived_ec) / sensor_time_constant_ec
+
+  d_cumulative_transpiration <- actual_transpiration                    # [mm d-1]
+  d_cumulative_irrigation    <- irrigation_rate                         # [mm d-1]
+  d_cumulative_drainage      <- drainage                                # [mm d-1]
+
+  # ------------------------------------------------------------------------
+  # 8. Outputs Y(time) = g(X, p, u, w)
+  # ------------------------------------------------------------------------
+  list(
+    c(d_crop_dry_mass,
+      d_leaf_area_index,
+      d_root_zone_water,
+      d_root_zone_salt,
+      d_leaf_sodium,
+      d_substrate_ph,
+      d_perceived_deficit,
+      d_perceived_ec,
+      d_cumulative_transpiration,
+      d_cumulative_irrigation,
+      d_cumulative_drainage),
+    soil_ec                   = soil_ec,                    # [dS m-1]
+    drain_ec                  = salt_concentration / salt_per_ec,  # [dS m-1]
+    osmotic_potential         = osmotic_potential,          # [MPa]
+    matric_potential          = matric_potential,           # [MPa]
+    stress_stomatal           = stress_stomatal,            # [-]
+    stress_expansion          = stress_expansion,           # [-]
+    stress_salt               = stress_salt,                # [-]
+    leaf_sodium_concentration = leaf_sodium_concentration,  # [mmol_c L-1]
+    cover_fraction            = cover_fraction,             # [-]
+    actual_transpiration      = actual_transpiration,       # [mm d-1]
+    potential_transpiration   = potential_transpiration,    # [mm d-1]
+    irrigation_rate           = irrigation_rate,            # [mm d-1]
+    leaching_fraction         = leaching_fraction,          # [-]
+    drainage                  = drainage,                   # [mm d-1]
+    acid_dose                 = acid_dose,                  # [mmol_c m-2 d-1]
+    gross_assimilation        = gross_assimilation,         # [g DM m-2 d-1]
+    maintenance_respiration   = maintenance_respiration,    # [g DM m-2 d-1]
+    harvestable_yield         = harvest_index * crop_dry_mass  # [g DM m-2]
+  )
+}
+```
+
+## Parameters, drivers and initial states
+
+```{r}
+#| label: parameters
+
+make_drivers <- function(season_length = 150, random_seed = 1) {
+  # season_length [d]; returns a list of approxfun objects, one per driver
+  set.seed(random_seed)
+  day_index <- 0:season_length                                          # [d]
+
+  number_of_days <- length(day_index)                                   # [-]
+  radiation <- 12 + 8 * sin(2 * pi * (day_index - 40) / 365) +
+    rnorm(n = number_of_days, mean = 0, sd = 2)                         # [MJ m-2 d-1]
+  temperature <- 16 + 8 * sin(2 * pi * (day_index - 50) / 365) +
+    rnorm(n = number_of_days, mean = 0, sd = 1.5)                       # [degC]
+  reference_et <- pmax(0.3, 0.35 * radiation * (1 + 0.02 * (temperature - 16)))  # [mm d-1]
+  rainfall <- rbinom(n = number_of_days, size = 1, prob = 0.12) *
+    rexp(n = number_of_days, rate = 1 / 8)                              # [mm d-1]
+
+  list(
+    driver_global_radiation = approxfun(x = day_index, y = pmax(radiation, 0.5), rule = 2),
+    driver_reference_et     = approxfun(x = day_index, y = reference_et, rule = 2),
+    driver_air_temperature  = approxfun(x = day_index, y = temperature, rule = 2),
+    driver_rainfall         = approxfun(x = day_index, y = rainfall, rule = 2),
+    driver_irrigation_water_ec = approxfun(
+      x = day_index, y = rep(1.2, number_of_days), rule = 2),           # [dS m-1]
+    driver_irrigation_alkalinity = approxfun(
+      x = day_index, y = rep(4.0, number_of_days), rule = 2)            # [mmol_c L-1]
+  )
+}
+
+make_parms <- function(drivers,
+                       stress_combination = "non_equivalent",
+                       assimilation_mode  = "radiation",
+                       base_leaching_fraction = 0.20,
+                       ec_set_point = 3.0) {
+
+  # stress_combination: "multiplicative" | "additive_potential" | "non_equivalent"
+  # assimilation_mode : "radiation" (Backbone A) | "transpiration" (Backbone C)
+
+  parms <- list(
+
+    # ---- switches -------------------------------------------------------
+    stress_combination = stress_combination,
+    assimilation_mode  = assimilation_mode,
+
+    # ---- canopy and carbon ---------------------------------------------
+    extinction_coefficient   = 0.70,   # [m2 ground m-2 leaf]
+    par_fraction             = 0.50,   # [MJ PAR per MJ global]
+    radiation_use_efficiency = 3.0,    # [g DM MJ-1 intercepted PAR]
+    normalised_water_productivity = 18,# [g DM m-2 mm-1] AquaCrop WP*
+    specific_leaf_area       = 0.022,  # [m2 leaf g-1 leaf DM]
+    leaf_fraction            = 0.45,   # [g leaf DM per g DM]
+    harvest_index            = 0.45,   # [-]
+    maximum_sink_rate        = 32,     # [g DM m-2 d-1]
+    sink_half_saturation     = 40,     # [g DM m-2]
+    maintenance_coefficient  = 0.012,  # [g DM g-1 DM d-1] at reference temperature
+    q_ten                    = 2.0,    # [-]
+    reference_temperature    = 20,     # [degC]
+    temperature_optimum      = 22,     # [degC]
+    temperature_width        = 12,     # [degC]
+    base_senescence_rate     = 0.010,  # [d-1]
+
+    # ---- water and soil / substrate type -------------------------------
+    root_zone_depth            = 0.50, # [m]
+    available_water_capacity   = 180,  # [mm m-1]  loam
+    retention_exponent         = 6.0,  # [-] 4 sand, 6 loam, 9 clay
+    matric_potential_at_capacity = -0.010, # [MPa]
+    crop_coefficient_basal     = 1.05, # [-]
+    evaporation_factor         = 0.35, # [-]
+    drainage_rate_constant     = 1.5,  # [d-1]
+
+    # ---- salinity -------------------------------------------------------
+    salt_per_ec         = 0.64,  # [g L-1 per dS m-1]
+    charge_per_ec       = 10.0,  # [mmol_c L-1 per dS m-1]
+    osmotic_per_ec      = 0.036, # [MPa per dS m-1]
+    sodium_fraction     = 0.40,  # [mol_c Na per mol_c total]
+    salt_uptake_fraction = 0.05, # [-] exclusion: 95 % of salt stays behind
+    sodium_bypass_fraction = 0.02, # [-] apoplastic bypass to the shoot
+    ec_50               = 6.0,   # [dS m-1] 50 % reduction point
+    ec_50_conductance   = 9.0,   # [dS m-1] root hydraulic conductance
+    salinity_shape      = 3.0,   # [-] van Genuchten exponent
+    sodium_tolerance    = 60,    # [mmol_c L-1] leaf sap
+    sodium_senescence_coefficient = 2.0e-4, # [d-1 per mmol_c L-1]
+    leaf_water_per_area = 0.20,  # [L m-2 leaf]
+
+    # ---- water stress shape --------------------------------------------
+    deficit_50_stomatal  = 0.55, # [-] fraction of available water depleted
+    deficit_50_expansion = 0.35, # [-] expansion is more sensitive (AquaCrop)
+    stress_shape         = 4.0,  # [-]
+    potential_50         = 0.60, # [MPa]
+    expansion_sensitivity_ratio = 1.6, # [-]
+
+    # ---- pH and alkalinity ---------------------------------------------
+    buffer_capacity      = 200,  # [mmol_c m-2 per pH unit]
+    ph_optimum           = 6.0,  # [-]
+    ph_width             = 1.2,  # [pH unit]
+    proton_per_growth    = 0.9,  # [mmol_c per g DM]
+    ammonium_fraction    = 0.10, # [mol N-NH4 per mol N total]
+    alkalinity_retention = 0.60, # [-]
+
+    # ---- controller p_u (this is what gets optimised) -------------------
+    deficit_trigger          = 0.35, # [-]
+    trigger_steepness        = 25,   # [-]
+    base_leaching_fraction   = base_leaching_fraction, # [-]
+    leaching_gain            = 0.25, # [-]
+    maximum_leaching_fraction = 0.55,# [-]
+    ec_set_point             = ec_set_point, # [dS m-1]
+    ec_steepness             = 2.5,  # [per dS m-1]
+    maximum_irrigation_rate  = 12,   # [mm d-1]
+    ph_set_point             = 6.2,  # [-]
+    acid_gain                = 60,   # [mmol_c m-2 d-1 per pH unit]
+    sensor_time_constant_water = 0.5,# [d]
+    sensor_time_constant_ec    = 2.0,# [d]
+
+    # ---- numerical floors ----------------------------------------------
+    water_volume_floor   = 1.0,   # [mm]
+    relative_water_floor = 0.02,  # [-]
+    reference_et_floor   = 0.05,  # [mm d-1]
+    leaf_area_floor      = 0.01,  # [m2 m-2]
+
+    # ---- initial states (kept in parms, per house style) ----------------
+    initial_crop_dry_mass    = 8,    # [g DM m-2]
+    initial_leaf_area_index  = 0.15, # [m2 m-2]
+    initial_root_zone_water  = 76.5, # [mm] = 0.85 * capacity
+    initial_root_zone_salt   = 61.4, # [mm * dS m-1 * g L-1 dS-1 m] -> [g m-2], EC ~ 1.25
+    initial_leaf_sodium      = 0,    # [mmol_c m-2]
+    initial_substrate_ph     = 6.0,  # [-]
+    initial_perceived_deficit = 0.15,# [-]
+    initial_perceived_ec     = 1.25, # [dS m-1]
+    initial_cumulative_transpiration = 0, # [mm]
+    initial_cumulative_irrigation    = 0, # [mm]
+    initial_cumulative_drainage      = 0  # [mm]
+  )
+
+  c(parms, drivers)
+}
+
+make_initial_state <- function(parms) {
+  # names and ORDER must match the derivative vector returned by the model
+  c(crop_dry_mass            = unname(parms$initial_crop_dry_mass),
+    leaf_area_index          = unname(parms$initial_leaf_area_index),
+    root_zone_water          = unname(parms$initial_root_zone_water),
+    root_zone_salt           = unname(parms$initial_root_zone_salt),
+    leaf_sodium              = unname(parms$initial_leaf_sodium),
+    substrate_ph             = unname(parms$initial_substrate_ph),
+    perceived_deficit        = unname(parms$initial_perceived_deficit),
+    perceived_ec             = unname(parms$initial_perceived_ec),
+    cumulative_transpiration = unname(parms$initial_cumulative_transpiration),
+    cumulative_irrigation    = unname(parms$initial_cumulative_irrigation),
+    cumulative_drainage      = unname(parms$initial_cumulative_drainage))
+}
+```
+
+## Simulation driver (no plotting here)
+
+```{r}
+#| label: simulation
+
+run_simulation <- function(parms, season_length = 150, time_step = 0.05) {
+  # season_length [d]; time_step [d]  -- 0.05 d = 72 min, fine enough for the
+  # fastest state here (the water sensor lag, 0.5 d)
+
+  initial_state <- make_initial_state(parms = parms)
+  time_sequence <- seq(from = 0, to = season_length, by = time_step)    # [d]
+
+  solution <- deSolve::ode(y = initial_state,
+                           times = time_sequence,
+                           func = crop_water_salinity_model,
+                           parms = parms,
+                           method = "rk4")
+
+  # deSolve already names the first column "time" [d]; keep it as is
+  result_dt <- as.data.table(as.data.frame(solution))
+  result_dt[]
+}
+
+run_scenarios <- function(season_length = 150) {
+  # Sweeps the two formulation switches and the leaching policy, which is the
+  # comparison the review argues actually matters.
+  drivers <- make_drivers(season_length = season_length)
+
+  scenario_grid <- CJ(stress_combination = c("multiplicative",
+                                             "additive_potential",
+                                             "non_equivalent"),
+                      assimilation_mode = c("radiation", "transpiration"),
+                      base_leaching_fraction = c(0.05, 0.20, 0.35),
+                      sorted = FALSE)
+
+  row_index <- 1  # <-- initialised for debugging
+  scenario_list <- vector(mode = "list", length = nrow(scenario_grid))
+  for (row_index in seq_len(nrow(scenario_grid))) {
+    parms <- make_parms(
+      drivers = drivers,
+      stress_combination = scenario_grid[row_index, stress_combination],
+      assimilation_mode  = scenario_grid[row_index, assimilation_mode],
+      base_leaching_fraction = scenario_grid[row_index, base_leaching_fraction])
+
+    one_run <- run_simulation(parms = parms, season_length = season_length)
+    one_run[, stress_combination := scenario_grid[row_index, stress_combination]]
+    one_run[, assimilation_mode  := scenario_grid[row_index, assimilation_mode]]
+    one_run[, base_leaching_fraction := scenario_grid[row_index, base_leaching_fraction]]
+    scenario_list[[row_index]] <- one_run
+  }
+
+  rbindlist(scenario_list)
+}
+```
+
+## Visualisation (separate from the simulation)
+
+```{r}
+#| label: visualisation
+
+plot_scenarios <- function(scenario_dt) {
+
+  pList <- list()
+
+  pList$p1 <- ggplot(scenario_dt,
+                     aes(x = time, y = soil_ec,
+                         colour = factor(base_leaching_fraction),
+                         linetype = stress_combination)) +
+    geom_line(linewidth = 0.7) +
+    labs(x = "time [d]", y = "root zone EC [dS m-1]",
+         colour = "leaching fraction [-]", linetype = "stress combination",
+         title = "Salinity build-up under three leaching policies") +
+    theme_bw()
+
+  pList$p2 <- ggplot(scenario_dt,
+                     aes(x = time, y = crop_dry_mass,
+                         colour = stress_combination,
+                         linetype = assimilation_mode)) +
+    geom_line(linewidth = 0.7) +
+    facet_wrap(~ base_leaching_fraction, labeller = label_both) +
+    labs(x = "time [d]", y = "crop dry mass [g DM m-2]",
+         title = "Formulation choice matters more than parameter values") +
+    theme_bw()
+
+  pList$p3 <- ggplot(scenario_dt,
+                     aes(x = time, y = stress_stomatal, colour = stress_combination)) +
+    geom_line(linewidth = 0.7) +
+    geom_line(aes(y = stress_expansion), linetype = "dashed", linewidth = 0.5) +
+    facet_wrap(~ base_leaching_fraction, labeller = label_both) +
+    labs(x = "time [d]", y = "stress factor [-]",
+         title = "Solid: stomatal stress. Dashed: expansion stress") +
+    theme_bw()
+
+  pList$p4 <- ggplot(scenario_dt,
+                     aes(x = time, y = leaf_sodium_concentration,
+                         colour = factor(base_leaching_fraction))) +
+    geom_line(linewidth = 0.7) +
+    labs(x = "time [d]", y = "leaf sap sodium [mmol_c L-1]",
+         colour = "leaching fraction [-]",
+         title = "Munns phase 2: the ionic integrator") +
+    theme_bw()
+
+  pList
+}
+
+run_all <- function(season_length = 150) {
+  pList <- list()
+  scenario_dt <- run_scenarios(season_length = season_length)
+  pList <- plot_scenarios(scenario_dt = scenario_dt)
+  list(scenario_dt = scenario_dt, pList = pList)
+}
+```
+
+# Causal diagram
+
+```{dot}
+//| label: causal-diagram
+digraph crop_water_salinity {
+  rankdir = LR;
+  graph [fontname = "Helvetica", nodesep = 0.35, ranksep = 0.55];
+  node  [fontname = "Helvetica", fontsize = 10, style = filled];
+  edge  [fontname = "Helvetica", fontsize = 9];
+
+  subgraph cluster_drivers {
+    label = "w(t) uncontrolled drivers"; color = grey70; style = dashed;
+    node [shape = parallelogram, fillcolor = "#EEEEEE"];
+    radiation      [label = "global radiation\n[MJ m-2 d-1]"];
+    reference_et   [label = "reference ET\n[mm d-1]"];
+    temperature    [label = "air temperature\n[degC]"];
+    rainfall       [label = "rainfall\n[mm d-1]"];
+    water_quality  [label = "irrigation water\nEC [dS m-1], alkalinity [mmol_c L-1]"];
+  }
+
+  subgraph cluster_states {
+    label = "X states"; color = "#2166AC"; style = dashed;
+    node [shape = box, fillcolor = "#D1E5F0"];
+    dry_mass    [label = "crop dry mass\n[g DM m-2]"];
+    leaf_area   [label = "leaf area index\n[m2 m-2]"];
+    zone_water  [label = "root zone water\n[mm]"];
+    zone_salt   [label = "root zone salt\n[g m-2]"];
+    leaf_sodium [label = "leaf sodium\n[mmol_c m-2]"];
+    substrate_ph [label = "substrate pH\n[-]"];
+  }
+
+  subgraph cluster_control {
+    label = "u(t) = h_r(X, p_u, w)"; color = "#B2182B"; style = dashed;
+    node [shape = box, fillcolor = "#FDDBC7"];
+    perceived_deficit [label = "perceived deficit\n[-] sensor lag 0.5 d"];
+    perceived_ec      [label = "perceived EC\n[dS m-1] lag 2 d"];
+    irrigation        [label = "irrigation rate\n[mm d-1]"];
+    leaching          [label = "leaching fraction\n[-]"];
+    acid              [label = "acid dose\n[mmol_c m-2 d-1]"];
+  }
+
+  subgraph cluster_soil {
+    label = "soil / substrate type p"; color = "#762A83"; style = dashed;
+    node [shape = ellipse, fillcolor = "#E7D4E8"];
+    retention  [label = "retention exponent\n[-] sand 4 .. clay 9"];
+    buffering  [label = "pH buffer capacity\n[mmol_c m-2 pH-1]"];
+  }
+
+  node [shape = ellipse, fillcolor = "#D9F0D3"];
+  matric   [label = "matric potential\n[MPa]"];
+  osmotic  [label = "osmotic potential\n[MPa]"];
+  stress_sto [label = "stomatal stress\n[-]"];
+  stress_exp [label = "expansion stress\n[-]"];
+  transpiration [label = "transpiration\n[mm d-1]"];
+  assimilation  [label = "gross assimilation\n[g DM m-2 d-1]"];
+
+  node [shape = doubleoctagon, fillcolor = "#FEE08B"];
+  yield [label = "Y: yield [g DM m-2],\ndrain EC [dS m-1]"];
+
+  radiation    -> assimilation;
+  temperature  -> assimilation;
+  reference_et -> transpiration;
+  rainfall     -> zone_water;
+  water_quality -> zone_salt;
+  water_quality -> substrate_ph;
+
+  zone_water -> matric;      retention -> matric;
+  zone_salt  -> osmotic;     zone_water -> osmotic [label = "concentration"];
+  matric  -> stress_sto;  osmotic -> stress_sto;
+  matric  -> stress_exp;  osmotic -> stress_exp;
+
+  stress_sto -> transpiration;
+  stress_sto -> assimilation;
+  stress_exp -> leaf_area [label = "fast, days"];
+  leaf_area  -> assimilation [label = "1-exp(-k LAI)"];
+  assimilation -> dry_mass;
+  dry_mass -> assimilation [label = "maintenance, -", color = "#B2182B"];
+  dry_mass -> leaf_area;
+
+  transpiration -> zone_water [label = "-"];
+  transpiration -> zone_salt  [label = "concentrates, +", color = "#B2182B"];
+  transpiration -> leaf_sodium [label = "mass flow"];
+  leaf_sodium -> leaf_area [label = "senescence, weeks", color = "#B2182B"];
+
+  substrate_ph -> assimilation [label = "Fe/Mn, weeks"];
+  buffering -> substrate_ph;
+
+  zone_water -> perceived_deficit;  zone_salt -> perceived_ec;
+  perceived_deficit -> irrigation;  perceived_ec -> leaching;
+  leaching -> irrigation;
+  irrigation -> zone_water;  irrigation -> zone_salt;
+  leaching -> zone_salt [label = "flushes, -"];
+  substrate_ph -> acid;  acid -> substrate_ph [label = "-"];
+
+  dry_mass -> yield;  zone_salt -> yield;
+}
+```
+
+View it from R:
+
+```{r}
+#| label: view-diagram
+
+# DiagrammeR::grViz(readLines("crop_water_salinity.dot") |> paste(collapse = "\n"))
+# or inline:
+# DiagrammeR::grViz(dot_string)
+```
+
+The two red-labelled edges are the feedbacks that make this system interesting:
+maintenance respiration (mass-proportional loss, the von Bertalanffy drag) and the
+transpiration-to-salt-concentration edge, which is a **positive feedback under deficit
+irrigation** — less water applied means less leaching means higher EC means more osmotic
+stress. That loop is why deficit irrigation and saline water are a dangerous combination and
+why the leaching fraction has to be a controlled variable rather than a fixed parameter.
+
+# Gaps and recommendations
+
+1. **Nobody carries the ionic integrator at field scale.** The Munns phase-2 state (leaf
+   tissue sodium) is standard in physiology and absent from AquaCrop, WOFOST, DSSAT and
+   STICS. Adding one state and two parameters would materially improve multi-season
+   predictions under saline irrigation.
+2. **Static salinity response functions are used dynamically.** Maas–Hoffman is a
+   seasonal-yield regression; embedding it as an instantaneous factor double-counts, because
+   the seasonal regression already includes the senescence effect that the dynamic model
+   also computes. Letey & Feng make this point; it is still widely ignored.
+3. **The combination rule is under-reported.** Multiplicative versus additive-potential
+   versus non-equivalent changes predicted yield by a large margin under combined stress,
+   and papers frequently do not state which they used. Always report it and always show
+   sensitivity to it.
+4. **pH is essentially unmodelled outside UNSATCHEM and EPIC.** For substrate systems this
+   is a real loss, because pH there is fast, controllable and cheap to measure.
+5. **Soil type enters in four independent places** (retention, salt storage, chemical
+   buffering, sodicity-structure feedback) and most models represent only the first.
+6. **Perception states are almost never modelled.** Irrigation-control papers optimise
+   thresholds while assuming perfect, instantaneous measurement of soil water. Sensor lag
+   and placement bias are first-order effects on the resulting policy.
+
+# Glossary of technical abbreviations
+
+Common ones (ODE, PDE, pH, EC, CO~2~) are not repeated here.
+
+| Abbreviation | Expansion | Note |
+|---|---|---|
+| ABA | abscisic acid | root-to-shoot drought signal; the perception/transport lag is hours |
+| AWC | available water capacity | mm of water per m of profile between field capacity and wilting point |
+| CEC | cation exchange capacity | cmol~c~ kg^-1^; sets chemical buffering |
+| DM | dry matter | biomass basis for all carbon states here |
+| EC~e~ | EC of the saturated paste extract | the basis of Maas–Hoffman tables |
+| EC~sw~ | EC of the soil solution at field water content | roughly 2x EC~e~; the quantity the plant sees |
+| ESP | exchangeable sodium percentage | % of CEC occupied by Na^+^; sodicity measure |
+| ET~0~ | reference evapotranspiration | FAO-56 grass reference, mm d^-1^ |
+| FvCB | Farquhar–von Caemmerer–Berry | the C3 leaf photosynthesis biochemical model |
+| GDD | growing degree days | degC d; thermal-time phenology driver |
+| HI | harvest index | harvestable DM per total DM |
+| K~cb~ | basal crop coefficient | transpiration-only crop coefficient, FAO-56 |
+| LAI | leaf area index | m^2^ leaf per m^2^ ground |
+| LF | leaching fraction | drainage volume / applied volume |
+| LR | leaching requirement | the LF needed to hold root-zone EC below a target |
+| LUE | light use efficiency | synonym of RUE in most crop-model usage |
+| MOL | method of lines | spatial discretisation turning a PDE into an ODE system |
+| PAR | photosynthetically active radiation | 400–700 nm, about 0.5 of global shortwave |
+| PRD | partial root-zone drying | deficit-irrigation strategy alternating wetted side |
+| RDI | regulated deficit irrigation | stage-targeted deficit strategy |
+| RUE | radiation use efficiency | g DM per MJ intercepted PAR |
+| SAR | sodium adsorption ratio | (mmol~c~ L^-1^)^0.5^; sodicity hazard of a solution |
+| SLA | specific leaf area | m^2^ leaf per g leaf DM |
+| TEC | threshold electrolyte concentration | EC below which clay disperses at a given SAR |
+| VPD | vapour pressure deficit | kPa; the atmospheric side of the transpiration driver |
+| WP* | normalised biomass water productivity | g DM m^-2^ mm^-1^, AquaCrop's central parameter |
+
+Model names: **APEX** Agricultural Policy Environmental eXtender; **APSIM** Agricultural
+Production Systems sIMulator; **CERES** Crop Environment REsource Synthesis; **CropSyst**
+Cropping Systems Simulator; **DSSAT** Decision Support System for Agrotechnology Transfer;
+**EPIC** Environmental Policy Integrated Climate; **GECROS** Genotype-by-Environment
+interaction on CROp growth Simulator; **LINTUL** Light INTerception and UtiLization;
+**SAHYSMOD** Spatial Agro-HYdro-Salinity MODel; **SALTMED** integrated irrigation, crop and
+field-management model; **SIMPLE** the deliberately reduced crop model of Zhao et al.;
+**STICS** Simulateur mulTIdisciplinaire pour les Cultures Standard; **SUCROS** Simple and
+Universal CROp growth Simulator; **SWAP** Soil–Water–Atmosphere–Plant; **TOMGRO** tomato
+growth model; **UNSATCHEM** unsaturated-zone chemistry model; **WOFOST** WOrld FOod STudies.
+
+# References
+
+Verify each before citing; recalled from training, not retrieved.
+
+## Crop-model backbones
+
+- van Ittersum, M.K. et al. (2003). On approaches and applications of the Wageningen crop
+  models. *European Journal of Agronomy* 18: 201–234.
+  <https://doi.org/10.1016/S1161-0301(02)00106-5>
+- de Wit, A. et al. (2019). 25 years of the WOFOST cropping systems model.
+  *Agricultural Systems* 168: 154–167. <https://doi.org/10.1016/j.agsy.2018.06.018>
+- Spitters, C.J.T. & Schapendonk, A.H.C.M. (1990). Evaluation of breeding strategies for
+  drought tolerance in potato by means of crop growth simulation. *Plant and Soil* 123:
+  193–203. <https://doi.org/10.1007/BF00011268>
+- Jones, J.W. et al. (2003). The DSSAT cropping system model. *European Journal of Agronomy*
+  18: 235–265. <https://doi.org/10.1016/S1161-0301(02)00107-7>
+- Keating, B.A. et al. (2003). An overview of APSIM. *European Journal of Agronomy* 18:
+  267–288. <https://doi.org/10.1016/S1161-0301(02)00108-9>
+- Holzworth, D.P. et al. (2014). APSIM – evolution towards a new generation of agricultural
+  systems simulation. *Environmental Modelling & Software* 62: 327–350.
+  <https://doi.org/10.1016/j.envsoft.2014.07.009>
+- Brisson, N. et al. (2003). An overview of the crop model STICS. *European Journal of
+  Agronomy* 18: 309–332. <https://doi.org/10.1016/S1161-0301(02)00110-7>
+- Stockle, C.O. et al. (2003). CropSyst, a cropping systems simulation model. *European
+  Journal of Agronomy* 18: 289–307. <https://doi.org/10.1016/S1161-0301(02)00109-0>
+- Zhao, C. et al. (2019). A SIMPLE crop model. *European Journal of Agronomy* 104: 97–106.
+  <https://doi.org/10.1016/j.eja.2019.01.009>
+- Yin, X. & van Laar, H.H. (2005). *Crop Systems Dynamics: an ecophysiological simulation
+  model for genotype-by-environment interactions (GECROS)*. Wageningen Academic.
+- de Pury, D.G.G. & Farquhar, G.D. (1997). Simple scaling of photosynthesis from leaves to
+  canopies without the errors of big-leaf models. *Plant, Cell & Environment* 20: 537–557.
+  <https://doi.org/10.1111/j.1365-3040.1997.00094.x>
+
+## Water-limited production
+
+- Steduto, P. et al. (2009). AquaCrop – the FAO crop model to simulate yield response to
+  water: I. Concepts and underlying principles. *Agronomy Journal* 101: 426–437.
+  <https://doi.org/10.2134/agronj2008.0139s>
+- Raes, D. et al. (2009). AquaCrop II: main algorithms and software description.
+  *Agronomy Journal* 101: 438–447. <https://doi.org/10.2134/agronj2008.0140s>
+- Hsiao, T.C. et al. (2009). AquaCrop III: parameterization and testing for maize.
+  *Agronomy Journal* 101: 448–459. <https://doi.org/10.2134/agronj2008.0218s>
+- Feddes, R.A., Kowalik, P.J. & Zaradny, H. (1978). *Simulation of Field Water Use and Crop
+  Yield*. Pudoc, Wageningen. (Simulation Monographs.)
+- Tardieu, F. & Davies, W.J. (1993). Integration of hydraulic and chemical signalling in the
+  control of stomatal conductance and water status of droughted plants. *Plant, Cell &
+  Environment* 16: 341–349. <https://doi.org/10.1111/j.1365-3040.1993.tb00880.x>
+- Tuzet, A., Perrier, A. & Leuning, R. (2003). A coupled model of stomatal conductance,
+  photosynthesis and transpiration. *Plant, Cell & Environment* 26: 1097–1116.
+  <https://doi.org/10.1046/j.1365-3040.2003.01035.x>
+- Steppe, K. et al. (2006). A mathematical model linking tree sap flow dynamics to daily stem
+  diameter fluctuations and radial stem growth. *Tree Physiology* 26: 257–273.
+  <https://doi.org/10.1093/treephys/26.3.257>
+- Cowan, I.R. & Farquhar, G.D. (1977). Stomatal function in relation to leaf metabolism and
+  environment. *Symposia of the Society for Experimental Biology* 31: 471–505.
+- Medlyn, B.E. et al. (2011). Reconciling the optimal and empirical approaches to modelling
+  stomatal conductance. *Global Change Biology* 17: 2134–2144.
+  <https://doi.org/10.1111/j.1365-2486.2010.02375.x>
+- Sperry, J.S. et al. (2017). Predicting stomatal responses to the environment from the
+  optimization of photosynthetic gain and hydraulic cost. *Plant, Cell & Environment* 40:
+  816–830. <https://doi.org/10.1111/pce.12852>
+- Cochard, H. et al. (2021). SurEau: a mechanistic model of plant water relations under
+  extreme drought. *Plant, Cell & Environment* / *Annals of Forest Science*.
+  <https://doi.org/10.1111/pce.14192>
+
+## Salinity, EC and combined stress
+
+- Maas, E.V. & Hoffman, G.J. (1977). Crop salt tolerance – current assessment. *Journal of
+  the Irrigation and Drainage Division ASCE* 103: 115–134.
+- van Genuchten, M.Th. & Hoffman, G.J. (1984). Analysis of crop salt tolerance data. In:
+  *Soil Salinity under Irrigation*, Springer.
+- van Genuchten, M.Th. (1987). *A Numerical Model for Water and Solute Movement in and below
+  the Root Zone*. USDA-ARS Research Report 121.
+- Munns, R. (1993). Physiological processes limiting plant growth in saline soils: some
+  dogmas and hypotheses. *Plant, Cell & Environment* 16: 15–24.
+  <https://doi.org/10.1111/j.1365-3040.1993.tb00840.x>
+- Munns, R. & Tester, M. (2008). Mechanisms of salinity tolerance. *Annual Review of Plant
+  Biology* 59: 651–681. <https://doi.org/10.1146/annurev.arplant.59.032607.092911>
+- Homaee, M., Feddes, R.A. & Dirksen, C. (2002). A macroscopic water extraction model for
+  non-uniform transient salinity and water stress. *Soil Science Society of America Journal*
+  66: 1764–1772. <https://doi.org/10.2136/sssaj2002.1764>
+- Skaggs, T.H., van Genuchten, M.Th., Shouse, P.J. & Poss, J.A. (2006). Macroscopic
+  approaches to root water uptake as a function of water and salinity stress. *Agricultural
+  Water Management* 86: 140–149. <https://doi.org/10.1016/j.agwat.2006.06.005>
+- Shani, U. & Dudley, L.M. (2001). Field studies of crop response to water and salt stress.
+  *Soil Science Society of America Journal* 65: 1522–1528.
+  <https://doi.org/10.2136/sssaj2001.6551522x>
+- Shani, U., Ben-Gal, A., Tripler, E. & Dudley, L.M. (2007). Plant response to the soil
+  environment: an analytical model integrating yield, water, soil type and salinity.
+  *Water Resources Research* 43: W08418. <https://doi.org/10.1029/2006WR005313>
+- Letey, J. & Feng, G.L. (2007). Dynamic versus steady-state approaches to evaluate
+  irrigation management of saline waters. *Agricultural Water Management* 91: 1–10.
+  <https://doi.org/10.1016/j.agwat.2007.02.014>
+- Corwin, D.L., Rhoades, J.D. & Simunek, J. (2007). Leaching requirement for soil salinity
+  control: steady-state versus transient models. *Agricultural Water Management* 90: 165–180.
+  <https://doi.org/10.1016/j.agwat.2007.02.007>
+- Ragab, R. (2002). A holistic generic integrated approach for irrigation, crop and field
+  management: the SALTMED model. *Environmental Modelling & Software* 17: 345–361.
+  <https://doi.org/10.1016/S1364-8152(01)00079-2>
+
+## Soil physics, chemistry and structure
+
+- van Genuchten, M.Th. (1980). A closed-form equation for predicting the hydraulic
+  conductivity of unsaturated soils. *Soil Science Society of America Journal* 44: 892–898.
+  <https://doi.org/10.2136/sssaj1980.03615995004400050002x>
+- Simunek, J., van Genuchten, M.Th. & Sejna, M. (2016). Recent developments and applications
+  of the HYDRUS computer software packages. *Vadose Zone Journal* 15(7).
+  <https://doi.org/10.2136/vzj2016.04.0033>
+- Suarez, D.L. & Simunek, J. (1997). UNSATCHEM: unsaturated water and solute transport model
+  with equilibrium and kinetic chemistry. *Soil Science Society of America Journal* 61:
+  1633–1646. <https://doi.org/10.2136/sssaj1997.03615995006100060014x>
+- van Dam, J.C. et al. (2008). Advances of modeling water flow in variably saturated soils
+  with SWAP. *Vadose Zone Journal* 7: 640–653. <https://doi.org/10.2136/vzj2007.0060>
+- Quirk, J.P. & Schofield, R.K. (1955). The effect of electrolyte concentration on soil
+  permeability. *Journal of Soil Science* 6: 163–178.
+  <https://doi.org/10.1111/j.1365-2389.1955.tb00841.x>
+- McNeal, B.L. (1968). Prediction of the effect of mixed-salt solutions on soil hydraulic
+  conductivity. *Soil Science Society of America Proceedings* 32: 190–193.
+- Ezlit, Y.D., Bennett, J.McL., Raine, S.R. & Smith, R.J. (2013). Modification of the McNeal
+  clay swelling model. *Soil Science Society of America Journal* 77: 2149–2156.
+  <https://doi.org/10.2136/sssaj2013.03.0097>
+- Nye, P.H. (1981). Changes of pH across the rhizosphere induced by roots. *Plant and Soil*
+  61: 7–26. <https://doi.org/10.1007/BF02277359>
+
+## Greenhouse, soilless and control
+
+- Sonneveld, C. & Voogt, W. (2009). *Plant Nutrition of Greenhouse Crops*. Springer.
+  <https://doi.org/10.1007/978-90-481-2532-6>
+- Carmassi, G., Incrocci, L., Maggini, R., Malorgio, F., Tognoni, F. & Pardossi, A. (2005).
+  Modeling salinity build-up in recirculating nutrient solution culture. *Journal of Plant
+  Nutrition* 28: 431–445. <https://doi.org/10.1081/PLN-200049163>
+- Carmassi, G. et al. (2007). An aggregated model for water requirements of greenhouse tomato
+  grown in closed rockwool culture with saline water. *Agricultural Water Management* 88:
+  73–82. <https://doi.org/10.1016/j.agwat.2006.10.002>
+- Massa, D., Incrocci, L., Maggini, R., Bibbiani, C., Carmassi, G., Malorgio, F. & Pardossi,
+  A. (2011). Simulation of crop water and mineral relations in greenhouse soilless culture.
+  *Environmental Modelling & Software* 26: 711–722.
+  <https://doi.org/10.1016/j.envsoft.2011.01.004>
+- Jones, J.W., Kenig, A. & Vallejos, C.E. (1999). Reduced state-variable tomato growth model.
+  *Transactions of the ASAE* 42: 255–265. <https://doi.org/10.13031/2013.13214>
+- Vanthoor, B.H.E., de Visser, P.H.B., Stanghellini, C. & van Henten, E.J. (2011). A methodology
+  for model-based greenhouse design: part 2, description and validation of a tomato yield
+  model. *Biosystems Engineering* 110: 378–395.
+  <https://doi.org/10.1016/j.biosystemseng.2011.08.005>
+- van Straten, G., van Willigenburg, G., van Henten, E. & van Ooteghem, R. (2010).
+  *Optimal Control of Greenhouse Cultivation*. CRC Press.
+  <https://doi.org/10.1201/b10321>
+
+## Field-scale models with a pH pathway
+
+- Williams, J.R. (1995). The EPIC model. In: Singh, V.P. (ed.) *Computer Models of Watershed
+  Hydrology*, Water Resources Publications, 909–1000.
+- Oosterbaan, R.J. SAHYSMOD: spatial agro-hydro-salinity model. ILRI, Wageningen.
+  <https://www.waterlog.info/sahysmod.htm>
