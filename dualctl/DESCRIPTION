@@ -1,0 +1,40 @@
+Package: dualctl
+Type: Package
+Title: Dual Control and Active Learning for Model-Based Sequential Optimization
+Version: 0.1.0
+Date: 2026-10-27
+Authors@R: person("Hans", "Schepers", email = "hans.schepers@gmail.com",
+                  role = c("aut", "cre"))
+Description: A model-agnostic toolbox for sequential optimisation of a physical
+    process when the model structure is roughly trusted, parameters are
+    uncertain and observations are sparse and noisy (model-rich, data-poor).
+    One season or campaign is one trajectory to learn from and act on. The
+    engine combines a hierarchical parameter estimator (extended or ensemble
+    Kalman filter on a parameter-augmented state), an identifiability module
+    (sensitivities, Fisher information, Cramer-Rao bounds), receding-horizon
+    control with discrete events, probing strategies (dither, information-aware
+    MPC, Thompson sampling, EVSI targeting), an advisor that ranks control
+    changes, Shapley attribution of savings, and an experiment layer with
+    production and probe arms. Models are plug-in files plus a YAML config. A
+    heat-exchanger fouling demo and a toy decay model are included.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports:
+    R6,
+    data.table,
+    deSolve,
+    yaml,
+    ggplot2,
+    stats,
+    utils
+Suggests:
+    testthat (>= 3.0.0),
+    future,
+    future.apply,
+    nloptr,
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+RoxygenNote: 7.3.2

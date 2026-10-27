@@ -1,0 +1,6 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^run_demo\.R$
+^demo_output$
+^renv$
+^renv\.lock$

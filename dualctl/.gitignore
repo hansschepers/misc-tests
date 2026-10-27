@@ -1,0 +1,5 @@
+demo_output/
+.Rproj.user/
+.Rhistory
+inst/doc
+renv/library/

@@ -1,0 +1,165 @@
+# =============================================================================
+# Scenario: cooling-water heat-exchanger fouling (dualctl demo)
+# ILLUSTRATIVE VALUES - plausible SI magnitudes, NOT validated against a plant.
+# Units in brackets. Time unit: day [d]. Currency: EUR.
+# Rf in [m2K/kW] (1 m2K/kW = 0.001 m2K/W); U in [kW/(m2 K)].
+# =============================================================================
+
+model:
+  file: fouling.R
+  name: hx_fouling
+
+  states:
+    Rf: {unit: "m2K/kW", init: 0.02, lower: 0.0, upper: 3.0, init_sd: 0.01, process_sd: 0.002}
+    # process_sd [m2K/kW / sqrt(d)]: estimator state noise (model error allowance)
+
+  truth_states:              # only in the simulated plant (structural mismatch)
+    H: {unit: "-", init: 0.3, lower: 0.0, upper: 1.0, init_sd: 0.05, process_sd: 0.0}
+
+  # value = prior mean (natural units); prior_sd, unit_sd, truth_unit_sd in the
+  # transformed space (log: ~ relative sd); truth_pop_sd in prior sd units.
+  parameters:
+    alpha_dep: {unit: "m2K/kW/d", value: 0.004, transform: log, prior_sd: 0.5,
+                range: [0.0005, 0.03], estimate: true, unit_sd: 0.25,
+                truth_pop_sd: 1.0, truth_unit_sd: 0.2}       # deposition rate at reference conditions
+    E_act:     {unit: "kJ/mol", value: 50.0, transform: log, prior_sd: 0.25,
+                range: [20.0, 120.0], estimate: true, unit_sd: 0.0,
+                truth_pop_sd: 1.0, truth_unit_sd: 0.0}       # activation energy of deposition
+    gamma_rem: {unit: "m2K/kW/d", value: 0.0015, transform: log, prior_sd: 0.6,
+                range: [0.0001, 0.02], estimate: true, unit_sd: 0.0,
+                truth_pop_sd: 1.0, truth_unit_sd: 0.05}      # shear removal at tau_ref
+    k_inh:     {unit: "L/mg", value: 0.12, transform: log, prior_sd: 0.6,
+                range: [0.01, 1.0], estimate: true, unit_sd: 0.0,
+                truth_pop_sd: 1.0, truth_unit_sd: 0.0}       # inhibitor efficacy, factor exp(-k_inh dose)
+    f_U0:      {unit: "-", value: 1.0, transform: log, prior_sd: 0.08,
+                range: [0.7, 1.3], estimate: true, unit_sd: 0.05,
+                truth_pop_sd: 1.0, truth_unit_sd: 0.04}      # clean-U correction factor
+    eta_clean: {unit: "-", value: 0.9, transform: logit, bounds: [0.0, 1.0], prior_sd: 0.7,
+                range: [0.5, 0.99], estimate: true, unit_sd: 0.0,
+                truth_pop_sd: 1.0, truth_unit_sd: 0.0}       # fraction of Rf removed by cleaning
+
+  constants:
+    D_i: 0.019               # [m] tube inner diameter
+    L_tube: 6.0              # [m] tube length (single pass)
+    N_tubes: 300             # [-] number of tubes
+    h_o: 2.5                 # [kW/(m2 K)] shell-side film coefficient
+    R_wall: 0.0625           # [m2K/kW] wall resistance (1 mm steel, 16 W/(m K))
+    cp_w: 4.18               # [kJ/(kg K)] water heat capacity
+    lambda_dep: 1.0          # [W/(m K)] deposit conductivity (thickness = Rf * lambda)
+    K_minor: 1.5             # [-] exchanger entry/exit loss coefficient
+    K_sys: 90.0              # [-] rest-of-circuit loss coefficient (~100 kPa at 1.5 m/s)
+    eta_pump: 0.7            # [-] pump efficiency
+    C_h_nom: 200.0           # [kW/K] process-side heat capacity rate
+    T_h_in: 65.0             # [degC] process inlet temperature
+    T_h_out_target: 45.0     # [degC] process outlet target (defines required duty)
+    T_h_out_max: 50.0        # [degC] process outlet hard limit (constraint)
+    dP_max: 30.0             # [kPa] exchanger pressure-drop limit (constraint)
+    Re_ref: 30000.0          # [-] reference Reynolds number
+    Pr_ref: 6.0              # [-] reference Prandtl number
+    T_ref_K: 293.15          # [K] reference film temperature
+    tau_ref: 6.0             # [Pa] reference wall shear stress
+    R_gas: 8.314             # [J/(mol K)] gas constant
+    f_film: 0.55             # [-] film temperature weight (Ebert-Panchal)
+    Rf_eps: 0.02             # [m2K/kW] removal saturation scale near a clean surface
+    c_short: 0.02            # [EUR/kWh] value of cooling shortfall (auxiliary cooling / throughput)
+    c_el: 0.15               # [EUR/kWh] electricity price
+    c_inh: 6.0               # [EUR/kg] inhibitor price
+    V_treat: 2000.0          # [m3/d] treated make-up / blowdown volume
+    s_soft: 20.0             # [kW] smoothing scale of the shortfall max()
+    c_clean_labor: 4000.0    # [EUR] cleaning labour and materials
+    downtime_d: 1.0          # [d] cleaning downtime (valued as lost required duty)
+
+  truth_constants:           # plant only
+    k_age: 0.0167            # [1/d] deposit ageing (hardening) rate (~60 d)
+    hard_clean_penalty: 0.6  # [-] loss of cleaning efficiency of fully hard deposit
+    mismatch: 0.5            # [-] strength of the hardness effects (0 = none)
+
+  controls:
+    v:    {unit: "m/s",  lower: 0.8, upper: 2.5, rate: 0.3, default: 1.5, step: 0.2, change_cost: 50.0}
+    dose: {unit: "mg/L", lower: 0.0, upper: 10.0, rate: 2.0, default: 2.0, step: 1.0, change_cost: 50.0}
+    # rate: max change per decision epoch; change_cost [EUR] used by the advisor ranking
+
+  events:
+    clean: {change_cost: 200.0, min_interval_epochs: 3}   # [EUR], [epochs]
+
+  disturbances:
+    source: synthetic        # synthetic | csv (then set path: and optional clim_window:)
+    T_cw_in: {mean: 17.0, amplitude: 8.0, peak_day: 200.0, ar_phi: 0.85, ar_sd: 0.8,
+              persistence_days: 5.0}     # [degC], [d]
+    c_f:     {mean: 1.0, ou_theta: 0.02, ou_sd: 0.03, persistence_days: 20.0}
+             # [-] foulant (scaling-tendency) index; theta [1/d]; sd [1/sqrt(d)] on log scale
+    load:    {weekly_amplitude: 0.05, ar_phi: 0.7, ar_sd: 0.02, persistence_days: 2.0}   # [-]
+    storms:  {rate_per_day: 0.02, duration_d: 3.0, T_drop: 3.0, c_f_spike: 0.6}
+             # [1/d], [d], [degC], [-]
+
+  sensor_sets:
+    routine:   {interval: 2.0, outputs: {U_obs: 0.03, dP_obs: 0.8}}
+    intensive: {interval: 1.0, outputs: {U_obs: 0.01, dP_obs: 0.3, Rf_probe: 0.01}}
+    # interval [d]; sd in output units ([kW/(m2 K)], [kPa], [m2K/kW])
+
+estimator:
+  param_process_sd: 0.002    # [transformed units / sqrt(d)] lets estimates follow mismatch
+
+plant:
+  parm_overrides: {mismatch: 0.5}
+
+controller:
+  horizon_epochs: 4
+  move_blocks: [1, 3]
+  terminal_days: 28.0
+  constraint_penalty: {g_T_h_out: 500.0, g_dP: 200.0}   # [EUR/(degC d)], [EUR/(kPa d)]
+
+strategies:
+  calendar:
+    controls: {v: 1.5, dose: 2.0}
+    events: {clean: {every_epochs: 8, offset_epochs: 7}}
+  infompc:
+    lambda0: 300.0           # [EUR/nat]
+  hillclimb:
+    event_rule: {event: clean, output: U_obs, below_fraction: 0.75}
+
+methods:
+  calendar:      {production: calendar,  probe: calendar,  learn: false, n_probe: 0}
+  ce_prior:      {production: ce,        probe: ce,        learn: false, n_probe: 0}
+  learn_noprobe: {production: ce,        probe: ce,        learn: true,  n_probe: 0}
+  learn_sensors: {production: ce,        probe: ce,        learn: true,  n_probe: 2}
+  hillclimb:     {production: hillclimb, probe: hillclimb, learn: false, n_probe: 0}
+  dual_dither:   {production: ce,        probe: dither,    learn: true,  n_probe: 2}
+  dual_infompc:  {production: ce,        probe: infompc,   learn: true,  n_probe: 2}
+  dual_thompson: {production: ce,        probe: thompson,  learn: true,  n_probe: 2}
+  dual_evsi:     {production: ce,        probe: evsi,      learn: true,  n_probe: 2}
+  oracle:        {production: oracle,    probe: oracle,    learn: false, n_probe: 0}
+
+evaluation:
+  n_seeds: 50
+  master_seed: 20261027
+  methods: [calendar, ce_prior, learn_noprobe, learn_sensors, hillclimb,
+            dual_dither, dual_infompc, dual_thompson, oracle]
+  ablation_seeds: 20
+
+ablations:
+  lambda_schedule:
+    methods: [learn_sensors, dual_infompc, oracle]
+    values:
+      constant:    {strategies: {infompc: {schedule: constant}}}
+      linear:      {strategies: {infompc: {schedule: linear}}}
+      exponential: {strategies: {infompc: {schedule: exponential}}}
+      zero:        {strategies: {infompc: {schedule: none}}}
+  probe_arm_size:
+    methods: [learn_sensors, dual_infompc, oracle]
+    values:
+      n1: {methods: {learn_sensors: {n_probe: 1}, dual_infompc: {n_probe: 1}}}
+      n2: {methods: {learn_sensors: {n_probe: 2}, dual_infompc: {n_probe: 2}}}
+      n3: {methods: {learn_sensors: {n_probe: 3}, dual_infompc: {n_probe: 3}}}
+  sensor_noise:
+    methods: [learn_noprobe, learn_sensors, dual_infompc, oracle]
+    values:
+      x0.5: {sensors: {noise_mult: 0.5}}
+      x1:   {sensors: {noise_mult: 1.0}}
+      x2:   {sensors: {noise_mult: 2.0}}
+  mismatch:
+    methods: [learn_noprobe, learn_sensors, dual_infompc, oracle]
+    values:
+      m0:   {plant: {parm_overrides: {mismatch: 0.0}}}
+      m0.5: {plant: {parm_overrides: {mismatch: 0.5}}}
+      m1:   {plant: {parm_overrides: {mismatch: 1.0}}}

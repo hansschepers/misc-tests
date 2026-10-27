@@ -1,0 +1,94 @@
+# =============================================================================
+# Scenario: toy decay tank (test model; arbitrary illustrative units)
+# Time unit [d], concentration [mg/L], currency [EUR].
+# =============================================================================
+
+season:
+  length_days: 40           # [d]
+  epoch_days: 5             # [d]
+
+solver:
+  dt_plant: 0.25            # [d]
+  dt_inner: 0.5             # [d]
+
+model:
+  file: toy_decay.R
+  name: toy_decay
+  states:
+    conc: {unit: "mg/L", init: 2.0, lower: 0.0, upper: 100.0, init_sd: 0.2, process_sd: 0.01}
+  parameters:
+    k_el: {unit: "1/d", value: 0.2, transform: log, prior_sd: 0.4, range: [0.02, 2.0],
+           estimate: true, unit_sd: 0.1, truth_pop_sd: 1.0, truth_unit_sd: 0.05}
+    b_in: {unit: "-", value: 1.0, transform: log, prior_sd: 0.3, range: [0.2, 5.0],
+           estimate: true, unit_sd: 0.0, truth_pop_sd: 1.0, truth_unit_sd: 0.0}
+  constants:
+    conc_target: 5.0        # [mg/L]
+    conc_max: 9.0           # [mg/L]
+    w_track: 1.0            # [EUR/((mg/L)^2 d)]
+    c_input: 0.2            # [EUR/(mg/L)] per unit dosing rate per day
+    flush_frac: 0.5         # [-]
+    c_flush: 2.0            # [EUR]
+  controls:
+    u_in: {unit: "mg/L/d", lower: 0.0, upper: 3.0, rate: 1.0, default: 1.0, step: 0.5, change_cost: 1.0}
+  events:
+    flush: {change_cost: 1.0, min_interval_epochs: 2}
+  disturbances:
+    source: synthetic
+    inflow: {mean: 0.3, amplitude: 0.2, period_d: 30.0, ar_phi: 0.5, ar_sd: 0.05,
+             persistence_days: 3.0}  # [mg/L/d], [d]
+  sensor_sets:
+    routine:   {interval: 1.0, outputs: {conc_obs: 0.1}}
+    intensive: {interval: 0.5, outputs: {conc_obs: 0.05}}
+
+experiment:
+  n_units: 3
+  n_probe: 1
+
+controller:
+  horizon_epochs: 3
+  move_blocks: [1, 2]
+  terminal_days: 2.0
+  optimizer: {method: hybrid, n_candidates: 4, maxit: 6, event_reopt: false}
+
+strategies:
+  calendar:
+    controls: {u_in: 1.0}
+    events: {flush: {every_epochs: 4, offset_epochs: 3}}
+  infompc: {lambda0: 2.0}
+  evsi: {n_samples: 3, n_candidates: 2, maxit: 2}
+  hillclimb:
+    event_rule: {event: flush, output: conc_obs, below_fraction: 0.2}
+
+advisor:
+  n_samples: 3
+  n_steps: 1
+  max_changes: 2
+
+attribution:
+  n_perm: 20
+
+methods:
+  calendar:      {production: calendar,  probe: calendar,  learn: false, n_probe: 0}
+  ce_prior:      {production: ce,        probe: ce,        learn: false, n_probe: 0}
+  learn_noprobe: {production: ce,        probe: ce,        learn: true,  n_probe: 0}
+  learn_sensors: {production: ce,        probe: ce,        learn: true,  n_probe: 1}
+  hillclimb:     {production: hillclimb, probe: hillclimb, learn: false, n_probe: 0}
+  dual_dither:   {production: ce,        probe: dither,    learn: true,  n_probe: 1}
+  dual_infompc:  {production: ce,        probe: infompc,   learn: true,  n_probe: 1}
+  dual_thompson: {production: ce,        probe: thompson,  learn: true,  n_probe: 1}
+  dual_evsi:     {production: ce,        probe: evsi,      learn: true,  n_probe: 1}
+  oracle:        {production: oracle,    probe: oracle,    learn: false, n_probe: 0}
+
+evaluation:
+  n_seeds: 2
+  master_seed: 7
+  methods: [calendar, learn_noprobe, dual_infompc, oracle]
+  parallel: false
+  ablation_seeds: 2
+
+ablations:
+  sensor_noise:
+    methods: [learn_noprobe, oracle]
+    values:
+      x0.5: {sensors: {noise_mult: 0.5}}
+      x2:   {sensors: {noise_mult: 2.0}}

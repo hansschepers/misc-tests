@@ -1,0 +1,140 @@
+# =============================================================================
+# dualctl engine defaults
+# Every number the engine uses lives here or in a scenario file. A scenario
+# file overrides any entry (nested merge). Units in brackets; the time unit is
+# the model's time unit (days in the shipped models).
+# =============================================================================
+
+season:
+  length_days: 364          # [d] length of one season / campaign
+  epoch_days: 14            # [d] decision epoch (controls piecewise constant)
+
+disturbances:
+  dt: 1.0                   # [d] resolution of the realized disturbance table
+
+forecast:
+  persistence_days: 5.0     # [d] default e-folding time of forecast anomalies
+  perfect: false            # true: controller sees the realized future (sensitivity runs only)
+
+solver:
+  plant_engine: deSolve     # truth simulation: deSolve::ode(method = "rk4")
+  inner_engine: rk4_internal  # estimator / controller / sensitivities (same RK4, no call overhead)
+  dt_plant: 0.5             # [d] RK4 step of the plant
+  dt_inner: 1.0             # [d] RK4 step of the inner loops
+
+sensors:
+  noise_mult: 1.0           # [-] multiplies every sensor sd (plant AND estimator)
+
+plant:
+  extra_noise_mult: 1.0     # [-] multiplies plant noise only (0 = noise-free data)
+  truth_spread_mult: 1.0    # [-] scales the population truth spread around the prior
+  clamp_to_range: true      # clamp true parameters to the plausible range
+  parm_overrides: {}        # natural-unit overrides of truth parameters/constants
+
+estimator:
+  type: ekf                 # ekf | enkf
+  fd_step_phi: 0.0001       # [transformed units] finite-difference step for parameters
+  fd_step_state_rel: 0.0001 # [-] relative FD step for states
+  fd_step_state_abs: 0.000001  # [state units] minimal FD step for states
+  param_process_sd: 0.0     # [transformed units / sqrt(d)] parameter random walk
+  phi_clamp_sd: 5.0         # [prior sd] estimates clamped to prior mean +- this
+  n_ensemble: 40            # [-] EnKF members
+  enkf_inflation: 1.01      # [-] multiplicative inflation of parameter anomalies
+  min_obs_sd: 0.000001      # [output units] floor of the assumed observation sd
+
+experiment:
+  n_units: 5                # [-] units in the cohort
+  n_probe: 2                # [-] default probe-arm size (methods may override)
+  cohorts: null             # cohort label per unit (randomisation within cohort); null = one cohort
+  crossover: false          # swap arms at crossover_at
+  crossover_at: 0.5         # [season fraction]
+  sensor_sets:
+    production: routine
+    probe: intensive
+  advisor_arm: production   # advisor runs on the first unit of this arm
+
+controller:
+  horizon_epochs: 4         # [epochs] receding horizon
+  move_blocks: [1, 3]       # [epochs] control blocks; must sum to horizon_epochs
+  terminal_days: 14.0       # [d] terminal cost = terminal_days * cost rate at horizon end
+  constraint_penalty_default: 100.0  # [currency / (constraint unit * d)]
+  constraint_penalty: {}    # per constraint output name
+  optimizer:
+    method: hybrid          # hybrid | random_shooting | nloptr
+    n_candidates: 8         # [-] random-shooting candidates
+    maxit: 20               # [-] Nelder-Mead / BOBYQA iterations
+    event_reopt: true       # re-optimise continuous controls for the best event timing
+
+strategies:
+  calendar:
+    controls: {}            # fixed recipe; missing controls use model defaults
+    events: {}              # e.g. clean: {every_epochs: 8, offset_epochs: 6}
+  dither:
+    signal: prbs            # prbs | multisine
+    amplitude: 1.0          # [control steps] dither amplitude at season start
+    prbs_hold_epochs: 1     # [epochs]
+    multisine_periods: [3, 5]  # [epochs] one period per control (recycled)
+    schedule: linear        # amplitude annealing
+    decay_rate: 3.0         # [-] for exponential schedule
+    step_at: 0.5            # [season fraction] for step schedule
+    recompute_every_epochs: 4  # [epochs] direction weights refresh
+    info_window_epochs: 2   # [epochs] window for information estimates
+    min_cost_curvature: 1.0 # [currency] floor of the perturbation cost
+  infompc:
+    lambda0: 100.0          # [currency / nat] information price at season start
+    schedule: linear
+    decay_rate: 3.0
+    step_at: 0.5
+    step_mult: 1.0          # [control steps] probe size
+    info_window_epochs: 2   # [epochs]
+  thompson: {}
+  evsi:
+    n_samples: 6            # [-] posterior draws for EVPI
+    n_candidates: 4         # [-] optimiser effort per draw
+    maxit: 6
+    cap_epochs: 8           # [epochs] value horizon cap
+    step_mult: 1.0
+    info_window_epochs: 2
+  hillclimb:
+    step_mult: 1.0          # [control steps]
+    event_rule: null        # e.g. {event: clean, output: U_obs, below_fraction: 0.75}
+  oracle: {}
+
+advisor:
+  enabled: true
+  n_samples: 6              # [-] posterior draws (common random numbers)
+  n_steps: 2                # [-] candidate step multiples per direction
+  max_changes: 3            # [-] length of the recommended sequence
+  min_saving: 0.0           # [currency] smallest saving worth recommending
+
+attribution:
+  gate_by: control          # control | change
+  space: linear             # linear | log
+  n_perm: 200               # [-] permutations for Monte Carlo Shapley
+  exact_max_players: 8      # [-] exact enumeration up to this many players
+  n_quad: 8                 # [-] Aumann-Shapley quadrature points
+  fd_step: 0.02             # [-] gate step for path gradients
+
+evaluation:
+  n_seeds: 50
+  master_seed: 1
+  reference_method: learn_sensors   # paired reference for probe-arm cost/value
+  oracle_method: oracle
+  ci_level: 0.95
+  coverage_level: 0.90
+  parallel: true
+  ablation_seeds: 20
+
+identifiability:
+  threshold: 0.5            # [-] identified if posterior-sd bound < threshold * prior sd
+  fd_step: 0.0001           # [transformed units]
+  dither_amplitude: 1.0     # [control steps]
+  dither_hold_epochs: 1     # [epochs]
+
+profile:
+  n_grid: 9
+  width_sd: 2.0             # [prior sd] half-width of the profile grid
+  maxit: 200
+
+methods: {}
+ablations: {}
