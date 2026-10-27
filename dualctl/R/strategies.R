@@ -117,6 +117,7 @@ ProbingStrategy <- R6::R6Class("ProbingStrategy",
     #' @param info diagnostics.
     result = function(u, events = character(0), info = list()) {
       cn <- self$model$control_names
+      if (is.null(names(u)) && length(u) == length(cn)) names(u) <- cn
       list(u = stats::setNames(as.numeric(u[cn]), cn), events = as.character(events), info = info)
     },
 

@@ -148,7 +148,9 @@ Controller <- R6::R6Class("Controller",
                            events_plan = ev_plan, engine = self$cfg$solver$inner_engine,
                            terminal_days = self$cfg$controller$terminal_days)
       pen <- if (length(self$penalty) > 0) sum(self$penalty * res$viol[names(self$penalty)]) else 0
-      list(J = res$cost + pen, res = res)
+      J <- res$cost + pen
+      if (!is.finite(J)) J <- self$cfg$controller$nonfinite_cost
+      list(J = J, res = res)
     },
 
     #' @description Objective of a decision vector.

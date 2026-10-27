@@ -207,10 +207,10 @@ plot_advisor_sequence <- function(ranking) {
 }
 
 #' Shapley attribution of season savings
-#' @param attr result of [season_attribution()].
+#' @param attribution result of [season_attribution()].
 #' @export
-plot_shapley <- function(attr) {
-  d <- data.table::copy(attr$shapley)
+plot_shapley <- function(attribution) {
+  d <- data.table::copy(attribution$shapley)
   d[, sign := ifelse(saving >= 0, "saving", "loss")]
   d[, player := factor(player, levels = d[order(saving)]$player)]
   ggplot2::ggplot(d, ggplot2::aes(x = saving / 1000, y = player, fill = sign)) +
@@ -224,7 +224,7 @@ plot_shapley <- function(attr) {
     ggplot2::labs(x = "Shapley share of season savings vs calendar baseline [kEUR]", y = NULL,
                   title = "Which adopted changes produced the savings",
                   subtitle = sprintf("Total %.1f kEUR; %s gates, %s space; open-loop replay on the true plant",
-                                     attr$total_saving / 1000, attr$gate_by, attr$space),
+                                     attribution$total_saving / 1000, attribution$gate_by, attribution$space),
                   caption = synthetic_caption) +
     dc_theme()
 }

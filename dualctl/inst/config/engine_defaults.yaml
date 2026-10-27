@@ -59,6 +59,7 @@ controller:
   terminal_days: 14.0       # [d] terminal cost = terminal_days * cost rate at horizon end
   constraint_penalty_default: 100.0  # [currency / (constraint unit * d)]
   constraint_penalty: {}    # per constraint output name
+  nonfinite_cost: 1.0e+12   # [currency] objective assigned to a rollout that produced NaN/Inf
   optimizer:
     method: hybrid          # hybrid | random_shooting | nloptr
     n_candidates: 8         # [-] random-shooting candidates

@@ -278,6 +278,10 @@ EstimatorEKF <- R6::R6Class("EstimatorEKF", inherit = Estimator,
         v0 <- c(self$z[ix], self$unit_phi(self$z, unit = i))
         jac <- fd_jacobian(function(v) self$transition(v, u = u_list[[i]], dfun = dfun, t0 = t0, t1 = t1),
                            v0 = v0, steps = self$fd_steps(v0))
+        if (any(!is.finite(jac$J)) || any(!is.finite(jac$f0))) {
+          warning("EKF predict: non-finite transition for unit ", i, " at time ", t1, "; state held")
+          next
+        }
         A_x <- jac$J[, seq_len(L$n_x), drop = FALSE]
         A_p <- jac$J[, L$n_x + seq_len(L$n_p), drop = FALSE]
         Fm[ix, ix] <- A_x
@@ -312,6 +316,7 @@ EstimatorEKF <- R6::R6Class("EstimatorEKF", inherit = Estimator,
         v0 <- c(self$z[ix], self$unit_phi(self$z, unit = i))
         jac <- fd_jacobian(function(v) self$measure(v, time = time, u = u_list[[i]], d = d, onames = onames),
                            v0 = v0, steps = self$fd_steps(v0))
+        if (any(!is.finite(jac$J)) || any(!is.finite(jac$f0))) next
         Hi <- matrix(0, nrow = length(onames), ncol = L$n_z)
         H_p <- jac$J[, L$n_x + seq_len(L$n_p), drop = FALSE]
         Hi[, ix] <- jac$J[, seq_len(L$n_x), drop = FALSE]
