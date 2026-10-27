@@ -1,0 +1,98 @@
+---
+title: "dualctl: dual control on heat-exchanger fouling"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{dualctl: dual control on heat-exchanger fouling}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+# Set DUALCTL_RUN_VIGNETTE=false to build the vignette without running the
+# (minutes-long) simulations.
+run <- !identical(tolower(Sys.getenv("DUALCTL_RUN_VIGNETTE", "true")), "false")
+knitr::opts_chunk$set(eval = run, fig.width = 8, fig.height = 5, message = FALSE)
+```
+
+All numbers in this vignette come from a **synthetic plant** with
+illustrative, unvalidated parameter values. They show how the methods behave
+on the simulated problem, not what they would save on a real exchanger.
+
+## 1. Scenario and models
+
+A scenario is one YAML file. The quick variant extends the default fouling
+scenario with fewer seeds, units and methods.
+
+```{r load}
+library(dualctl)
+cfg <- load_scenario("fouling_quick.yaml")
+fit <- load_model(cfg, variant = "fitted")   # what the estimator and controller believe
+tru <- load_model(cfg, variant = "truth")    # the simulated plant (extra hardness state)
+fit
+tru$state_names
+```
+
+## 2. Identifiability: what do the weather and load teach on their own?
+
+```{r ident}
+ident <- identifiability_report(cfg, model = fit, seed = 1)
+ident$classification
+p <- plot_identifiability(ident)
+p$p_bounds
+p$p_spectrum
+```
+
+Parameters whose bound stays close to the prior under `disturbances` need
+deliberate probing (velocity and dose changes) or the probe sensors.
+
+## 3. One season: probe arm, production arm, advisor
+
+```{r season}
+season <- run_season(cfg, method = "dual_infompc", seed = 1, advisor = TRUE, keep_obs = TRUE)
+table(season$arms)
+plot_param_convergence(season$posterior, unit_idx = 0)
+ps <- plot_season(season, state_col = "Rf", obs_col = "obs_Rf_probe")
+ps$state
+ps$u_v
+plot_advisor_sequence(season$advisor$ranking)
+head(season$advisor$sequence)
+```
+
+## 4. Which changes produced the savings?
+
+```{r shapley}
+adv_unit <- season$advisor$ranking$unit[1]
+at <- season_attribution(season, unit_idx = adv_unit, cfg = cfg)
+at$shapley
+plot_shapley(at)
+at$aumann
+```
+
+## 5. Monte Carlo over paired seeds
+
+Each seed fixes the weather, the unit population, the initial states, the
+observation noise and the arm assignment, so methods are compared on
+identical plants.
+
+```{r mc}
+mc <- run_monte_carlo(cfg, parallel = FALSE)
+met <- summarize_metrics(mc, cfg = cfg)
+met$costs
+met$comparisons
+pr <- plot_regret(met$regret)
+pr$p_time
+pr$p_final
+plot_coverage(met$coverage)
+met$probe_value
+```
+
+With three seeds the intervals are wide; read `met$comparisons$verdict`
+before drawing conclusions. The full study (50 seeds, all baselines and
+ablations) is `Rscript run_demo.R` in the package source directory.
+
+## 6. Ablation (sensor noise)
+
+```{r ablation}
+abl <- run_ablations(cfg, which = "sensor_noise", parallel = FALSE)
+plot_ablations(abl)
+```

@@ -163,3 +163,8 @@ ablations:
       m0:   {plant: {parm_overrides: {mismatch: 0.0}}}
       m0.5: {plant: {parm_overrides: {mismatch: 0.5}}}
       m1:   {plant: {parm_overrides: {mismatch: 1.0}}}
+
+demo:
+  method: dual_infompc       # method of the single illustrated season (advisor, attribution)
+  state_col: Rf              # true state shown in the season figure
+  obs_col: obs_Rf_probe      # noisy observation overlaid (probe units only)

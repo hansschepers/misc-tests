@@ -225,12 +225,26 @@ load_scenario <- function(path, overrides = list()) {
   defaults_path <- system.file("config", "engine_defaults.yaml", package = "dualctl")
   if (!nzchar(defaults_path)) stop("engine_defaults.yaml not found; is dualctl installed or loaded?")
   defaults <- yaml::read_yaml(defaults_path)
-  scen <- yaml::read_yaml(path)
+  scen <- read_scenario_yaml(path)
   cfg <- utils::modifyList(defaults, scen)
   cfg <- utils::modifyList(cfg, overrides)
   cfg$.dir  <- dirname(path)
   cfg$.file <- path
   cfg
+}
+
+# read a scenario YAML; a top-level `base:` entry names a scenario it extends
+# (resolved next to the file or in the package config dir; nested bases allowed)
+read_scenario_yaml <- function(path, depth = 0) {
+  if (depth > 10) stop("scenario 'base' chain too deep (cycle?)")
+  scen <- yaml::read_yaml(path)
+  if (!is.null(scen$base)) {
+    base_path <- resolve_path(file = scen$base, base_dir = dirname(path), subdir = "config")
+    base <- read_scenario_yaml(base_path, depth = depth + 1)
+    scen$base <- NULL
+    scen <- utils::modifyList(base, scen)
+  }
+  scen
 }
 
 # locate a file: as given, relative to base_dir, or inside the package's inst/<subdir>

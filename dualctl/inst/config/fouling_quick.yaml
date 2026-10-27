@@ -1,0 +1,33 @@
+# =============================================================================
+# Quick variant of the fouling scenario (vignette, smoke runs).
+# Extends fouling_default.yaml; only the entries below differ.
+# Shorter season starting in spring (forecasts and weather are generated from
+# day 0; the seasonal peak is at day 200), fewer units, seeds and methods.
+# =============================================================================
+
+base: fouling_default.yaml
+
+season:
+  length_days: 182          # [d]
+
+experiment:
+  n_units: 4
+  n_probe: 2
+
+controller:
+  horizon_epochs: 3
+  move_blocks: [1, 2]
+  optimizer: {n_candidates: 6, maxit: 12}
+
+evaluation:
+  n_seeds: 3
+  methods: [calendar, learn_noprobe, learn_sensors, dual_infompc, oracle]
+  ablation_seeds: 2
+  parallel: false
+
+ablations:
+  lambda_schedule: ~
+  probe_arm_size: ~
+  mismatch: ~
+  sensor_noise:
+    methods: [learn_sensors, dual_infompc, oracle]

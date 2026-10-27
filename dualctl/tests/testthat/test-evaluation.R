@@ -1,0 +1,36 @@
+test_that("Monte Carlo, regret and metrics run on the toy model", {
+  cfg <- toy_cfg()
+  mc <- run_monte_carlo(cfg, methods = c("calendar", "learn_noprobe", "learn_sensors", "dual_infompc", "oracle"),
+                        seeds = 1:2, parallel = FALSE)
+  expect_equal(nrow(mc$errors), 0)
+  met <- summarize_metrics(mc, cfg = cfg)
+  expect_true(all(c("calendar", "learn_noprobe", "dual_infompc") %in% met$regret$final$method))
+  expect_equal(met$regret$final[method == "oracle"]$mean, 0)
+  expect_true(nrow(met$comparisons) >= 1)
+  expect_true(all(met$coverage$coverage >= 0 & met$coverage$coverage <= 1))
+  expect_true(data.table::is.data.table(met$probe_value))
+  f <- tempfile(fileext = ".md")
+  write_summary(met, path = f, cfg = cfg)
+  txt <- readLines(f)
+  expect_true(any(grepl("synthetic plant", txt)))
+})
+
+test_that("scenario files can extend a base scenario", {
+  cfg <- load_scenario("fouling_quick.yaml")
+  expect_equal(cfg$season$length_days, 182)
+  expect_equal(cfg$model$name, "hx_fouling")
+  expect_null(cfg$ablations$mismatch)
+  expect_false(is.null(cfg$ablations$sensor_noise$values))
+})
+
+test_that("plots build from toy results", {
+  cfg <- toy_cfg()
+  res <- run_season(cfg, method = "dual_infompc", seed = 1, advisor = TRUE, keep_obs = TRUE)
+  expect_s3_class(plot_param_convergence(res$posterior, unit_idx = 1), "ggplot")
+  expect_s3_class(plot_advisor_sequence(res$advisor$ranking), "ggplot")
+  ps <- plot_season(res, state_col = "conc", obs_col = "obs_conc_obs")
+  expect_true(all(vapply(ps, function(p) inherits(p, "ggplot"), logical(1))))
+  expect_s3_class(plot_shapley(season_attribution(res, unit_idx = 1, cfg = cfg)), "ggplot")
+  id <- plot_identifiability(identifiability_report(cfg, seed = 1))
+  expect_s3_class(id$p_bounds, "ggplot")
+})

@@ -197,7 +197,11 @@ simulate_unit <- function(model, x0, parms, u_plan, dfun, t0, t1, dt,
        traj = if (keep_traj) data.table::rbindlist(traj_rows) else NULL)
 }
 
-# build a one-row (or multi-row) control plan table
+#' Control plan table (piecewise constant from each `times` entry)
+#' @param times segment start times.
+#' @param U control vector (one segment) or matrix (rows = segments).
+#' @param control_names control names (column order of `U`).
+#' @export
 make_u_plan <- function(times, U, control_names) {
   U <- matrix(as.numeric(U), ncol = length(control_names))
   M <- cbind(times, U)
