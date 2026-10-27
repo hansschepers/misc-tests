@@ -1,0 +1,48 @@
+digraph statin_ezetimibe {
+  graph [rankdir = LR, fontname = "Helvetica", fontsize = 11];
+  node  [shape = box, style = "rounded,filled", fillcolor = "#F2F2F2", fontname = "Helvetica", fontsize = 10];
+  edge  [fontname = "Helvetica", fontsize = 9];
+
+  subgraph cluster_w { label = "drivers w(t)"; style = dashed;
+    Diet  [shape = ellipse, fillcolor = "#FFF2CC", label = "diet D(t)\n[mmol/d]"];
+    Meals [shape = ellipse, fillcolor = "#FFF2CC", label = "meal clock\n(gallbladder emptying)"];
+  }
+  subgraph cluster_u { label = "control u(t), regimen p_u"; style = dashed;
+    Rsv [shape = diamond, fillcolor = "#F8CECC", label = "rosuvastatin\nu_rsv [mg/d]"];
+    Eze [shape = diamond, fillcolor = "#F8CECC", label = "ezetimibe\nu_eze [mg/d]"];
+  }
+
+  Lumen [label = "gut lumen C_lum\n[mmol]"];
+  Liver [label = "liver pool C_L\n[mmol]\nSREBP2 sensor g(C_L)"];
+  LDLR  [label = "LDLR activity R_LDLR\n[-]"];
+  LDL   [label = "plasma LDL-C\n[mmol/L]"];
+  Per   [label = "peripheral tissue C_P\n[mmol]"];
+  Feces [shape = ellipse, label = "faeces\n(neutral sterols, bile acids)"];
+
+  A_rh  [fillcolor = "#DAE8FC", label = "rosuvastatin liver A_rh\n[mg]"];
+  A_rc  [fillcolor = "#DAE8FC", label = "rosuvastatin plasma A_rc\n[mg]"];
+  E_gut [fillcolor = "#DAE8FC", label = "ezetimibe gut E_gut\n[mg]"];
+  E_gb  [fillcolor = "#DAE8FC", label = "ezetimibe gallbladder E_gb\n[mg]"];
+
+  Diet  -> Lumen;
+  Lumen -> Liver [label = "absorption A (NPC1L1)"];
+  Lumen -> Feces [label = "k_fec"];
+  Liver -> Lumen [label = "bile B (ABCG5/G8)"];
+  Liver -> Feces [label = "bile acids BA"];
+  Liver -> LDL   [label = "VLDL->LDL P_V"];
+  LDL   -> Liver [label = "LDLR uptake U_hep"];
+  LDL   -> Per   [label = "U_per"];
+  Per   -> Liver [label = "RCT (HDL)"];
+  Liver -> Liver [label = "synthesis S_hep (HMGCR)", style = dashed];
+  Liver -> LDLR  [label = "(-) via g", style = dashed];
+  LDLR  -> LDL   [label = "(-)", style = dashed];
+
+  Rsv   -> A_rc  [label = "F_rsv"];
+  A_rc  -> A_rh  [label = "OATP1B1"];
+  A_rh  -> Liver [label = "inhibits HMGCR", color = red, fontcolor = red];
+  Eze   -> E_gut;
+  E_gut -> E_gb  [label = "plasma -> bile"];
+  E_gb  -> E_gut [label = "emptying k_gb(t)"];
+  Meals -> E_gb  [style = dotted];
+  E_gut -> Lumen [label = "inhibits NPC1L1", color = red, fontcolor = red];
+}
