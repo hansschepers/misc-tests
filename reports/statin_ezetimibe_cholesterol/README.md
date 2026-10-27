@@ -4,6 +4,8 @@ Question: clinicians quote "ezetimibe lowers LDL-C by about 15–20 %". How does
 
 The R code was **not run**; this is by design (no R in this environment). The numbers in the "Expected results" section come from an independent Python re-implementation of the same steady-state and PK equations. Please run `run_all.R` and compare.
 
+**Version 2** (in `v2/`) adds bile-acid enterohepatic circulation, micelle-gated absorption, meal composition (fat, fibre, plant sterols), NPC1L1 binding kinetics, and experiments on meal pattern and pill timing. See `v2/README_v2.md`.
+
 ## Files
 
 | File | Content |
