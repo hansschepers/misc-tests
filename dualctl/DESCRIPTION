@@ -22,10 +22,10 @@ Encoding: UTF-8
 Depends: R (>= 4.1.0)
 Imports:
     R6,
-    data.table,
+    data.table (>= 1.14.0),
     deSolve,
     yaml,
-    ggplot2,
+    ggplot2 (>= 3.4.0),
     stats,
     utils
 Suggests:
