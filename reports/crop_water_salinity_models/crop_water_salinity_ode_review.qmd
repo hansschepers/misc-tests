@@ -16,7 +16,6 @@ format:
 execute:
   eval: false
   echo: true
-bibliography: null
 ---
 
 ::: {.callout-important}

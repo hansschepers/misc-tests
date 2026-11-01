@@ -3,6 +3,8 @@
 .Rapp.history
 misc-tests.Rproj
 
+*.html
+
 # Session Data files
 .RData
 .RDataTmp
