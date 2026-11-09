@@ -1,0 +1,64 @@
+digraph statin_ezetimibe_v2 {
+  graph [rankdir = LR, fontname = "Helvetica", fontsize = 11, compound = true];
+  node  [shape = box, style = "rounded,filled", fillcolor = "#F2F2F2", fontname = "Helvetica", fontsize = 10];
+  edge  [fontname = "Helvetica", fontsize = 9];
+
+  subgraph cluster_w { label = "meal w(t): cholesterol, fat, fibre, plant sterols"; style = dashed;
+    Meal [shape = ellipse, fillcolor = "#FFF2CC", label = "meal pulses\n(gastric emptying)"];
+  }
+  subgraph cluster_u { label = "control u(t)"; style = dashed;
+    Pill_E [shape = diamond, fillcolor = "#F8CECC", label = "ezetimibe pill"];
+    Pill_R [shape = diamond, fillcolor = "#F8CECC", label = "rosuvastatin pill"];
+  }
+
+  Fat   [label = "fat in SI Fat_J\n[g]"];
+  CCK   [label = "CCK\n[-]"];
+  Fib   [label = "fibre Fib_I\n[g]"];
+  PS    [label = "plant sterols PS_J\n[mmol]"];
+
+  subgraph cluster_liver { label = "liver"; style = rounded;
+    C_L  [label = "cholesterol C_L\n[mmol]"];
+    CYP  [shape = ellipse, label = "CYP7A1\nBA synthesis J_syn"];
+    SREBP [shape = ellipse, label = "SREBP2 g(C_L)\nHMGCR, LDLR"];
+    Rsv  [fillcolor = "#DAE8FC", label = "rosuvastatin A_rh\n[mg]"];
+  }
+  Bile  [shape = ellipse, label = "hepatic bile\nBA J_sec, cholesterol B,\nezetimibe"];
+  GB    [label = "gallbladder\nBA_GB, C_GB, E_gb"];
+  Jej   [label = "jejunum\nBA_J, C_lum, E_gut\nmicelles"];
+  NPC   [label = "NPC1L1 occupancy\nO_NPC [-]"];
+  Ile   [label = "ileum BA_I\n[mmol]"];
+  Z     [label = "FXR/FGF19 Z_FXR\n[-]"];
+  LDL   [label = "plasma LDL\n[mmol/L]"];
+  Per   [label = "periphery C_P\n[mmol]"];
+  Feces [shape = ellipse, label = "faeces"];
+
+  Meal -> Fat; Meal -> Fib; Meal -> PS; Meal -> Jej [label = "cholesterol"];
+  Fat -> CCK [label = "stimulates"];
+  CCK -> GB  [label = "contraction,\nsphincter relaxes", style = dashed];
+  Fat -> Jej [label = "micelle capacity", style = dashed];
+  PS  -> Jej [label = "competes in micelles", style = dashed, color = red];
+
+  C_L  -> CYP; CYP -> Bile; C_L -> Bile [label = "B ~ C_L * J_sec^nu"];
+  Bile -> GB [label = "phi_GB (fasting)"];
+  Bile -> Jej [label = "1 - phi_GB"];
+  GB   -> Jej [label = "k_gb(t)"];
+  Jej  -> C_L [label = "absorption A"];
+  Jej  -> Ile [label = "transit"];
+  Jej  -> Feces;
+  Ile  -> Bile [label = "ASBT reabsorption"];
+  Ile  -> Feces [label = "BA loss"];
+  Fib  -> Ile [label = "binds BA", style = dashed, color = red];
+  Ile  -> Z [label = "J_asbt"];
+  Z    -> CYP [label = "(-)", style = dashed];
+  C_L  -> SREBP [label = "(-)", style = dashed];
+  SREBP -> C_L [label = "synthesis", style = dashed];
+  C_L  -> LDL [label = "VLDL->LDL"];
+  LDL  -> C_L [label = "LDLR"];
+  LDL  -> Per; Per -> C_L [label = "RCT"];
+
+  Pill_R -> Rsv [label = "OATP1B1"];
+  Rsv -> SREBP [label = "inhibits HMGCR", color = red, fontcolor = red];
+  Pill_E -> Jej;
+  Jej -> NPC [label = "binding k_on / k_off"];
+  NPC -> Jej [label = "inhibits uptake", color = red, fontcolor = red];
+}
