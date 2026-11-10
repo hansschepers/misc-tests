@@ -1,0 +1,66 @@
+{{Freie Navigation|Buch der Lieder|Prolog (Lyrisches Intermezzo 1827)|Aus meinen Thränen sprießen||Buch der Lieder (1827)|Prolog}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Im wunderschönen Monat Mai
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;112
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_112.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_112.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|112||Buch_der_Lieder_112.jpg}}
+{{Center|'''I.'''}}<br />
+<poem>
+{{idt}}Im wunderschönen Monat Mai,
+Als alle Knospen sprangen,
+Da ist in meinem Herzen
+Die Liebe aufgegangen.
+
+{{Zeile|5}}{{idt}}Im wunderschönen Monat Mai,
+Als alle Vögel sangen,
+Da hab ich ihr gestanden
+Mein Sehnen und Verlangen.
+</poem>
+|}
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[eo:Elektitaj Poemoj de Heinrich Heine/Printempe en dolĉega Maj']]
+[[fi:Ihanaan aikaan Toukokuun]]
+[[fi:Ihanaan aikaan toukokuun –]]
+[[fi:Kun ihanuuteen toukokuun]]
+[[pl:W prześlicznym Maju]]
+[[ru:С приходом чудных майских дней (Гейне; Быков)]]
+[[ru:Утром, встав, я вопрошаю (Гейне; Бальмонт)]]
+[[ru:В чудеснейшем месяце мае (Гейне; Вейнберг)]]
+[[ru:Чудесным светлым майским днём (Гейне; Зоргенфрей)]]
+[[uk:Коли настав чудовий май (Гейне/Леся Українка)]]
+
+{{Interwiki-Info|fi1|(Juva, 1905)}}
+{{Interwiki-Info|fi2|(Juva, 1916)}}
+{{Interwiki-Info|fi3|(Uotila)}}
+
+{{Interwiki-Info|ru1|(Byikow)}}
+{{Interwiki-Info|ru2|(Balmont)}}

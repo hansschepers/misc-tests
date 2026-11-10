@@ -1,0 +1,59 @@
+{{Freie Navigation|Buch der Lieder|Ich hab’ dich geliebet und liebe dich noch!|Es leuchtet meine Liebe||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Am leuchtenden Sommermorgen
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;150
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_150.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_150.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|150||Buch_der_Lieder_150.jpg}}
+{{Center|'''XLVI.'''}}<br />
+<poem>
+{{idt}}Am leuchtenden Sommermorgen
+Geh’ ich im Garten herum.
+Es flüstern und sprechen die Blumen,
+Ich aber wandle stumm.
+
+{{Zeile|5}}{{idt}}Es flüstern und sprechen die Blumen,
+Und schau’n mitleidig mich an:
+Sey unserer Schwester nicht böse,
+Du trauriger, blasser Mann.
+</poem>
+|}
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[en:Littell's Living Age/Volume 151/Issue 1957/"Bright is the Warm Morning"]]
+[[fi:Kesä-aamuna kirkkahinna]]
+[[ru:Летним утром в сад я вышел (Гейне; Кусков)]]
+[[ru:В блестящее летнее утро (Гейне; Быков)]]
+[[ru:Любовь моя сумрачным светом (Гейне; Зоргенфрей)]]
+[[uk:Блискучого літнього ранку (Гейне/Леся Українка)]]
+
+{{Interwiki-Info|ru1|(Кусков)}}
+{{Interwiki-Info|ru2|(Быков)}}
+{{Interwiki-Info|ru3|(Зоргенфрей)}}

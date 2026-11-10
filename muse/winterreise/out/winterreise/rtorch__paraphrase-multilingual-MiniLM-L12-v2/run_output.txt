@@ -1,0 +1,182 @@
+=== Winterreise (Müller / Schubert 1827) | rtorch: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 === 
+82 stanza units over 24 songs 
+     song                 title            title_en
+    <int>                <char>              <char>
+ 1:     1            Gute Nacht          Good Night
+ 2:     2       Die Wetterfahne     The Weathervane
+ 3:     3      Gefrorene Tränen        Frozen Tears
+ 4:     4            Erstarrung            Numbness
+ 5:     5        Der Lindenbaum     The Linden Tree
+ 6:     6            Wasserflut               Flood
+ 7:     7        Auf dem Flusse        On the River
+ 8:     8             Rückblick        Looking Back
+ 9:     9              Irrlicht    Will-o'-the-Wisp
+10:    10                  Rast                Rest
+11:    11        Frühlingstraum     Dream of Spring
+12:    12            Einsamkeit          Loneliness
+13:    13              Die Post            The Post
+14:    14       Der greise Kopf       The Grey Head
+15:    15             Die Krähe            The Crow
+16:    16       Letzte Hoffnung           Last Hope
+17:    17              Im Dorfe      In the Village
+18:    18 Der stürmische Morgen  The Stormy Morning
+19:    19             Täuschung            Delusion
+20:    20         Der Wegweiser        The Signpost
+21:    21         Das Wirtshaus             The Inn
+22:    22                  Mut!            Courage!
+23:    23       Die Nebensonnen       The Mock Suns
+24:    24         Der Leiermann The Hurdy-Gurdy Man
+     song                 title            title_en
+    <int>                <char>              <char>
+                                tempo n_stanza
+                               <char>    <int>
+ 1:                            Mäßig.        4
+ 2:               Ziemlich geschwind.        3
+ 3:                 Nicht zu langsam.        3
+ 4:                 Ziemlich schnell.        5
+ 5:                            Mäßig.        6
+ 6:                          Langsam.        4
+ 7:                          Langsam.        3
+ 8:               Nicht zu geschwind.        4
+ 9:                          Langsam.        3
+10:                            Mäßig.        4
+11:                     Etwas bewegt.        6
+12:                          Langsam.        2
+13:                  Etwas geschwind.        4
+14:                    Etwas langsam.        3
+15:                    Etwas langsam.        3
+16:               Nicht zu geschwind.        3
+17:                    Etwas langsam.        2
+18: Ziemlich geschwind, doch kräftig.        3
+19:                  Etwas geschwind.        1
+20:                            Mäßig.        4
+21:                     Sehr langsam.        4
+22:      Ziemlich geschwind, kräftig.        2
+23:                 Nicht zu langsam.        1
+24:                    Etwas langsam.        5
+                                tempo n_stanza
+                               <char>    <int>
+
+PCA variance explained (PC1..3): 0.138 0.095 0.091 
+UMAP seed stability (cor of 2-D distances, 5 seeds): 0.57 0.84 
+Designed axes inner_outer x life_death: cos between them = -0.09 
+--- PC1: stanzas at the ends --- 
+       end unit_id            title  score
+    <char>  <char>           <char>  <num>
+ 1:      -     6.2       Wasserflut -0.553
+ 2:      -     6.1       Wasserflut -0.517
+ 3:      -     3.3 Gefrorene Tränen -0.482
+ 4:      -     4.2       Erstarrung -0.401
+ 5:      -    10.2             Rast -0.391
+ 6:      +    24.5    Der Leiermann  0.309
+ 7:      +    15.1        Die Krähe  0.315
+ 8:      +    15.2        Die Krähe  0.343
+ 9:      +     2.2  Die Wetterfahne  0.343
+10:      +    24.1    Der Leiermann  0.351
+                                                                                                                        text
+                                                                                                                      <char>
+ 1: Wenn die Gräser sprossen wollen, weht daher ein lauer Wind, und das Eis zerspringt in Schollen, und der weiche Schnee ze
+ 2:          Manche Trän aus meinen Augen ist gefallen in den Schnee: seine kalten Flocken saugen durstig ein das heiße Weh,
+ 3: Und dringt doch aus der Quelle der Brust so glühend heiß, als wolltet ihr zerschmelzen des ganzen Winters Eis, ihr dring
+ 4:          Ich will den Boden küssen, durchdringen Eis und Schnee mit meinen heißen Tränen, bis ich die Erde, die Erde seh
+ 5: Die Füße frugen nicht nach Rast, es war zu kalt zum Stehen, der Rücken fühlte keine Last, der Sturm half fort mich wehen
+ 6:                                   Wunderlicher Alter, soll ich mit dir gehn? Willst zu meinen Liedern deine Leier drehn?
+ 7:                          Eine Krähe war mit mir aus der Stadt gezogen, ist bis heute für und für um mein Haupt geflogen.
+ 8:            Krähe, wunderliches Tier, willst mich nicht verlassen? Meinst wohl bald als Beute hier meinen Leib zu fassen?
+ 9: Er hätt es eher bemerken sollen, des Hauses aufgestecktes Schild, so hätt er nimmer suchen wollen im Haus ein treues Fra
+10:                                 Drüben hinterm Dorfe steht ein Leiermann, und mit starren Fingern dreht er, was er kann.
+--- PC2: stanzas at the ends --- 
+       end unit_id                 title  score
+    <char>  <char>                <char>  <num>
+ 1:      -    14.1       Der greise Kopf -0.392
+ 2:      -    14.2       Der greise Kopf -0.366
+ 3:      -    23.1       Die Nebensonnen -0.325
+ 4:      -    18.1 Der stürmische Morgen -0.313
+ 5:      -    11.2        Frühlingstraum -0.298
+ 6:      +     6.3            Wasserflut  0.271
+ 7:      +    22.1                  Mut!  0.309
+ 8:      +    13.3              Die Post  0.328
+ 9:      +    13.4              Die Post  0.346
+10:      +    13.2              Die Post  0.370
+                                                                                                                        text
+                                                                                                                      <char>
+ 1: Der Reif hat einen weißen Schein mir übers Haar gestreuet; Da glaubt’ ich schon ein Greis zu sein und hab mich sehr gefr
+ 2: Doch bald ist er hinweggetaut, hab wieder schwarze Haare, daß mir’s vor meiner Jugend graut – wie weit noch bis zur Bahr
+ 3: Drei Sonnen sah ich am Himmel stehn, hab lang’ und fest sie angesehn; und sie auch standen da so stier, als wollten sie 
+ 4:                  Wie hat der Sturm zerrissen des Himmels graues Kleid! die Wolkenfetzen flattern umher in mattem Streit,
+ 5:           Und als die Hähne krähten, da ward mein Auge wach; da war es kalt und finster, es schrieen die Raben vom Dach,
+ 6: Schnee, du weißt von meinem Sehnen, sag, wohin doch geht dein Lauf? Folge nach nur meinen Tränen, nimmt dich bald das Bä
+ 7: Fliegt der Schnee mir ins Gesicht, schüttl ich ihn herunter. Wenn mein Herz im Busen spricht, sing ich hell und munter; 
+ 8:                  Nun ja, die Post kommt aus der Stadt, wo ich ein liebes Liebchen hatt, mein Herz! mein Herz, mein Herz!
+ 9:                                   Willst wohl einmal hinübersehn und fragen, wie es dort mag gehn, mein Herz, mein Herz?
+10:                          Die Post bringt keinen Brief für dich. Was drängst du denn so wunderlich, mein Herz, mein Herz?
+--- PC3: stanzas at the ends --- 
+       end unit_id            title  score
+    <char>  <char>           <char>  <num>
+ 1:      -    14.2  Der greise Kopf -0.407
+ 2:      -    10.3             Rast -0.391
+ 3:      -    21.3    Das Wirtshaus -0.363
+ 4:      -    14.1  Der greise Kopf -0.308
+ 5:      -     3.3 Gefrorene Tränen -0.264
+ 6:      +    11.1   Frühlingstraum  0.261
+ 7:      +    17.2         Im Dorfe  0.262
+ 8:      +    22.2             Mut!  0.289
+ 9:      +    11.4   Frühlingstraum  0.308
+10:      +    23.1  Die Nebensonnen  0.357
+                                                                                                                        text
+                                                                                                                      <char>
+ 1: Doch bald ist er hinweggetaut, hab wieder schwarze Haare, daß mir’s vor meiner Jugend graut – wie weit noch bis zur Bahr
+ 2:         In eines Köhlers engem Haus hab’ Obdach ich gefunden; doch meine Glieder ruhn nicht aus: so brennen ihre Wunden.
+ 3:                Sind denn in diesem Hause die Kammern all besetzt? bin matt zum Niedersinken bin tödlich schwer verletzt.
+ 4: Der Reif hat einen weißen Schein mir übers Haar gestreuet; Da glaubt’ ich schon ein Greis zu sein und hab mich sehr gefr
+ 5: Und dringt doch aus der Quelle der Brust so glühend heiß, als wolltet ihr zerschmelzen des ganzen Winters Eis, ihr dring
+ 6: Ich träumte von bunten Blumen, so wie sie wohl blühen im Mai, ich träumte von grünen Wiesen, von lustigem Vogelgeschrei,
+ 7: Bellt mich nur fort, ihr wachen Hunde, laßt mich nicht ruhn in der Schlummerstunde! Ich bin zu Ende mit allen Träumen, –
+ 8:                  Lustig in die Welt hinein gegen Wind und Wetter! will kein Gott auf Erden sein, sind wir selber Götter!
+ 9:               Ich träumte von Lieb um Liebe, von einer schönen Maid, von Herzen und von Küssen, von Wonne und Seligkeit,
+10: Drei Sonnen sah ich am Himmel stehn, hab lang’ und fest sie angesehn; und sie auch standen da so stier, als wollten sie 
+
+Songs by PC3:
+     song                 title            title_en    PC3
+    <int>                <char>              <char>  <num>
+ 1:    10                  Rast                Rest -0.257
+ 2:    14       Der greise Kopf       The Grey Head -0.253
+ 3:     2       Die Wetterfahne     The Weathervane -0.238
+ 4:    21         Das Wirtshaus             The Inn -0.231
+ 5:     3      Gefrorene Tränen        Frozen Tears -0.208
+ 6:    15             Die Krähe            The Crow -0.184
+ 7:    24         Der Leiermann The Hurdy-Gurdy Man -0.153
+ 8:     6            Wasserflut               Flood -0.151
+ 9:    13              Die Post            The Post -0.065
+10:     4            Erstarrung            Numbness -0.064
+11:     7        Auf dem Flusse        On the River -0.063
+12:    20         Der Wegweiser        The Signpost -0.016
+13:     5        Der Lindenbaum     The Linden Tree  0.009
+14:     9              Irrlicht    Will-o'-the-Wisp  0.040
+15:    12            Einsamkeit          Loneliness  0.043
+16:     8             Rückblick        Looking Back  0.070
+17:    18 Der stürmische Morgen  The Stormy Morning  0.076
+18:    16       Letzte Hoffnung           Last Hope  0.167
+19:    11        Frühlingstraum     Dream of Spring  0.167
+20:     1            Gute Nacht          Good Night  0.208
+21:    22                  Mut!            Courage!  0.234
+22:    19             Täuschung            Delusion  0.249
+23:    17              Im Dorfe      In the Village  0.263
+24:    23       Die Nebensonnen       The Mock Suns  0.357
+     song                 title            title_en    PC3
+    <int>                <char>              <char>  <num>
+
+Path length (sum of consecutive cosine distances) vs 20000 random orders:
+          order path_length null_mean null_sd       z p_shorter
+         <char>       <num>     <num>   <num>   <num>     <num>
+1:     composer      8.8875    8.7896  0.2718  0.3603    0.6380
+2: mueller_1824      8.5240    8.7896  0.2718 -0.9772    0.1658
+
+Largest steps:
+    song            from                    to step_dist
+   <int>          <char>                <char>     <num>
+1:    23 Die Nebensonnen         Der Leiermann     0.592
+2:    13        Die Post       Der greise Kopf     0.566
+3:    21   Das Wirtshaus                  Mut!     0.507
+4:    17        Im Dorfe Der stürmische Morgen     0.490
+5:    22            Mut!       Die Nebensonnen     0.487

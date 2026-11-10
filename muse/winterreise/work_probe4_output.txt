@@ -1,0 +1,79 @@
+--- search: Im wunderschönen Monat Mai 
+  Im wunderschönen Monat Mai 
+  Boetticher:Krüger-von Sivers, Clara 
+  Richard Püttner 
+  Aus meinen Thränen sprießen 
+  Mai 
+  Prolog (Lyrisches Intermezzo 1827) 
+  Buch der Lieder 
+  Ein heiliger Arbues junior 
+  Deutsche Gräber in der Fremde/3. Der Organist von Treuen 
+  Ein Münchener Biergarten 
+--- search: Ich grolle nicht 
+  Ich grolle nicht, und wenn das Herz auch bricht 
+  Ja, du bist elend, und ich grolle nicht 
+  Buch der Lieder 
+  Die Vermählte 
+  Robert Schumann 
+  Wie die Wellenschaumgeborene 
+  Das ist ein Flöten und Geigen 
+  Das deutsche Lied und Frau Schröder-Devrient 
+  Erinnerungen an Wilhelmine Schröder-Devrient/Nr. 10 
+  Erinnerungen an Wilhelmine Schröder-Devrient/Nr. 14 
+--- search: Die alten, bösen Lieder 
+  Die alten, bösen Lieder 
+  Tragödien nebst einem lyrischen Intermezzo 
+  Buch der Lieder 
+  Nacht lag auf meinen Augen 
+  Friedrike Varnhagen von Ense (Buch der Lieder 1827) 
+  Lyrisches Intermezzo 
+  Liste der Gedichte 
+  Heinrich Heine/Gedichtanfänge 
+--- search: Allnächtlich im Traume 
+  Allnächtlich im Traume seh’ ich dich 
+  Tragödien nebst einem lyrischen Intermezzo 
+  Ich hab’ im Traum’ geweinet 
+  Das ist ein Brausen und Heulen 
+  Buch der Lieder 
+  Lyrisches Intermezzo 
+  Liste der Gedichte 
+  Heinrich Heine/Gedichtanfänge 
+  Boetticher:Max, Gabriel Cornelius 
+
+--- raw html around poem I ---
+ 
+<hr style="width:5em;text-align:center; text-align:-moz-center; text-align:-khtml-center; margin-right:auto; margin-left:auto; margin-top:0px; margin-bottom:0px;" />
+<p><span class="PageNumber" id="Seite&#95;71" style="color:#666666; display:inline; margin:0px; padding:0px;">&#x5b;<b><a href="/wiki/Seite:Tragoedien_nebst_einem_lyrischen_Intermezzo_071.jpg" class="prp-pagequality-4" title="Seite:Tragoedien nebst einem lyrischen Intermezzo 071.jpg">71</a></b>&#x5d;</span> <span id="I"></span>
+</p>
+<div class="poem">
+<p>&#160;&#160;&#160;&#160;&#160;I.<br />
+<br />
+&#160;&#160;&#160;&#160;&#160;Aus meinen Thränen sprießen<br />
+Viel blühende Blumen hervor,<br />
+Und meine Seufzer werden<br />
+Ein Nachtigallenchor.<br />
+<br />
+</p>
+<div style="position:relative;" class="ws-noexport"><span class="zeilennummer">5</span></div>&#160;&#160;&#160;&#160;&#160;Und wenn du mich lieb hast, Kindchen,<br />
+<p>Schenk’ ich dir die Blumen all’,<br />
+Und vor deinem Fenster soll klingen<br />
+Das Lied der Nachtigall.
+</p>
+</div>
+<p><br />
+<span id="II"></span>
+</p>
+<div class="poem">
+<p>&#160;&#160;&#160;&#160;&#160;II.<br />
+<br />
+&#160;&#160;&#160;&#160;&#160;Die Rose, die Lilie, die Taube, die Sonne,<br />
+Die liebt’ ich einst alle in Liebeswonne.<br />
+Ich lieb’ sie nicht mehr, ich liebe alleine<br />
+Die Kleine, die Feine, die Reine, die Eine;<br />
+Sie selber, aller Liebe Bronne,<br />
+Ist Rose und Lilie und Taube und Sonne.
+</p>
+</div>
+<p><span class="PageNumber" id="Seite&#95;72" styl 
+
+'Im wunderschönen' in 1823 text: FALSE 

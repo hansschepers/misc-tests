@@ -1,0 +1,56 @@
+{{Freie Navigation|Buch der Lieder|Lehn’ deine Wang’ an meine Wang’|Es stehen unbeweglich||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Ich will meine Seele tauchen
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;115
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_115.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_115.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|115||Buch_der_Lieder_115.jpg}}
+{{Center|'''VII.'''}}<br />
+<poem>
+{{idt}}Ich will meine Seele tauchen
+In den Kelch der Lilie hinein;
+Die Lilie soll klingend hauchen
+Ein Lied von der Liebsten mein.
+
+{{Zeile|5}}{{idt}}Das Lied soll schauern und beben,
+Wie der Kuß von ihrem Mund’,
+Den sie mir einst gegeben
+In wunderbar süßer Stund’.
+</poem>
+|}
+<!--*!-->
+
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:Mun sieluni kylpeä halaa]]
+[[ru:Хочу я в чашечку лилеи (Гейне; Вейнберг)]]
+[[ru:Я хотел бы, чтоб чуткое сердце моё (Гейне; Надсон)]]
+[[ru:Я в чашу лилии белой (Гейне; Зоргенфрей)]]
+[[pl:Kielichom lilji]]

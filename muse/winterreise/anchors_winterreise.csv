@@ -1,0 +1,13 @@
+axis,pole,label,text
+inner_outer,+,inner world,"Erinnerung und Traum und Sehnsucht im eigenen Herzen."
+inner_outer,+,inner world,"Ich denke zurück an vergangene Zeiten und träume von dem verlorenen Glück."
+inner_outer,+,inner world,"Gedanken und Gefühle und Tränen in der Seele."
+inner_outer,-,outer world,"Wind und Wetter und Straßen und Dörfer und fremde Menschen."
+inner_outer,-,outer world,"Der Weg führt durch das Land vorbei an Häusern und Feldern."
+inner_outer,-,outer world,"Draußen bellen die Hunde und die Leute schlafen in ihren Betten."
+life_death,+,life,"Warme Liebe und blühender Frühling und Hoffnung."
+life_death,+,life,"Die Geliebte lächelt und das Herz ist froh und lebendig."
+life_death,+,life,"Die Sonne scheint und die Vögel singen und alles grünt."
+life_death,-,death,"Tod und Grab und ewige Ruhe."
+life_death,-,death,"Das Leben ist zu Ende und der Körper liegt im kalten Grab."
+life_death,-,death,"Ich möchte sterben und nicht mehr weitergehen."

@@ -1,0 +1,160 @@
+=== Dichterliebe (Heine / Schumann 1840) | rtorch: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 === 
+Dichterliebe -> Heine Lyrisches Intermezzo numbers: 1 2 3 4 7 11 18 22 20 41 40 46 56 57 44 66 
+47 stanza units over 16 songs 
+     song                          title                        title_en  tempo
+    <int>                         <char>                          <char> <char>
+ 1:     1     Im wunderschönen Monat Mai    In the wondrous month of May   <NA>
+ 2:     2     Aus meinen Tränen sprießen            From my tears spring   <NA>
+ 3:     3 Die Rose, die Lilie, die Taube    The rose, the lily, the dove   <NA>
+ 4:     4    Wenn ich in deine Augen seh      When I look into your eyes   <NA>
+ 5:     5   Ich will meine Seele tauchen              I will dip my soul   <NA>
+ 6:     6   Im Rhein, im heiligen Strome    In the Rhine, the holy river   <NA>
+ 7:     7               Ich grolle nicht                I bear no grudge   <NA>
+ 8:     8        Und wüßten's die Blumen  And if the little flowers knew   <NA>
+ 9:     9  Das ist ein Flöten und Geigen There is a fluting and fiddling   <NA>
+10:    10   Hör ich das Liedchen klingen     When I hear the little song   <NA>
+11:    11 Ein Jüngling liebt ein Mädchen          A youth loves a maiden   <NA>
+12:    12    Am leuchtenden Sommermorgen      On a bright summer morning   <NA>
+13:    13      Ich hab im Traum geweinet              I wept in my dream   <NA>
+14:    14         Allnächtlich im Traume            Nightly in my dreams   <NA>
+15:    15              Aus alten Märchen            From old fairy tales   <NA>
+16:    16        Die alten, bösen Lieder             The old, evil songs   <NA>
+    n_stanza
+       <int>
+ 1:        2
+ 2:        2
+ 3:        1
+ 4:        2
+ 5:        2
+ 6:        3
+ 7:        2
+ 8:        4
+ 9:        2
+10:        2
+11:        3
+12:        2
+13:        3
+14:        3
+15:        8
+16:        6
+
+PCA variance explained (PC1..3): 0.184 0.155 0.119 
+UMAP seed stability (cor of 2-D distances, 5 seeds): 0.77 0.89 
+Designed axes dream_waking x bliss_bitterness: cos between them = -0.13 
+--- PC1: stanzas at the ends --- 
+       end unit_id                        title  score
+    <char>  <char>                       <char>  <num>
+ 1:      -    15.2            Aus alten Märchen -0.504
+ 2:      -     2.1   Aus meinen Tränen sprießen -0.504
+ 3:      -    12.1  Am leuchtenden Sommermorgen -0.456
+ 4:      -     6.3 Im Rhein, im heiligen Strome -0.422
+ 5:      -    15.3            Aus alten Märchen -0.317
+ 6:      +     4.2  Wenn ich in deine Augen seh  0.350
+ 7:      +    13.1    Ich hab im Traum geweinet  0.352
+ 8:      +     7.2             Ich grolle nicht  0.363
+ 9:      +    13.2    Ich hab im Traum geweinet  0.433
+10:      +     8.4      Und wüßten's die Blumen  0.434
+                                                                                                                        text
+                                                                                                                      <char>
+ 1:                     Wo bunte Blumen blühen Im goldnen Abendlicht’, Und lieblich duftend glühen, Mit bräutlichem Gesicht;
+ 2:                  Aus meinen Thränen sprießen Viel blühende Blumen hervor, Und meine Seufzer werden Ein Nachtigallenchor.
+ 3:        Am leuchtenden Sommermorgen Geh’ ich im Garten herum. Es flüstern und sprechen die Blumen, Ich aber wandle stumm.
+ 4: Es schweben Blumen und Englein Um unsre liebe Frau; Die Augen, die Lippen, die Wänglein, Die gleichen der Liebsten genau
+ 5:                          Und grüne Bäume singen Uralte Melodein, Die Lüfte heimlich klingen, Und Vögel schmettern drein.
+ 6: Wenn ich mich lehn’ an deine Brust, Kommt’s über mich wie Himmelslust; Doch wenn du sprichst: ich liebe dich! So muß ich
+ 7: Ich hab’ im Traum’ geweinet, Mir träumte du lägest im Grab’. Ich wachte auf und die Thräne Floß noch von der Wange herab
+ 8: Das weiß ich längst. Ich sah dich ja im Traume, Und sah die Nacht in deines Herzens Raume, Und sah die Schlang’, die dir
+ 9:       Ich hab’ im Traum’ geweinet, Mir träumt’ du verließest mich. Ich wachte auf, und ich weinte Noch lange bitterlich.
+10:      Die alle können’s nicht wissen, Nur Eine kennt meinen Schmerz; Sie hat ja selbst zerrissen, Zerrissen mir das Herz.
+--- PC2: stanzas at the ends --- 
+       end unit_id                        title  score
+    <char>  <char>                       <char>  <num>
+ 1:      -    12.1  Am leuchtenden Sommermorgen -0.284
+ 2:      -     1.2   Im wunderschönen Monat Mai -0.281
+ 3:      -     1.1   Im wunderschönen Monat Mai -0.275
+ 4:      -     2.2   Aus meinen Tränen sprießen -0.215
+ 5:      -     8.1      Und wüßten's die Blumen -0.198
+ 6:      +     6.1 Im Rhein, im heiligen Strome  0.522
+ 7:      +    16.2      Die alten, bösen Lieder  0.534
+ 8:      +    16.5      Die alten, bösen Lieder  0.602
+ 9:      +    16.4      Die alten, bösen Lieder  0.620
+10:      +    16.3      Die alten, bösen Lieder  0.669
+                                                                                                                        text
+                                                                                                                      <char>
+ 1:        Am leuchtenden Sommermorgen Geh’ ich im Garten herum. Es flüstern und sprechen die Blumen, Ich aber wandle stumm.
+ 2:                   Im wunderschönen Monat Mai, Als alle Vögel sangen, Da hab ich ihr gestanden Mein Sehnen und Verlangen.
+ 3:                    Im wunderschönen Monat Mai, Als alle Knospen sprangen, Da ist in meinem Herzen Die Liebe aufgegangen.
+ 4: Und wenn du mich lieb hast, Kindchen, Schenk’ ich dir die Blumen all’, Und vor deinem Fenster soll klingen Das Lied der 
+ 5: Und wüßten’s die Blumen, die kleinen, Wie tief verwundet mein Herz, Sie würden mit mir weinen, Zu heilen meinen Schmerz.
+ 6:           Im Rhein, im heiligen Strome, Da spiegelt sich in den Well’n, Mit seinem großen Dome, Das große, heilige Cöln.
+ 7:         Hinein leg’ ich gar manches, Doch sag’ ich noch nicht was; Der Sarg muß seyn noch größer Wie’s Heidelberger Faß.
+ 8:           Die sollen den Sarg forttragen, Und senken in’s Meer hinab; Denn solchem großen Sarge Gebührt ein großes Grab.
+ 9:       Und holt mir auch zwölf Riesen, Die müssen noch stärker seyn Als wie der starke Christoph Im Dom zu Cöln am Rhein.
+10:        Und holt eine Todtenbahre, Von Brettern fest und dick; Auch muß sie seyn noch länger Als wie zu Mainz die Brück’.
+--- PC3: stanzas at the ends --- 
+       end unit_id                          title  score
+    <char>  <char>                         <char>  <num>
+ 1:      -    11.1 Ein Jüngling liebt ein Mädchen -0.661
+ 2:      -    11.2 Ein Jüngling liebt ein Mädchen -0.547
+ 3:      -     3.1 Die Rose, die Lilie, die Taube -0.344
+ 4:      -    11.3 Ein Jüngling liebt ein Mädchen -0.311
+ 5:      -    12.2    Am leuchtenden Sommermorgen -0.217
+ 6:      +    16.2        Die alten, bösen Lieder  0.217
+ 7:      +    15.4              Aus alten Märchen  0.230
+ 8:      +    15.6              Aus alten Märchen  0.276
+ 9:      +     6.1   Im Rhein, im heiligen Strome  0.281
+10:      +    10.2   Hör ich das Liedchen klingen  0.363
+                                                                                                                        text
+                                                                                                                      <char>
+ 1: Ein Jüngling liebt ein Mädchen, Die hat einen Andern erwählt; Der Andre liebt eine Andre, Und hat sich mit dieser vermäh
+ 2:        Das Mädchen heurathet aus Aerger Den ersten besten Mann, Der ihr in den Weg gelaufen; Der Jüngling ist übel dran.
+ 3: Die Rose, die Lilie, die Taube, die Sonne, Die liebt’ ich einst alle in Liebeswonne. Ich lieb’ sie nicht mehr, ich liebe
+ 4:          Es ist eine alte Geschichte, Doch bleibt sie immer neu; Und wem sie just passiret, Dem bricht das Herz entzwei.
+ 5: Es flüstern und sprechen die Blumen, Und schau’n mitleidig mich an: Sey unserer Schwester nicht böse, Du trauriger, blas
+ 6:         Hinein leg’ ich gar manches, Doch sag’ ich noch nicht was; Der Sarg muß seyn noch größer Wie’s Heidelberger Faß.
+ 7:                      Und Nebelbilder steigen Wohl aus der Erd’ hervor, Und tanzen luft’gen Reigen, Im wunderlichen Chor;
+ 8:               Und laute Quellen brechen Aus wildem Marmorstein, Und seltsam in den Bächen Strahlt fort der Wiederschein.
+ 9:           Im Rhein, im heiligen Strome, Da spiegelt sich in den Well’n, Mit seinem großen Dome, Das große, heilige Cöln.
+10:            Es treibt mich ein dunkles Sehnen Hinauf zur Waldeshöh’, Dort lös’t sich auf in Thränen Mein übergroßes Weh’.
+
+Songs by PC3:
+     song                          title                        title_en    PC3
+    <int>                         <char>                          <char>  <num>
+ 1:    11 Ein Jüngling liebt ein Mädchen          A youth loves a maiden -0.639
+ 2:     3 Die Rose, die Lilie, die Taube    The rose, the lily, the dove -0.344
+ 3:    12    Am leuchtenden Sommermorgen      On a bright summer morning -0.120
+ 4:     4    Wenn ich in deine Augen seh      When I look into your eyes -0.102
+ 5:     7               Ich grolle nicht                I bear no grudge -0.027
+ 6:    14         Allnächtlich im Traume            Nightly in my dreams -0.023
+ 7:     2     Aus meinen Tränen sprießen            From my tears spring  0.014
+ 8:     1     Im wunderschönen Monat Mai    In the wondrous month of May  0.019
+ 9:     9  Das ist ein Flöten und Geigen There is a fluting and fiddling  0.034
+10:     8        Und wüßten's die Blumen  And if the little flowers knew  0.050
+11:     5   Ich will meine Seele tauchen              I will dip my soul  0.063
+12:    13      Ich hab im Traum geweinet              I wept in my dream  0.131
+13:     6   Im Rhein, im heiligen Strome    In the Rhine, the holy river  0.150
+14:    16        Die alten, bösen Lieder             The old, evil songs  0.245
+15:    15              Aus alten Märchen            From old fairy tales  0.266
+16:    10   Hör ich das Liedchen klingen     When I hear the little song  0.283
+
+Path length (sum of consecutive cosine distances) vs 20000 random orders:
+              order path_length null_mean null_sd       z p_shorter
+             <char>       <num>     <num>   <num>   <num>     <num>
+1:         composer      6.6026    6.8461  0.3205 -0.7595    0.2245
+2: heine_intermezzo      6.6097    6.8461  0.3205 -0.7375    0.2314
+
+Largest steps:
+    song                           from                             to
+   <int>                         <char>                         <char>
+1:    11 Ein Jüngling liebt ein Mädchen    Am leuchtenden Sommermorgen
+2:    10   Hör ich das Liedchen klingen Ein Jüngling liebt ein Mädchen
+3:    12    Am leuchtenden Sommermorgen      Ich hab im Traum geweinet
+4:     6   Im Rhein, im heiligen Strome               Ich grolle nicht
+5:     5   Ich will meine Seele tauchen   Im Rhein, im heiligen Strome
+   step_dist
+       <num>
+1:     0.637
+2:     0.610
+3:     0.590
+4:     0.535
+5:     0.503

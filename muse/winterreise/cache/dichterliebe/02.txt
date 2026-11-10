@@ -1,0 +1,61 @@
+{{Freie Navigation|Buch der Lieder|Im wunderschönen Monat Mai|Die Rose, die Lilie, die Taube, die Sonne||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Aus meinen Thränen sprießen
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;113
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_113.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_113.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|113||Buch_der_Lieder_113.jpg}}
+{{Center|'''II.'''}}<br />
+<poem>
+{{idt}}Aus meinen Thränen sprießen
+Viel blühende Blumen hervor,
+Und meine Seufzer werden
+Ein Nachtigallenchor.
+
+{{Zeile|5}}{{idt}}Und wenn du mich lieb hast, Kindchen,
+Schenk’ ich dir die Blumen all’,
+Und vor deinem Fenster soll klingen
+Das Lied der Nachtigall.
+</poem>
+|}
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:Mun kyynelistäni puhkee]]
+[[ru:Из слёз моих много родится (Гейне; Фет)]]
+[[ru:Из слёз моих много, малютка (Гейне; Михайлов)]]
+[[ru:Из слёз моих родится много (Гейне; Добролюбов)]]
+[[ru:Из слёз моих выходит много (Гейне; Вейнберг)]]
+[[ru:Из слёз моих пышные розы родятся (Гейне; Бальмонт)]]
+[[ru:Из слёз моих расцветает (Гейне; Зоргенфрей)]]
+
+{{Interwiki-Info|ru1|(Fet)}}
+{{Interwiki-Info|ru2|(Michailow)}}
+{{Interwiki-Info|ru3|(Dobroljubow)}}
+{{Interwiki-Info|ru4|(Weinberg)}}

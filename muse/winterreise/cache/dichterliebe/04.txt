@@ -1,0 +1,55 @@
+{{Freie Navigation|Buch der Lieder|Die Rose, die Lilie, die Taube, die Sonne|Dein Angesicht so lieb und schön||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Wenn ich in deine Augen seh’
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;114
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_114.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_114.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|114||Buch_der_Lieder_114.jpg}}
+{{Center|'''IV.'''}}<br />
+<poem>
+{{idt}}Wenn ich in deine Augen seh’,
+So schwindet all mein Leid und Weh;
+Doch wenn ich küsse deinen Mund,
+So werd’ ich ganz und gar gesund.
+
+{{Zeile|5}}{{idt}}Wenn ich mich lehn’ an deine Brust,
+Kommt’s über mich wie Himmelslust;
+Doch wenn du sprichst: ich liebe dich!
+So muß ich weinen bitterlich.
+</poem>
+|}
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:Kun silmihis ma katselen]]
+[[pl:Gdy się w twe cudne oczy]]
+[[ru:Когда в глаза гляжу порой (Гейне; Яхонтов)]]
+[[ru:Когда гляжу тебе в глаза (Гейне; Михайлов)]]
+[[ru:Когда в глаза твои смотрю я (Гейне; Вейнберг)]]
+[[ru:Лишь на тебя я посмотрю (Гейне; Бальмонт)]]

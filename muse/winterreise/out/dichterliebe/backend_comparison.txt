@@ -1,0 +1,25 @@
+=== dichterliebe: 2 runs: api__voyage-4-large, rtorch__paraphrase-multilingual-MiniLM-L12-v2 === 
+##### api__voyage-4-large  vs  rtorch__paraphrase-multilingual-MiniLM-L12-v2 
+RSA songs  (n = 16):   rho = 0.748 
+RSA stanzas (n = 47):  rho = 0.739 
+PC correspondence (signed cor of song scores; |r| ~ 1 = same axis, off-diagonal = swapped):
+                          PC1   PC2  PC3
+api__voyage-4-large:PC1 -0.44  0.77 0.12
+api__voyage-4-large:PC2  0.68  0.25 0.45
+api__voyage-4-large:PC3 -0.41 -0.33 0.67
+variance explained: 14.1/13/11.9 %  vs  18.4/15.5/11.9 % 
+step-distance profile cor (consecutive songs): 0.802 
+
+Path tests:
+                                             run            order path_length
+                                          <char>           <char>       <num>
+1:                           api__voyage-4-large         composer       4.029
+2:                           api__voyage-4-large heine_intermezzo       4.066
+3: rtorch__paraphrase-multilingual-MiniLM-L12-v2         composer       6.603
+4: rtorch__paraphrase-multilingual-MiniLM-L12-v2 heine_intermezzo       6.610
+       z p_shorter
+   <num>     <num>
+1: -0.79     0.216
+2: -0.53     0.300
+3: -0.76     0.224
+4: -0.74     0.231

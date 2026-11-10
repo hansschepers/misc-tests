@@ -1,0 +1,69 @@
+{{Freie Navigation|Buch der Lieder|Wie die Wellenschaumgeborene|Ja, du bist elend, und ich grolle nicht||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Ich grolle nicht, und wenn das Herz auch bricht
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;125
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_125.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_125.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|125||Buch_der_Lieder_125.jpg}}
+{{Center|'''XVIII.'''}}<br />
+<poem>
+{{idt}}Ich grolle nicht, und wenn das Herz auch bricht,
+Ewig verlor’nes Lieb! ich grolle nicht.
+Wie du auch strahlst in Diamantenpracht,
+Es fällt kein Strahl in deines Herzens Nacht.
+
+{{Zeile|5}}{{idt}}Das weiß ich längst. Ich sah dich ja im Traume,
+Und sah die Nacht in deines Herzens Raume,
+Und sah die Schlang’, die dir am Herzen frißt,
+Ich sah mein Lieb, wie sehr du elend bist.
+</poem>
+|}
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[eo:Elektitaj Poemoj de Heinrich Heine/Ne plendas mi]]
+[[fi:Niin, viha pois, jos sydän sortuiskin!]]
+[[fi:En soimaa...]]
+[[fi:En kaiho, en, jos sortuis sydänkin]]
+[[ru:Я не сержусь, и хоть сердце моё разорвётся, любя (Гейне; Вейнберг)]]
+[[ru:Я не ропщу, — пусть сердце и в огне (Гейне; Фет)]]
+[[ru:Не помню я зла, хоть душа разрывается (Гейне; Греков)]]
+[[ru:Я не ропщу, хоть в сердце стынет кровь (Гейне; Михайлов)]]
+[[ru:Я не сержусь, хотя из сердца льётся кровь (Гейне; Быков)]]
+[[ru:Ich grolle nicht (Гейне; Анненский)]]
+[[uk:Не жаль мені, хай серце розіб'є (Гейне/Леся Українка)]]
+
+{{Interwiki-Info|fi1|(Juva)}}
+{{Interwiki-Info|fi2|(Kouta)}}
+{{Interwiki-Info|fi3|(Uotila)}}
+{{Interwiki-Info|ru1|(Weinberg)}}
+{{Interwiki-Info|ru2|(Fet)}}
+{{Interwiki-Info|ru4|(Mikhailow)}}
+{{Interwiki-Info|ru5|(Bykow)}}
+{{Interwiki-Info|ru6|(Annenskij)}}

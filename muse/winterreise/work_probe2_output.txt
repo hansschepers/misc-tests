@@ -1,0 +1,93 @@
+VOYAGE_API_KEY set: TRUE  length: 46 
+status 200 
+dim 2 1024  cos DE/EN = 0.8085503 
+$total_tokens
+[1] 13
+
+===== de.wikipedia.org / Dichterliebe: 11396 chars ===== 
+'''Dichterliebe''', op. 48, ist ein [[Liederzyklus|Zyklus]] von 16 [[Romantik|romantischen]] [[Kunstlied]]ern von [[Robert Schumann]]. Der Zyklus entstand 1840 zu Gedichten aus [[Heinrich Heine]]s ''Lyrischem Intermezzo'', einer Sammlung von 65 Gedichten, die 1823 in ''Tragödien nebst einem lyrischen Intermezzo'', dann 1827 im ''[[Buch der Lieder (Heine)|Buch der Lieder]]'' erschienen waren. Von den 20 komponierten Liedern wurden 16 schließlich gedruckt, in der ursprünglichen Fassung von 1840 hatte der Zyklus folgenden, längeren Titel: »[[Gedichte von Heinrich Heine – 20 Lieder und Gesänge aus dem Lyrischen Intermezzo im Buch der Lieder]]«.<ref>[https://imslp.org/wiki/20_Lieder_nach_Gedichten_von_Heinrich_Heine%2C_Opp.29%2C_48_(Schumann%2C_Robert) ''Übertragung der Urfassung der Dichterliebe aus dem Autograph bei IMSLP''] Notenedition (2023, Creative Commons Attribution-ShareAlike 4.0 – Lizenz) von Danijel Drilo.</ref>
+
+Schumann ging bei seinen Liederzyklen oft von einer in sich geschlossenen Episode mit einer zugrunde liegenden poetischen Idee aus. Dies schlägt sich hier in dem selbstgewählten Titel ''Dichterliebe'' nieder, wobei er dabei einer eigenen dramatischen Konzeption folgend die Reihenfolge von Heines Gedichten umstellte.
+
+Das Werk wurde im September 1844 bei [[C. F. Peters]] in Leipzig gedruckt und 1861 in Hamburg von [[Julius Stockhausen (Musiker)|Julius Stockhausen]] und [[Johannes Brahms]] erstmals als Ganzes aufgeführt.
+
+== Titel ==
+Heine hatte die Gedichte nicht mit Überschriften versehen, es handelt sich bei den „Liedertiteln“ daher um [[Incipit]]s.
+# [[Im wunderschönen Monat Mai]]
+# Aus meinen Tränen sprießen
+# Die Rose, die Lilie, die Taube, die Sonne
+# Wenn ich in deine Augen seh’
+# Ich will meine Seele tauchen
+# Im Rhein, im heiligen Strome
+# Ich grolle nicht
+# Und wüßten’s die Blumen, die kleinen
+# Das ist ein Flöten und Geigen
+# Hör' ich das Liedchen klingen
+# [[Ein Jüngling liebt ein Mädchen]]
+# Am leuchtenden Sommermorgen
+# Ich hab’ im Traum geweinet
+# Allnächtlich im Traume
+# Aus alten Märchen
+# [[Die alten, bösen Lieder]]
+
+Vier Lieder wurden bei der Drucklegung aussortiert:
+* „Dein Angesicht so lieb und schön“. Bei Heine Nr. 5. Schumann: ''5 Lieder und Gesänge'', op. 127 (1854), Nr. 2
+* „Lehn’ deine Wang’ an meine Wang’“.  Bei Heine Nr. 6. Schumann: ''4 Gesänge'', op. 142 (1852), Nr. 2
+* „Es leuchtet meine Liebe“. Bei Heine Nr. 46. Schumann: ''5 Lieder und Gesänge'', Op. 127 (1854), Nr. 3
+* „Mein Wagen rollet langsam“. Bei Heine  
+===== de.wikisource.org / Dichterliebe: 43 chars ===== 
+ERROR The page you specified doesn't exist. 
+===== de.wikisource.org / Lyrisches Intermezzo: 4610 chars ===== 
+{{Textdaten
+|VORIGER=William Ratcliff
+|NÄCHSTER=Almansor (Heine)
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Lyrisches Intermezzo
+|SUBTITEL=
+|HERKUNFT=[[Tragödien nebst einem lyrischen Intermezzo]], S.&nbsp;69–128
+|HERAUSGEBER=
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1823
+|VERLAG=Dümmler
+|ERSCHEINUNGSORT=Berlin
+|WIKIPEDIA=
+|GND=
+|BILD=
+|QUELLE={{GBS|uMcDAAAAQAAJ}} und [[commons:Category:Tragoedien nebst einem lyrischen Intermezzo|Scans auf Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=
+|BEARBEITUNGSSTAND=fertig
+|BENUTZERHILFE=on
+|INDEXSEITE=Tragödien nebst einem lyrischen Intermezzo
+}}
+
+{{SeitePR|69|Tragoedien nebst einem lyrischen Intermezzo 069.jpg}}
+{{SeitePR|71|Tragoedien nebst einem lyrischen Intermezzo 071.jpg}}
+{{SeitePR|72|Tragoedien nebst einem lyrischen Intermezzo 072.jpg}}
+{{SeitePR|73|Tragoedien nebst einem lyrischen Intermezzo 073.jpg}}
+{{SeitePR|74|Tragoedien nebst einem lyrischen Intermezzo 074.jpg}}
+{{SeitePR|75|Tragoedien nebst einem lyrischen Intermezzo 075.jpg}}
+{{SeitePR|76|Tragoedien nebst einem lyrischen Intermezzo 076.jpg}}
+{{SeitePR|77|Tragoedien nebst einem lyrischen Intermezzo 077.jpg}}
+{{SeitePR|78|Tragoedien nebst einem lyrischen Intermezzo 078.jpg}}
+{{SeitePR|79|Tragoedien nebst einem lyrischen Intermezzo 079.jpg}}
+{{SeitePR|80|Tragoedien nebst einem lyrischen Intermezzo 080.jpg}}
+{{SeitePR|81|Tragoedien nebst einem lyrischen Intermezzo 081.jpg}}
+{{SeitePR|82|Tragoedien nebst einem lyrischen Intermezzo 082.jpg}}
+{{SeitePR|83|Tragoedien nebst einem lyrischen Intermezzo 083.jpg}}
+{{SeitePR|84|Tragoedien nebst einem lyrischen Intermezzo 084.jpg}}
+{{SeitePR|85|Tragoedien nebst einem lyrischen Intermezzo 085.jpg}}
+{{SeitePR|86|Tragoedien nebst einem lyrischen Intermezzo 086.jpg}}
+{{SeitePR|87|Tragoedien nebst einem lyrischen Intermezzo 087.jpg}}
+{{SeitePR|88|Tragoedien nebst einem lyrischen Intermezzo 088.jpg}}
+{{SeitePR|89|Tragoedien nebst einem lyrischen Intermezzo 089.jpg}}
+{{SeitePR|90|Tragoedien nebst einem lyrischen Intermezzo 090.jpg}}
+{{SeitePR|91|Tragoedien nebst einem lyrischen Intermezzo 091.jpg}}
+{{SeitePR|92|Tragoedien nebst einem lyrischen Intermezzo 092.jpg}}
+{{SeitePR|93|Tragoedien nebst einem lyrischen Intermezzo 093.jpg}}
+{{SeitePR|94|Tragoedien nebst einem lyrischen Intermezzo 094.jpg}}
+{{SeitePR|95|Tragoedien nebst einem lyrischen Intermezzo 095.jpg}}
+{{SeitePR|96|Tragoedien nebst einem lyrischen Intermezzo 096.jpg}}
+{{SeitePR|97|Tragoedien nebst einem lyrischen Intermezzo 097.jpg}}
+{{SeitePR|98|Tragoedien nebst einem lyris 

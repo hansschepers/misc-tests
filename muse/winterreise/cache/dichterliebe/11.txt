@@ -1,0 +1,64 @@
+{{Freie Navigation|Buch der Lieder|Manch Bild vergessener Zeiten|Hör’ ich das Liedchen klingen||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Ein Jüngling liebt ein Mädchen
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;144
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_144.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_144.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|144||Buch_der_Lieder_144.jpg}}
+{{Center|'''XL.'''}}<br />
+<poem>
+{{idt}}Ein Jüngling liebt ein Mädchen,
+Die hat einen Andern erwählt;
+Der Andre liebt eine Andre,
+Und hat sich mit dieser vermählt.
+
+{{Zeile|5}}{{idt}}Das Mädchen heurathet aus Aerger
+Den ersten besten Mann,
+Der ihr in den Weg gelaufen;
+Der Jüngling ist übel dran.
+
+{{idt}}Es ist eine alte Geschichte,
+{{Zeile|10}}Doch bleibt sie immer neu;
+Und wem sie just passiret,
+Dem bricht das Herz entzwei.
+</poem>
+|}
+
+{{SORTIERUNG:Jungling liebt ein Madchen #Ein}}
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[be:Дзяцюк шчыра любіць дзяўчыну… (Гейнэ/Багдановіч)]]
+[[fi:Ja poika lempii neittä]]
+[[fi:Loi lempensä poika neitoon]]
+[[ru:Красавицу юноша любит (Гейне; Плещеев)]]
+[[ru:Девушку юноша любит (Гейне; Зоргенфрей)]]
+[[uk:Хлопець кохає дівчину (Гейне/Леся Українка)]]
+
+{{Interwiki-Info|fi1|(Juva)}}
+{{Interwiki-Info|fi2|(Uotila)}}

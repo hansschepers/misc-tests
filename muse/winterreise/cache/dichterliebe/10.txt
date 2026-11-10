@@ -1,0 +1,61 @@
+{{Freie Navigation|Buch der Lieder|Ein Jüngling liebt ein Mädchen|Mir träumte von einem Königskind’||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Hör’ ich das Liedchen klingen
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;145
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_145.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_145.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|145||Buch_der_Lieder_145.jpg}}
+{{Center|'''XLI.'''}}<br/>
+<poem>
+{{idt}}Hör’ ich das Liedchen klingen,
+Das einst die Liebste sang,
+So will mir die Brust zerspringen,
+Vor wildem Schmerzendrang.
+
+{{Zeile|5}}{{idt}}Es treibt mich ein dunkles Sehnen
+Hinauf zur Waldeshöh’,
+Dort lös’t sich auf in Thränen
+Mein übergroßes Weh’.
+</poem>
+|}
+<!--10!-->
+
+{{SORTIERUNG:Hor ich das Liedchen klingen}}
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:Kun laulun soivan kuulen]]
+[[ru:Только до слуха коснётся (Гейне/Михайлов)]]
+[[ru:В толпе опять я слышу песню (Гейне/Майков)]]
+[[ru:Чуть только я песню услышу (Гейне/Вейнберг)]]
+[[ru:Слышу ли песенки звуки (Гейне/Фет)]]
+
+{{Interwiki-Info|ru1|(Михайлов)}}
+{{Interwiki-Info|ru2|(Майков)}}
+{{Interwiki-Info|ru3|(Вейберг)}}
+{{Interwiki-Info|ru4|(Фет)}}

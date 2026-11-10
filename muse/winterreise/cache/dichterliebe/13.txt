@@ -1,0 +1,64 @@
+{{Freie Navigation|Buch der Lieder|Mein Wagen rollet langsam|Allnächtlich im Traume seh’ ich dich||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Ich hab’ im Traum’ geweinet
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;159
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_159.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_159.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|159||Buch_der_Lieder_159.jpg}}
+{{Center|'''LVI.'''}}<br />
+<poem>
+{{idt}}Ich hab’ im Traum’ geweinet,
+Mir träumte du lägest im Grab’.
+Ich wachte auf und die Thräne
+Floß noch von der Wange herab.
+
+{{Zeile|5}}{{idt}}Ich hab’ im Traum’ geweinet,
+Mir träumt’ du verließest mich.
+Ich wachte auf, und ich weinte
+Noch lange bitterlich.
+
+{{idt}}Ich hab’ im Traum’ geweinet,
+{{Zeile|10}}Mir träumte du wärst mir noch gut.
+Ich wachte auf, und noch immer
+Strömt meine Thränenfluth.
+</poem>
+|}
+
+{{SORTIERUNG:Ich hab im Traum geweinet}}
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:Ma unissani itkin]]
+[[ru:Я плакал во сне (Гейне; Кульчицкий)]]
+[[ru:Во сне неутешно я плакал (Гейне; Михайлов)]]
+[[ru:Я плакал во сне. Мне приснилось (Гейне; Фет)]]
+[[ru:Плакал я во сне: мне снилось (Гейне; Вейнберг)]]
+[[uk:Крізь сон колись тяжко я плакав (Гейне/Леся Українка)]]
+{{Interwiki-Info|ru2|(Michailow)}}
+{{Interwiki-Info|ru3|(Fet)}}
+{{Interwiki-Info|ru4|(Weinberg)}}

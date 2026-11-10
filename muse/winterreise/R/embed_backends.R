@@ -3,11 +3,16 @@
 # returns a numeric matrix (length(texts) x d), rows L2-normalised, rownames = texts.
 # Comparison notes live in embedding_backends.md (same folder as the run script).
 
-embed_texts <- function(texts, backend = "rtorch", model = NULL, cache_dir = "cache", ...) {
-  model <- model %||% switch(backend
+default_model <- function(backend) {
+  switch(backend
     , rtorch = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-    , api    = "voyage-3.5"
-    , ollama = "bge-m3")
+    , api    = "voyage-4-large"
+    , ollama = "bge-m3"
+    , stop(glue("unknown backend '{backend}'")))
+}
+
+embed_texts <- function(texts, backend = "rtorch", model = NULL, cache_dir = "cache", ...) {
+  model <- model %||% default_model(backend)
   dir.create(cache_dir, showWarnings = FALSE, recursive = TRUE)
   cache_file <- file.path(cache_dir, glue("emb__{backend}__{gsub('[^A-Za-z0-9._-]', '_', model)}.rds"))
   cache <- if (file.exists(cache_file)) readRDS(cache_file) else NULL
@@ -86,15 +91,19 @@ embed_rtorch <- function(texts, repo, ...) {
 }
 
 # ---- 3. remote API (OpenAI-compatible /embeddings: Voyage, OpenAI, Mistral, ...) -----
+# input_type is Voyage-specific ("document" | "query" | NULL); NULL drops it (OpenAI).
+# Everything here is compared symmetrically (stanza vs stanza, anchor vs stanza), so
+# "document" for all texts.
 embed_api <- function(texts, model, base_url = "https://api.voyageai.com/v1",
-                      key_env = "VOYAGE_API_KEY", batch = 64, ...) {
+                      key_env = "VOYAGE_API_KEY", input_type = "document", batch = 64, ...) {
   key <- Sys.getenv(key_env)
   if (!nzchar(key)) stop(glue("embed_api: set {key_env} (e.g. in ~/.Renviron)"))
   chunks <- split(texts, ceiling(seq_along(texts) / batch))
   do.call(rbind, lapply(chunks, function(ch) {
+    body <- list(model = model, input = as.list(ch), input_type = input_type)
     resp <- request(glue("{base_url}/embeddings")) |>
       req_auth_bearer_token(key) |>
-      req_body_json(list(model = model, input = as.list(ch))) |>
+      req_body_json(body[!vapply(body, is.null, logical(1))]) |>
       req_retry(max_tries = 4) |>
       req_perform()
     d <- resp_body_json(resp, simplifyVector = TRUE)$data

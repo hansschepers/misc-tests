@@ -1,0 +1,62 @@
+{{Freie Navigation|Buch der Lieder|Die Lotosblume ängstigt|Du liebst mich nicht, du liebst mich nicht||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Im Rhein, im heiligen Strome
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;120
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_120.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_120.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|120||Buch_der_Lieder_120.jpg}}
+{{Center|'''XI.'''}}<br />
+<poem>
+{{idt}}Im Rhein, im heiligen Strome,
+Da spiegelt sich in den Well’n,
+Mit seinem großen Dome,
+Das große, heilige Cöln.
+
+{{Zeile|5}}{{idt}}Im Dom da steht ein Bildniß,
+Auf goldenem Leder gemalt;
+In meines Lebens Wildniß
+Hat’s freundlich hineingestrahlt.
+
+{{idt}}Es schweben Blumen und Englein
+{{Zeile|10}}Um unsre liebe Frau;
+Die Augen, die Lippen, die Wänglein,
+Die gleichen der Liebsten genau.
+</poem>
+|}
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:Rein-virtaan värähdellen]]
+[[fi:Rein-virtaan värähdellen –]]
+[[ru:В голубые волны Рейна (Гейне; Кусков)]]
+[[ru:Волны Рейна, реки этой чудной (Гейне; Вейнберг)]]
+[[ru:В потоке быстром, светлом Рейна (Гейне; Быков)]]
+
+{{Interwiki-Info|fi1|(Juva, 1905)}}
+{{Interwiki-Info|fi2|(Juva, 1916)}}

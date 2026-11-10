@@ -1,0 +1,61 @@
+{{Freie Navigation|Buch der Lieder|Aus meinen Thränen sprießen|Wenn ich in deine Augen seh’||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Die Rose, die Lilie, die Taube, die Sonne
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo,&nbsp;S.113
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_113.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_113.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|113||Buch_der_Lieder_113.jpg}}
+{{Center|'''III.'''}}<br />
+<poem>
+{{idt}}Die Rose, die Lilie, die Taube, die Sonne,
+Die liebt’ ich einst alle in Liebeswonne.
+Ich lieb’ sie nicht mehr, ich liebe alleine
+Die Kleine, die Feine, die Reine, die Eine;
+{{Zeile|5}}Sie selber, aller Liebe Bronne,
+Ist Rose und Lilie und Taube und Sonne.
+</poem>
+|}
+<!--8[?]!-->
+
+{{SORTIERUNG:Rose die Lilie die Taube die Sonne #Die}}
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:Kevät, kyyhky ja lilja ja ruusukulta]]
+[[fi:Kuun, auringon, kyyhkysen, ruusun ja liljan]]
+[[pl:Róża i lilja]]
+[[ru:Я любил прежде солнышко, лилии, птичек и розы (Гейне; Кусков)]]
+[[ru:Лилеею, розой, голубкой, денницей (Гейне; Фет)]]
+[[ru:Лилею и розу, голубку и солнца сиянье (Гейне; Вейнберг)]]
+[[ru:Голубка и роза, заря и лилея (Гейне; Зоргенфрей)]]
+[[uk:І рожу, й лілею, і сонце, й голубку (Гейне/Леся Українка)]]
+
+{{Interwiki-Info|fi1|(Juva)}}
+{{Interwiki-Info|fi2|(Uotila)}}
+{{Interwiki-Info|ru1|(Кусков)}}
+{{Interwiki-Info|ru2|(Фет)}}

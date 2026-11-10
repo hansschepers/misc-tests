@@ -1,0 +1,65 @@
+{{Freie Navigation|Buch der Lieder|So hast du ganz und gar vergessen|Warum sind denn die Rosen so blaß||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Und wüßten’s die Blumen, die kleinen
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;128
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_128.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_128.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|128||Buch_der_Lieder_128.jpg}}
+{{Center|'''XXII.'''}}<br />
+<poem>
+{{idt}}Und wüßten’s die Blumen, die kleinen,
+Wie tief verwundet mein Herz,
+Sie würden mit mir weinen,
+Zu heilen meinen Schmerz.
+
+{{Zeile|5}}{{idt}}Und wüßten’s die Nachtigallen,
+Wie ich so traurig und krank,
+Sie ließen fröhlich erschallen
+Erquickenden Gesang.
+
+{{idt}}Und wüßten sie mein Wehe,
+{{Zeile|10}}Die goldnen Sternelein,
+Sie kämen aus ihrer Höhe,
+Und sprächen Trost mir ein.
+
+{{idt}}Die alle können’s nicht wissen,
+Nur Eine kennt meinen Schmerz;
+{{Zeile|15}}Sie hat ja selbst zerrissen,
+Zerrissen mir das Herz.
+</poem>
+|}
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[en:Littell's Living Age/Volume 135/Issue 1741/"Und wüssten's die Blumen, die Kleinen"]]
+[[fi:Ja jos tietäisi kukat pienot]]
+[[pl:Gdyby kwiateczki wiedziały]]
+[[ro:Și de-ar cunoaște...]]
+[[ru:Когда бы цветы то узнали (Гейне/Михайлов)]]
+[[ru:Если б знали малютки цветочки (Гейне/Вейнберг)]]

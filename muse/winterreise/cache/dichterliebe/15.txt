@@ -1,0 +1,80 @@
+{{Freie Navigation|Buch der Lieder|Mein Liebchen, wir saßen beisammen|Ich hab’ dich geliebet und liebe dich noch!||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Aus alten Mährchen winkt es
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;148–149
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_148.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_148.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|148||Buch_der_Lieder_148.jpg}}
+{{Center|'''XLIV.'''}}<br />
+<poem>
+{{idt}}Aus alten Mährchen winkt es
+Hervor mit weißer Hand,
+Da singt es und da klingt es
+Von einem Zauberland’:
+
+{{Zeile|5}}{{idt}}Wo bunte Blumen blühen
+Im goldnen Abendlicht’,
+Und lieblich duftend glühen,
+Mit bräutlichem Gesicht;
+
+{{idt}}Und grüne Bäume singen
+{{Zeile|10}}Uralte Melodein,
+Die Lüfte heimlich klingen,
+Und Vögel schmettern drein.
+
+{{idt}}Und Nebelbilder steigen
+Wohl aus der Erd’ hervor,
+{{Zeile|15}}Und tanzen luft’gen Reigen,
+Im wunderlichen Chor; 
+
+{{idt}}{{Seite|149||Buch_der_Lieder_149.jpg}}Und blaue Funken brennen
+An jedem Blatt und Reis,
+Und rothe Lichter rennen
+{{Zeile|20}}Im irren, wirren Kreis;
+
+{{idt}}Und laute Quellen brechen
+Aus wildem Marmorstein,
+Und seltsam in den Bächen
+Strahlt fort der Wiederschein.
+
+{{Zeile|25}}{{idt}}Ach! könnt’ ich dorthin kommen,
+Und dort mein Herz erfreu’n,
+Und aller Qual entnommen,
+Und frei und selig seyn!
+
+{{idt}}Ach! jenes Land der Wonne,
+{{Zeile|30}}Das seh’ ich oft im Traum,
+Doch kommt die Morgensonne,
+Zerfließt’s wie eitel Schaum.
+</poem>
+|}
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:Taas valkokäsi vilkkuu]]

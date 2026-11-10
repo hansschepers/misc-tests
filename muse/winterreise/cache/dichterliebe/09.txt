@@ -1,0 +1,59 @@
+{{Freie Navigation|Buch der Lieder|Ja, du bist elend, und ich grolle nicht|So hast du ganz und gar vergessen||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Das ist ein Flöten und Geigen
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;127
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_127.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_127.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|127||Buch_der_Lieder_127.jpg}}
+{{Center|'''XX.'''}}<br />
+<poem>
+{{idt}}Das ist ein Flöten und Geigen,
+Trompeten schmettern drein;
+Da tanzt den Hochzeitreigen
+Die Herzallerliebste mein.
+
+{{Zeile|5}}{{idt}}Das ist ein Klingen und Dröhnen
+Von Pauken und Schallmei’n;
+Dazwischen schluchzen und stöhnen
+Die guten Engelein.
+</poem>
+|}
+
+{{SORTIERUNG:ist ein Floten und Geigen #Das}}
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:No ompas luikkuja näitä]]
+[[ru:Свадебной радости полны (Гейне/Михайлов)]]
+[[ru:Слышны звуки флейт и скрипок (Гейне/Вейнберг)]]
+[[ru:Певучая флейта со скрипкой (Гейне/Быков)]]
+[[uk:Сопілки й сурми грають (Гейне/Леся Українка)]]
+
+{{Interwiki-Info|ru1|(Michailow)}}
+{{Interwiki-Info|ru2|(Weinberg)}}
+{{Interwiki-Info|ru3|(Bykow)}}

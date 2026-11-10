@@ -1,22 +1,31 @@
-# Winterreise: embedding backends (long-term notes)
+# Song cycles: embedding backends (long-term notes)
 
 Living file: compare backends for quality, flexibility and scalability. Update the run log
 below after every backend run. The code front door is `embed_texts()` in
-`R/embed_backends.R`. Switch the backend at the top of `run_winterreise.R`
-(`BACKEND`, `MODEL`). Outputs go to `out/<backend>/`, so runs sit side by side.
+`R/embed_backends.R`.
+
+- Run: `Rscript run_winterreise.R <cycle> <backend> [model]`. The cycles are
+  `winterreise` and `dichterliebe` (configs in `R/text_cycles.R`); the backends are
+  `rtorch`, `api` and `ollama`.
+- Outputs: `out/<cycle>/<backend>__<model>/`.
+- Compare: `Rscript compare_backends.R <cycle>` writes
+  `out/<cycle>/backend_comparison.txt`.
+- PC names: `pc_labels.csv`, one row per cycle x backend x model x PC. Fill these in after
+  reading `axis_extremes.csv`.
+- Designed axes: `anchors_<cycle>.csv`.
 
 ## The three routes
 
 | | 1. rtorch (pure R) | 3. remote API | 4. Ollama (local server) |
 |---|---|---|---|
-| Status | **BUILT + run 2026-11-10** | code written, not run (no key yet) | code written, not run (not installed) |
-| Engine | `{torch}` (libtorch 2.8 cpu) + `{tok}` + `{hfhub}` + `{safetensors}` | `httr2` POST `/embeddings` (OpenAI-compatible) | `httr2` POST `localhost:11434/api/embed` |
-| Default model | `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (384-d, 118M) | `voyage-3.5` (key `VOYAGE_API_KEY`) | `bge-m3` (1024-d, 568M, XLM-R) |
+| Status | **BUILT + run 2026-11-10** | **run 2026-11-10 (Voyage)** | code written, not run (not installed) |
+| Engine | `{torch}` (libtorch 2.8 cpu) + `{tok}` + `{hfhub}` + `{safetensors}` | `httr2` POST `/embeddings` (OpenAI-compatible; Voyage `input_type = "document"`) | `httr2` POST `localhost:11434/api/embed` |
+| Default model | `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2` (384-d, 118M) | `voyage-4-large` (1024-d; key `VOYAGE_API_KEY` in env) | `bge-m3` (1024-d, 568M, XLM-R) |
 | Python | none | none | none |
 | Install | ~560 MB libtorch + 471 MB weights (HF cache, `~/.cache/huggingface`) | nothing | Ollama app (system executable) + `ollama pull bge-m3` (~1.2 GB) |
 | Account | none: public, ungated HF model | API key (Voyage / OpenAI / Mistral / Cohere-compat) | none |
 | Data leaves the PC | no | **yes** (fine for public-domain lyrics; NOT for customer text) | no |
-| Speed seen | 82 stanzas in 10 s, CPU, batch 1 | - | - |
+| Speed seen | 82 stanzas in 10 s, CPU, batch 1 | 82 stanzas in 2-21 s (first call slow) | - |
 | Cost | free | cents per corpus | free |
 
 ## What the rtorch port covers, and what it does not
@@ -100,7 +109,69 @@ means a text is never embedded twice per model.
   data reason, not a semantic one. Fix: fall back to sentence or half-stanza units
   when a song has 1 stanza.
 
+### 2026-11-10: Voyage (voyage-4-large) on both cycles; Dichterliebe added
+
+Dichterliebe text: Heine, *Buch der Lieder* (1827), one de.wikisource page per poem
+(Heine's text and spelling, e.g. "Thränen" and "seyn", not Schumann's sung text). The
+"poet's order" is the position in the *Lyrisches Intermezzo* list: Heine numbers 1 2 3 4
+7 11 18 22 20 41 40 46 56 57 44 66. Schumann's order is nearly Heine's (he swaps 8/9 and
+10/11 and moves "Aus alten Märchen" late).
+
+**Cross-backend agreement (`out/<cycle>/backend_comparison.txt`):**
+
+| | Winterreise | Dichterliebe |
+|---|---|---|
+| RSA songs (Spearman of cosine matrices) | 0.61 | 0.75 |
+| RSA stanzas | 0.50 | 0.74 |
+| step-distance profile cor | **0.72** | **0.80** |
+| PC1..3 variance (rtorch / voyage) | 14/10/9 % vs 11/9/7 % | 18/16/12 % vs 14/13/12 % |
+| PC correspondence | **NOT 1:1**. rtorch PC3 ~ -voyage PC2 (r = -0.65) | PC1 and PC2 swapped (0.77 / 0.68); **PC3 = PC3 (0.67)** |
+| UMAP seed stability (rtorch / voyage) | 0.57-0.84 / 0.52-0.89 | 0.77-0.89 / **0.14-0.67** |
+
+**What survives a backend switch (trust it):**
+
+- **The path tests.**
+  - Winterreise, Schubert's order: z = +0.36 / +0.63, NOT smoother than random.
+  - Winterreise, Müller's order: z = -0.98 / -0.92, smoother but not significant.
+  - Dichterliebe: Schumann's order z = -0.76 / -0.79 and Heine's order z = -0.74 / -0.53,
+    both mildly smoother, not significant. Dichterliebe reads more like a continuous
+    story than Winterreise.
+- **The step profile** (r = 0.72 / 0.80):
+  - Winterreise: Nebensonnen -> Leiermann is a top-4 jump in both.
+  - Dichterliebe: the largest jumps sit around "Ein Jüngling liebt ein Mädchen" (10 -> 11
+    -> 12) in both.
+- **Dichterliebe PC3:** the story told in the third person, with irony ("Ein Jüngling
+  liebt ein Mädchen", "Die Rose, die Lilie") against the enchanted garden and fairy tale
+  ("Aus alten Märchen", "Am leuchtenden Sommermorgen"). The same stanzas sit at the ends
+  in both backends.
+- **The illusion-vs-reality axis in Winterreise** exists in both backends, but at
+  different ranks: rtorch PC3 (body/wounds vs dream/illusion) ~ voyage PC2 (illusion and
+  defiance: Nebensonnen, Mut!, Täuschung vs omens: Wirtshaus, Krähe, Wetterfahne). So the
+  CONTENT is robust; "it is PC3" is not.
+
+**What does NOT survive:**
+
+- PC numbering in Winterreise (24 songs, flat spectrum).
+- UMAP layouts, especially Voyage on 16 songs (r down to 0.14). UMAP is decoration here.
+
+**Lesson for the plots:** colouring by "PC3" is backend-dependent. Better: colour by a
+NAMED axis. Use either (a) a designed anchor axis, or (b) the PC from run X that best
+matches a reference axis (Procrustes-align PCs to the rtorch run).
+
+**rtorch vs Voyage at this scale:** Voyage spreads stanzas more evenly (lower variance per
+PC, smaller cosine distances overall: path lengths 6.9 vs 8.9). The MiniLM PCs are
+"peakier", so easier to name but possibly overfitting to wording. Neither is "right"; the
+agreement table is the quality signal.
+
 ## Ideas parked
+
+- Colour the ribbon by a NAMED axis (anchor axis, or PCs aligned to a reference run)
+  instead of raw PC3; see the lesson above.
+- One joint map with Winterreise and Dichterliebe embedded together (same PCA), to show
+  where the two cycles overlap.
+- Heine-number check: Wikipedia says "Es leuchtet meine Liebe" is Heine no. 46; our 1827
+  list gives 47 (1827 has "Im wunderschönen Monat Mai" as no. 1, which the 1823 edition
+  lacks?). The order is unaffected.
 
 - Unit = line or half-stanza (finer path); weight stanzas by `n_lines_sung` (musical
   emphasis).

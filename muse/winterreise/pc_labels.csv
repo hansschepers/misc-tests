@@ -1,0 +1,13 @@
+cycle,backend,model,pc,neg,pos
+winterreise,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC1,tears and ice,figures met
+winterreise,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC2,seen phenomena,talk to the heart
+winterreise,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC3,body: wounds and age,dream and illusion
+winterreise,api,voyage-4-large,PC1,tears and ice,lights and the dark road
+winterreise,api,voyage-4-large,PC2,illusion and defiance,omens: inn-graveyard and crow
+winterreise,api,voyage-4-large,PC3,going astray,standing and watching
+dichterliebe,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC1,flowers and imagery,heartbreak and tears
+dichterliebe,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC2,May love,coffin and cathedral
+dichterliebe,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC3,the story told (irony),enchanted longing
+dichterliebe,api,voyage-4-large,PC1,private grief in dreams,loud spectacle: wedding and coffin
+dichterliebe,api,voyage-4-large,PC2,May and flowers,weeping and the grave
+dichterliebe,api,voyage-4-large,PC3,the story told (irony),enchanted garden and fairy tale

@@ -1,0 +1,74 @@
+{{Freie Navigation|Buch der Lieder|Nacht lag auf meinen Augen|Friedrike Varnhagen von Ense (Buch_der_Lieder_1827)||Buch der Lieder (1827)||Friedrike Varnhagen von Ense}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Die alten, bösen Lieder
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;170–171
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_170.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_170.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Hiermit endet „Lyrisches Intermezzo“. Es folgt „Die Heimkehr“.
+|WIKIPEDIA=Die alten, bösen Lieder
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|170||Buch_der_Lieder_170.jpg}}
+{{Center|'''LXVI.'''}}<br />
+<poem>
+{{idt}}Die alten, bösen Lieder,
+Die Träume schlimm und arg,
+Die laßt uns jetzt begraben,
+Holt einen großen Sarg.
+
+{{Zeile|5}}{{idt}}Hinein leg’ ich gar manches,
+Doch sag’ ich noch nicht was;
+Der Sarg muß seyn noch größer
+Wie’s Heidelberger Faß.
+
+{{idt}}Und holt eine Todtenbahre,
+{{Zeile|10}}Von Brettern fest und dick;
+Auch muß sie seyn noch länger
+Als wie zu Mainz die Brück’.
+
+{{idt}}Und holt mir auch zwölf Riesen,
+Die müssen noch stärker seyn
+{{Zeile|15}}Als wie der starke Christoph
+Im Dom zu Cöln am Rhein.
+
+{{idt}}{{Seite|171||Buch_der_Lieder_171.jpg}}Die sollen den Sarg forttragen,
+Und senken in’s Meer hinab;
+Denn solchem großen Sarge
+{{Zeile|20}}Gebührt ein großes Grab.
+
+{{idt}}Wißt Ihr warum der Sarg wohl
+So groß und schwer mag seyn?
+Ich legt’ auch meine Liebe
+Und meinen Schmerz hinein.
+</poem>
+|}
+
+{{SORTIERUNG:alten bosen Lieder #Die}}
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[fi:Nuo vanhat, pahat laulut]]
+[[ru:Для старых, мрачных песен (Гейне; Зоргенфрей)]]
+[[ru:Песни старые и злые (Гейне; Кусков)]]
+[[uk:Всі давні та прикрії співи (Гейне/Леся Українка)]]

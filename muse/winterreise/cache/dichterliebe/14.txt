@@ -1,0 +1,61 @@
+{{Freie Navigation|Buch der Lieder|Ich hab’ im Traum’ geweinet|Das ist ein Brausen und Heulen||Buch der Lieder (1827)}}
+{{Textdaten
+|AUTOR=[[Heinrich Heine]]
+|TITEL=Allnächtlich im Traume seh’ ich dich
+|SUBTITEL=
+|HERKUNFT=[[Buch der Lieder]], Lyrisches Intermezzo, S.&nbsp;160
+|HERAUSGEBER=
+|AUFLAGE=1
+|ENTSTEHUNGSJAHR=1822–1823
+|ERSCHEINUNGSJAHR=1827
+|VERLAG=Hoffmann und Campe
+|ERSCHEINUNGSORT=Hamburg
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=Buch_der_Lieder_160.jpg
+|QUELLE=[[:Image:Buch_der_Lieder_160.jpg|Scans der Ausgabe 1827 auf den Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES= 
+|WIKIPEDIA=
+|BEARBEITUNGSSTAND=fertig
+}}
+{|
+|
+{{Seite|160||Buch_der_Lieder_160.jpg}}
+{{Center|'''LVII.'''}}<br />
+<poem>
+{{idt}}Allnächtlich im Traume seh’ ich dich,
+Und sehe dich freundlich grüßen,
+Und lautaufweinend stürz’ ich mich
+Zu deinen süßen Füßen.
+
+{{Zeile|5}}{{idt}}Du siehst mich an wehmüthiglich,
+Und schüttelst das blonde Köpfchen;
+Aus deinen Augen schleichen sich
+Die Perlenthränentröpfchen.
+
+{{idt}}Du sagst mir heimlich ein leises Wort,
+{{Zeile|10}}Und giebst mir den Strauß von Zypressen.
+Ich wache auf, und der Strauß ist fort,
+Und’s Wort hab’ ich vergessen.
+</poem>
+|}
+
+[[Kategorie:Werke]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Deutschland]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Heinrich Heine]]
+[[Kategorie:Buch der Lieder (1827)]]
+
+[[eo:Elektitaj Poemoj de Heinrich Heine/En nokta sonĝo]]
+[[ru:Во сне я ночь каждую вижу (Гейне/Вейнберг)]]
+[[ru:Я каждую ночь тебя вижу во сне (Гейне/Апухтин)]]
+[[uk:Щоночі у сні бачу, мила, тебе (Гейне/Леся Українка)]]
+
+{{Interwiki-Info|ru1|(Вейнберг)}}
+{{Interwiki-Info|ru2|(Апухтин)}}
