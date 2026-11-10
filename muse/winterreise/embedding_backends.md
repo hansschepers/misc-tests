@@ -4,15 +4,32 @@ Living file: compare backends for quality, flexibility and scalability. Update t
 below after every backend run. The code front door is `embed_texts()` in
 `R/embed_backends.R`.
 
-- Run: `Rscript run_winterreise.R <cycle> <backend> [model]`. The cycles are
-  `winterreise` and `dichterliebe` (configs in `R/text_cycles.R`); the backends are
-  `rtorch`, `api` and `ollama`.
-- Outputs: `out/<cycle>/<backend>__<model>/`.
-- Compare: `Rscript compare_backends.R <cycle>` writes
+Layout (all paths relative to the project root; workers `setwd()` to `SONGCYCLES_ROOT`,
+which defaults to this folder):
+
+| folder | holds |
+|---|---|
+| `workers/` | runnable scripts: `run_cycle.R`, `run_joint.R`, `compare_backends.R` |
+| `R/` | functions only (sourced by the workers): texts, embedding backends, trajectory/plots |
+| `config/` | hand-edited inputs: `pc_labels.csv`, `anchors/<cycle>.csv` |
+| `cache/texts/<cycle>/` | fetched wikitext (fetched once; a fetch prints "fetching wikisource") |
+| `cache/embeddings/` | `emb__<backend>__<model>.rds` (each text embedded once per model) |
+| `cache/probes/` | one-off probe downloads |
+| `out/` | `<cycle>/<backend>__<model>/`, `joint/<backend>__<model>/`, `_archive/` |
+| `tests/` | development probes `work_*.R` + their `_output.txt` (history, not operational) |
+
+- Run one cycle: `Rscript workers/run_cycle.R <cycle> <backend> [model]`. The cycles are
+  `winterreise`, `dichterliebe` and `muellerin` (configs in `R/text_cycles.R`); the
+  backends are `rtorch`, `api` and `ollama`.
+- Compare backends: `Rscript workers/compare_backends.R <cycle>` writes
   `out/<cycle>/backend_comparison.txt`.
-- PC names: `pc_labels.csv`, one row per cycle x backend x model x PC. Fill these in after
-  reading `axis_extremes.csv`.
-- Designed axes: `anchors_<cycle>.csv`.
+- Joint map: `Rscript workers/run_joint.R <backend>` (needs every cycle run first).
+- PC names: `config/pc_labels.csv`, one row per cycle x backend x model x PC (cycle =
+  `joint_raw`/`joint_centred` for the joint map). Fill these in after reading
+  `axis_extremes.csv`.
+- Designed axes: `config/anchors/<cycle>.csv`.
+- New cycle: add a loader + a `cycle_config()` entry in `R/text_cycles.R`, and an
+  `config/anchors/<cycle>.csv`.
 
 ## The three routes
 
@@ -36,7 +53,7 @@ below after every backend run. The code front door is `embed_texts()` in
   The loader asserts both conditions.
 - Batch size 1, so no padding and no attention mask. Truncation is at `max_seq_length`
   (128) from `sentence_bert_config.json`.
-- **Verified:** semantic sanity check (`work_step1.R`). DE/EN paraphrase cos = 0.97,
+- **Verified:** semantic sanity check (`tests/work_step1.R`). DE/EN paraphrase cos = 0.97,
   DE paraphrase = 0.71, unrelated pairs about 0.1.
 - **NOT verified:** element-wise parity with Python sentence-transformers. A future check:
   compare against the HF Inference API output for the same model (needs a free HF token),
@@ -67,7 +84,7 @@ Quality is not "which map looks nicest". Use these measures:
 5. **Practical:** seconds per 100 stanzas, install size, privacy, cost.
 
 Scalability: rtorch batch-1 CPU is fine to about 10^4 short texts. For more, batch with a
-mask, or use Ollama/API. The incremental RDS cache (`cache/emb__<backend>__<model>.rds`)
+mask, or use Ollama/API. The incremental RDS cache (`cache/embeddings/emb__<backend>__<model>.rds`)
 means a text is never embedded twice per model.
 
 ## Run log
@@ -182,7 +199,13 @@ is now throttled to 1 request/s and retries; it fetches only once (cached).
 | Dichterliebe | -0.76 | -0.79 | mildly continuous |
 | Winterreise | +0.36 | +0.63 | ordered by contrast, not drift |
 
-**Joint space (`run_joint.R <backend>`, outputs in `out/joint/<run>/`):**
+**Backend agreement on Müllerin is LOW:** RSA songs 0.37, stanzas 0.34 (vs 0.61-0.75 for
+the other two cycles). PC1 and PC2 are swapped (0.76 / 0.72); PC3 = PC3 only at 0.48. Yet
+the step profile agrees (0.73) and both path tests are significant. So "how smooth is the
+order" is robust, while "which songs resemble which" is model-dependent for this cycle.
+Müllerin is the cycle where a third backend would be most informative.
+
+**Joint space (`workers/run_joint.R <backend>`, outputs in `out/joint/<run>/`):**
 
 - The embeddings do not change when the cycles are embedded together; each text is
   encoded on its own. Only the PROJECTION is joint.
@@ -205,6 +228,15 @@ is now throttled to 1 request/s and retries; it fetches only once (cached).
   towards a figure or an object, away from the self.
 
 ## Ideas parked
+
+- Organisers to add when this grows:
+  - Once there are more than about 4 cycles: a `config/cycles.csv` registry (cycle, label,
+    poet, composer, year, source page, n_songs) driving `cycle_config()`, plus one file
+    per cycle loader in `R/cycles/`.
+  - `workers/run_all.R`: every cycle x backend, then joint + compare, after any change to
+    `R/`.
+  - Rename the folder to `song_cycles/`: only `SONGCYCLES_ROOT` (the default in 3
+    workers) changes.
 
 - Colour the ribbon by a NAMED axis (anchor axis, or PCs aligned to a reference run)
   instead of raw PC3; see the lesson above.

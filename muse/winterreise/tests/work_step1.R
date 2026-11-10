@@ -1,5 +1,5 @@
 setwd("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise")
-sink("work_step1_output.txt")
+sink("tests/work_step1_output.txt")
 suppressPackageStartupMessages({
   library(data.table); library(glue); library(httr2); library(jsonlite)
   library(torch); library(tok); library(hfhub); library(safetensors)

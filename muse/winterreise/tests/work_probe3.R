@@ -1,5 +1,5 @@
 setwd("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise")
-sink("work_probe3_output.txt")
+sink("tests/work_probe3_output.txt")
 suppressPackageStartupMessages({ library(httr2); library(jsonlite); library(glue) })
 r <- request("https://de.wikisource.org/w/api.php") |>
   req_url_query(action = "parse", page = "Lyrisches Intermezzo", prop = "text", format = "json") |>

@@ -1,4 +1,4 @@
-sink("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise/work_model_probe_output.txt")
+sink("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise/tests/work_model_probe_output.txt")
 library(torch)
 print(torch_is_installed())
 print(torch_randn(2, 2))

@@ -1,4 +1,4 @@
-sink("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise/work_env_probe_output.txt")
+sink("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise/tests/work_env_probe_output.txt")
 pk <- c("httr2", "jsonlite", "stringr", "data.table", "uwot", "ggplot2", "ggrepel",
         "viridisLite", "reticulate", "text", "fastTextR", "word2vec", "irlba", "ggforce")
 print(sapply(pk, requireNamespace, quietly = TRUE))

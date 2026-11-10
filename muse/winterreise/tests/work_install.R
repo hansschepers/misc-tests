@@ -1,4 +1,4 @@
-sink("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise/work_install_output.txt", split = TRUE)
+sink("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise/tests/work_install_output.txt", split = TRUE)
 options(repos = c(CRAN = "https://cloud.r-project.org"))
 pk <- c("torch", "tok", "hfhub", "safetensors", "uwot")
 need <- pk[!sapply(pk, requireNamespace, quietly = TRUE)]

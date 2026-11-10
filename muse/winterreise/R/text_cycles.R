@@ -7,6 +7,7 @@ wiki_wikitext <- function(page, cache_file, host = "de.wikisource.org") {
   if (file.exists(cache_file)) {
     return(paste(readLines(cache_file, encoding = "UTF-8", warn = FALSE), collapse = "\n"))
   }
+  cat(glue("fetching wikisource: {page} -> {cache_file}"), "\n")
   b <- request(glue("https://{host}/w/api.php")) |>
     req_url_query(action = "parse", page = page, prop = "wikitext", format = "json", redirects = 1) |>
     req_user_agent("song-cycle-semantic-path/0.1 (R httr2)") |>
@@ -74,7 +75,7 @@ lines_to_stanzas <- function(lines_dt) {
 
 # ---- Winterreise: Schubert/Friedlaender edition, one page, 24 '== n. Title ==' sections --
 load_winterreise <- function(cache_dir) {
-  wt <- wiki_wikitext("Winterreise_(Schubert/Friedlaender)", file.path(cache_dir, "wikitext_raw.txt"))
+  wt <- wiki_wikitext("Winterreise_(Schubert/Friedlaender)", file.path(cache_dir, "winterreise", "wikitext.txt"))
   head_re <- "(?m)^== *([0-9]+)\\. *(.+?) *== *$"
   heads <- regmatches(wt, gregexpr(head_re, wt, perl = TRUE))[[1]]
   bodies <- strsplit(wt, head_re, perl = TRUE)[[1]][-1]
@@ -118,7 +119,7 @@ load_dichterliebe <- function(cache_dir) {
     data.table(song = i, title = S$title[i], tempo = pl$tempo, pl$lines)
   }))
   # Heine's own order: position in the Lyrisches Intermezzo list of 'Buch der Lieder'
-  bdl <- wiki_wikitext("Buch der Lieder", file.path(cache_dir, "buch_der_lieder.txt"))
+  bdl <- wiki_wikitext("Buch der Lieder", file.path(cache_dir, "dichterliebe", "buch_der_lieder.txt"))
   sec <- sub("(?s).*== *Lyrisches Intermezzo[^\n]*\n(.*?)\n== .*", "\\1", bdl, perl = TRUE)
   li <- regmatches(sec, gregexpr("(?m)^#\\[\\[([^]|]+)", sec, perl = TRUE))[[1]]
   li <- sub("^#\\[\\[", "", li)

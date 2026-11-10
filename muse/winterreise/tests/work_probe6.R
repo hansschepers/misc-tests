@@ -1,5 +1,5 @@
 setwd("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise")
-sink("work_probe6_output.txt")
+sink("tests/work_probe6_output.txt")
 suppressPackageStartupMessages({ library(httr2); library(jsonlite); library(glue) })
 api <- function(host, ...) {
   request(glue("https://{host}/w/api.php")) |> req_url_query(..., format = "json") |>

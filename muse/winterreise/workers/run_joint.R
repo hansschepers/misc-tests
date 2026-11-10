@@ -9,10 +9,10 @@
 #   R2_cycle       = share of total song variance explained by the cycle means
 #   nn_same_cycle  = share of songs whose nearest neighbour (cosine) is in the same cycle
 #   eta2 per PC    = share of that PC's variance explained by the cycle label
-# Usage: Rscript run_joint.R [backend] [model]   (each cycle must have been run first)
+# Usage: Rscript workers/run_joint.R [backend] [model]   (each cycle must have been run first)
 # Outputs: out/joint/<backend>__<model>/
 # ============================================================
-setwd("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise")
+setwd(Sys.getenv("SONGCYCLES_ROOT", "C:/Users/Lenovo/Documents/misc-tests/muse/winterreise"))
 args <- commandArgs(trailingOnly = TRUE)
 BACKEND <- if (length(args) >= 1) args[1] else "rtorch"
 suppressPackageStartupMessages({ library(data.table); library(glue); library(ggplot2); library(ggrepel) })
@@ -66,7 +66,7 @@ project <- function(mode) {
        eta2 = apply(Vc %*% rot, 2, eta2, g = songs$cycle))
 }
 
-pcl <- fread("pc_labels.csv")
+pcl <- fread("config/pc_labels.csv")
 for (mode in c("raw", "centred")) {
   P <- project(mode)
   cat(glue("\n######## {mode}: variance PC1..5 = {paste(round(100 * P$var, 1), collapse = ' / ')} %"), "\n")

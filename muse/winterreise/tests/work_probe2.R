@@ -1,5 +1,5 @@
 setwd("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise")
-sink("work_probe2_output.txt")
+sink("tests/work_probe2_output.txt")
 suppressPackageStartupMessages({ library(httr2); library(jsonlite); library(glue) })
 key <- Sys.getenv("VOYAGE_API_KEY")
 cat("VOYAGE_API_KEY set:", nzchar(key), " length:", nchar(key), "\n")

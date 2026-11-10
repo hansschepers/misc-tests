@@ -6,14 +6,15 @@
 # Three maps of the same vectors:
 #   A. PCA      PC1 x PC2, ribbon colour = PC3          (derived, linear, honest)
 #   B. UMAP     2-D neighbourhood map, colour = PC3     (derived, nonlinear, seed-checked)
-#   C. Designed anchor axes (anchors_<cycle>.csv), colour = PC3  (the reader's mental model)
+#   C. Designed anchor axes (config/anchors/<cycle>.csv), colour = PC3  (the reader's mental model)
 # Ribbon width = within-song semantic dispersion.
-# PC names: pc_labels.csv (fill in after reading axis_extremes.csv).
+# PC names: config/pc_labels.csv (fill in after reading axis_extremes.csv).
 # Backends: embedding_backends.md. Outputs: out/<cycle>/<backend>__<model>/
-# Usage: Rscript run_winterreise.R [cycle] [backend] [model]
+# Usage: Rscript workers/run_cycle.R [cycle] [backend] [model]
+# All paths below are relative to the project root (SONGCYCLES_ROOT).
 # ============================================================
 
-setwd("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise")
+setwd(Sys.getenv("SONGCYCLES_ROOT", "C:/Users/Lenovo/Documents/misc-tests/muse/winterreise"))
 args <- commandArgs(trailingOnly = TRUE)
 CYCLE <- if (length(args) >= 1) args[1] else "winterreise"   # "winterreise" | "dichterliebe"
 BACKEND <- if (length(args) >= 2) args[2] else "rtorch"      # "rtorch" | "api" | "ollama"
@@ -35,7 +36,7 @@ sink(file.path(out_dir, "run_output.txt"), split = TRUE)
 cat(glue("=== {cfg$label} | {BACKEND}: {MODEL} ==="), "\n")
 
 # 1. text ---------------------------------------------------------------
-TXT <- cfg$load("cache")
+TXT <- cfg$load("cache/texts")
 stanzas <- lines_to_stanzas(TXT$lines)
 titles <- stanzas[, .(title = title[1], tempo = tempo[1], n_stanza = .N), by = song]
 titles[, title_en := cfg$title_en]
@@ -44,7 +45,7 @@ cat(glue("{nrow(stanzas)} stanza units over {n_song} songs"), "\n")
 print(titles[, .(song, title, title_en, tempo, n_stanza)])
 
 # 2. embeddings ---------------------------------------------------------
-embed_fn <- function(x) embed_texts(x, backend = BACKEND, model = MODEL, cache_dir = "cache")
+embed_fn <- function(x) embed_texts(x, backend = BACKEND, model = MODEL, cache_dir = "cache/embeddings")
 E <- embed_fn(stanzas$text)
 SV <- build_song_vectors(stanzas, E)
 V <- SV$V
@@ -52,7 +53,7 @@ V <- SV$V
 # 3. layouts ------------------------------------------------------------
 pc <- layout_pca(V, E)
 um <- layout_umap(V, E)
-anchors <- fread(glue("anchors_{CYCLE}.csv"), encoding = "UTF-8")
+anchors <- fread(file.path("config", "anchors", glue("{CYCLE}.csv")), encoding = "UTF-8")
 an <- layout_anchors(V, E, anchors, embed_fn)
 cat("\nPCA variance explained (PC1..3):", round(pc$var_explained, 3), "\n")
 cat("UMAP seed stability (cor of 2-D distances, 5 seeds):", round(range(um$stability), 2), "\n")
@@ -89,7 +90,7 @@ saveRDS(list(cycle = CYCLE, backend = BACKEND, model = MODEL, stanzas = stanzas,
              songs = songs, pc = pc, path_test = tst), file.path(out_dir, "vectors.rds"))
 
 # 6. plots --------------------------------------------------------------
-pcl <- fread("pc_labels.csv")[cycle == CYCLE & backend == BACKEND & model == MODEL]
+pcl <- fread("config/pc_labels.csv")[cycle == CYCLE & backend == BACKEND & model == MODEL]
 pc_name <- function(p, sep = " / ") {
   r <- pcl[pc == p]
   if (nrow(r) == 0) return(glue("{p} (unnamed: see axis_extremes.csv)"))
@@ -114,7 +115,7 @@ mk("umap1", "umap2", um$stanza, "UMAP 1", "UMAP 2",
 mk("anchor1", "anchor2", an$stanza,
    glue("{an$axes[1]}  (- {pole(an$axes[1], '-')} / + {pole(an$axes[1], '+')})"),
    glue("{an$axes[2]}  (- {pole(an$axes[2], '-')} / + {pole(an$axes[2], '+')})"),
-   glue("C. Designed axes (anchors_{CYCLE}.csv): the reader's own coordinates"), "C_designed_path.png")
+   glue("C. Designed axes (config/anchors/{CYCLE}.csv): the reader's own coordinates"), "C_designed_path.png")
 
 long <- melt(songs[, .(song, PC3, step_dist, dispersion)], id.vars = "song")
 p_diag <- ggplot(long[!is.na(value)], aes(song, value)) +

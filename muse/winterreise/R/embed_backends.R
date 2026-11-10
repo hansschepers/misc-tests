@@ -11,7 +11,7 @@ default_model <- function(backend) {
     , stop(glue("unknown backend '{backend}'")))
 }
 
-embed_texts <- function(texts, backend = "rtorch", model = NULL, cache_dir = "cache", ...) {
+embed_texts <- function(texts, backend = "rtorch", model = NULL, cache_dir = "cache/embeddings", ...) {
   model <- model %||% default_model(backend)
   dir.create(cache_dir, showWarnings = FALSE, recursive = TRUE)
   cache_file <- file.path(cache_dir, glue("emb__{backend}__{gsub('[^A-Za-z0-9._-]', '_', model)}.rds"))

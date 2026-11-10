@@ -1,0 +1,21 @@
+=== muellerin: 2 runs: api__voyage-4-large, rtorch__paraphrase-multilingual-MiniLM-L12-v2 === 
+##### api__voyage-4-large  vs  rtorch__paraphrase-multilingual-MiniLM-L12-v2 
+RSA songs  (n = 20):   rho = 0.372 
+RSA stanzas (n = 84):  rho = 0.343 
+PC correspondence (signed cor of song scores; |r| ~ 1 = same axis, off-diagonal = swapped):
+                         PC1  PC2   PC3
+api__voyage-4-large:PC1 0.11 0.76 -0.12
+api__voyage-4-large:PC2 0.72 0.11 -0.09
+api__voyage-4-large:PC3 0.08 0.03  0.48
+variance explained: 16.1/12.9/9.1 %  vs  17/12.4/10.1 % 
+step-distance profile cor (consecutive songs): 0.734 
+
+Path tests:
+                                             run    order path_length     z
+                                          <char>   <char>       <num> <num>
+1:                           api__voyage-4-large composer       4.574 -3.66
+2: rtorch__paraphrase-multilingual-MiniLM-L12-v2 composer       5.515 -2.65
+   p_shorter
+       <num>
+1:     0.000
+2:     0.007

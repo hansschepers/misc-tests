@@ -1,6 +1,6 @@
 # Compare embedding backends for one cycle: reads out/<cycle>/*/vectors.rds
-# Usage: Rscript compare_backends.R [cycle]
-setwd("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise")
+# Usage: Rscript workers/compare_backends.R [cycle]
+setwd(Sys.getenv("SONGCYCLES_ROOT", "C:/Users/Lenovo/Documents/misc-tests/muse/winterreise"))
 args <- commandArgs(trailingOnly = TRUE)
 CYCLE <- if (length(args) >= 1) args[1] else "winterreise"
 suppressPackageStartupMessages({ library(data.table); library(glue) })
