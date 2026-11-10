@@ -1,0 +1,73 @@
+{{Textdaten
+|VORIGER=Wanderschaft
+|NÄCHSTER=Halt!
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Wohin?
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 5-6
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=Berlin
+|VERLAG=B. Behrs
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+
+{{Idt}}{{Idt}}{{Seite|5||DE_M%C3%BCller_Gedicht_1906_005.png}} '''Wohin?'''
+
+Ich hört’ ein Bächlein rauschen
+Wohl aus dem Felsenquell,
+Hinab zum Thale rauschen
+So frisch und wunderhell.
+
+{{Zeile|5}}{{Idt}}Ich weiß nicht, wie mir wurde,
+Nicht, wer den Rath mir gab,
+Ich mußte gleich<ref>bei Schubert: „auch“</ref> hinunter
+Mit meinem Wanderstab.
+
+{{Idt}}Hinunter und immer weiter,
+{{Zeile|10}}Und immer dem Bache nach,
+Und immer frischer<ref>ursprüngliche Textfassung: „heller“. Müller änderte in einem späteren Druck „heller“ in „frischer“, Schubert folgt in seiner Vertonung der älteren Textfassung. Siehe: Dietich Fischer Dieskau, Elmar Budde (Hrsg.): ''Franz Schubert. Lieder. Neue Ausgabe Band I.'' Edition Peters 31106c, Frankfurt am Main 1985, S. 8 </ref> rauschte,
+Und immer heller der Bach.
+
+{{Idt}}Ist das denn meine Straße?
+O Bächlein, sprich, wohin?
+{{Zeile|15}}Du hast mit deinem Rauschen
+Mir ganz berauscht den Sinn.
+
+{{Idt}}{{Seite|6||DE_M%C3%BCller_Gedicht_1906_006.png}} Was sag’ ich denn von <ref>bei Schubert: „vom“</ref> Rauschen?
+Das kann kein Rauschen sein:
+Es singen wohl die Nixen
+{{Zeile|20}}Dort<ref>bei Schubert: „Tief“</ref> unten ihren Reihn.
+
+{{Idt}}Laß singen, Gesell, laß rauschen,
+Und wandre fröhlich nach!
+Es gehn ja Mühlenräder
+In jedem klaren Bach. 
+</poem>
+
+
+{{Linie}}
+
+
+== Anmerkungen ==
+<references/>
+
+[[Kategorie:Deutschland]]
+[[Kategorie:19. Jahrhundert]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

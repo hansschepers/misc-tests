@@ -1,0 +1,162 @@
+=== joint | api: voyage-4-large | 60 songs, 213 stanzas === 
+R2_cycle (variance explained by the cycle means): 0.116 
+nn_same_cycle: 0.717  (chance 0.331) 
+cosine between cycle means:
+             muellerin winterreise dichterliebe
+muellerin        1.000       0.923        0.951
+winterreise      0.923       1.000        0.911
+dichterliebe     0.951       0.911        1.000
+######## raw: variance PC1..5 = 10.5 / 7.2 / 5.2 / 4.6 / 4.4 % 
+eta2 (share of the PC explained by cycle): 0.68 / 0.27 / 0.06 / 0.13 / 0.08 
+--- raw PC1: stanza ends --- 
+       end        cycle                          title  score
+    <char>       <char>                         <char>  <num>
+ 1:      -  winterreise                Der greise Kopf -0.412
+ 2:      -  winterreise                  Das Wirtshaus -0.374
+ 3:      -  winterreise                  Das Wirtshaus -0.355
+ 4:      -  winterreise                  Das Wirtshaus -0.339
+ 5:      -  winterreise                 Der Lindenbaum -0.331
+ 6:      + dichterliebe     Im wunderschönen Monat Mai  0.239
+ 7:      + dichterliebe   Ich will meine Seele tauchen  0.251
+ 8:      + dichterliebe   Im Rhein, im heiligen Strome  0.267
+ 9:      +    muellerin             Des Müllers Blumen  0.280
+10:      + dichterliebe Die Rose, die Lilie, die Taube  0.284
+                                                                                               text
+                                                                                             <char>
+ 1: Vom Abendrot zum Morgenlicht ward mancher Kopf zum Greise. Wer glaubt’s? und meiner ward es nic
+ 2: Auf einen Totenacker hat mich mein Weg gebracht. Allhier will ich einkehren, hab ich bei mir ge
+ 3: O unbarmherzge Schenke, doch weisest du mich ab? Nun weiter denn, nur weiter, mein treuer Wande
+ 4: Sind denn in diesem Hause die Kammern all besetzt? bin matt zum Niedersinken bin tödlich schwer
+ 5: Die kalten Winde bliesen mir grad ins Angesicht, der Hut flog mir vom Kopfe, ich wendete mich n
+ 6: Im wunderschönen Monat Mai, Als alle Knospen sprangen, Da ist in meinem Herzen Die Liebe aufgeg
+ 7: Ich will meine Seele tauchen In den Kelch der Lilie hinein; Die Lilie soll klingend hauchen Ein
+ 8: Es schweben Blumen und Englein Um unsre liebe Frau; Die Augen, die Lippen, die Wänglein, Die gl
+ 9: Am Bach viel kleine Blumen stehn, Aus hellen blauen Augen sehn; Der Bach der ist des Müllers Fr
+10: Die Rose, die Lilie, die Taube, die Sonne, Die liebt’ ich einst alle in Liebeswonne. Ich lieb’ 
+--- raw PC2: stanza ends --- 
+       end        cycle                     title  score
+    <char>       <char>                    <char>  <num>
+ 1:      -  winterreise                Wasserflut -0.263
+ 2:      -    muellerin   Der Müller und der Bach -0.256
+ 3:      - dichterliebe Ich hab im Traum geweinet -0.238
+ 4:      -  winterreise          Gefrorene Tränen -0.231
+ 5:      - dichterliebe   Und wüßten's die Blumen -0.230
+ 6:      +    muellerin     Des Baches Wiegenlied  0.312
+ 7:      +    muellerin                     Mein!  0.393
+ 8:      +    muellerin                 Der Jäger  0.457
+ 9:      +    muellerin                 Der Jäger  0.473
+10:      +    muellerin      Eifersucht und Stolz  0.488
+                                                                                               text
+                                                                                             <char>
+ 1: Manche Trän aus meinen Augen ist gefallen in den Schnee: seine kalten Flocken saugen durstig ei
+ 2:     Und wenn sich die Liebe Dem Schmerz entringt, Ein Sternlein, ein neues, Am Himmel erblinkt.
+ 3: Ich hab’ im Traum’ geweinet, Mir träumte du wärst mir noch gut. Ich wachte auf, und noch immer 
+ 4:   Gefrorne Tropfen fallen von meinen Wangen ab: ob es mir denn entgangen, daß ich geweinet hab?
+ 5: Die alle können’s nicht wissen, Nur Eine kennt meinen Schmerz; Sie hat ja selbst zerrissen, Zer
+ 6: Hinweg, hinweg Von dem Mühlensteg, Böses Mägdlein, daß ihn dein Schatten nicht weckt! Wirf mir 
+ 7: Bächlein, laß dein Rauschen sein! Räder, stellt eur Brausen ein! All’ ihr muntern Waldvögelein,
+ 8: Doch besser, du bliebest im Walde dazu, Und ließest die Mühlen und Müller in Ruh’. Was taugen d
+ 9: Was sucht denn der Jäger am Mühlbach hier? Bleib’, trotziger Jäger, in deinem Revier! Hier gieb
+10: Wohin so schnell, so kraus, so wild, mein lieber Bach? Eilst du voll Zorn dem frechen Bruder Jä
+--- raw PC3: stanza ends --- 
+       end        cycle                          title  score
+    <char>       <char>                         <char>  <num>
+ 1:      - dichterliebe  Das ist ein Flöten und Geigen -0.310
+ 2:      -    muellerin                          Halt! -0.297
+ 3:      -    muellerin                 Trockne Blumen -0.290
+ 4:      -    muellerin                 Trockne Blumen -0.272
+ 5:      -    muellerin                         Wohin? -0.270
+ 6:      + dichterliebe Die Rose, die Lilie, die Taube  0.219
+ 7:      + dichterliebe               Ich grolle nicht  0.223
+ 8:      +  winterreise                  Der Wegweiser  0.236
+ 9:      +    muellerin                          Pause  0.236
+10:      + dichterliebe               Ich grolle nicht  0.282
+                                                                                               text
+                                                                                             <char>
+ 1: Das ist ein Flöten und Geigen, Trompeten schmettern drein; Da tanzt den Hochzeitreigen Die Herz
+ 2: Ei willkommen, ei willkommen, Süßer Mühlengesang! Und das Haus, wie so traulich! Und die Fenste
+ 3:                     Dann Blümlein alle, Heraus, heraus! Der Mai ist kommen, Der Winter ist aus.
+ 4:                 Und Lenz wird kommen, Und Winter wird gehn, Und Blümlein werden Im Grase stehn,
+ 5: Laß singen, Gesell, laß rauschen, Und wandre fröhlich nach! Es gehn ja Mühlenräder In jedem kla
+ 6: Die Rose, die Lilie, die Taube, die Sonne, Die liebt’ ich einst alle in Liebeswonne. Ich lieb’ 
+ 7: Ich grolle nicht, und wenn das Herz auch bricht, Ewig verlor’nes Lieb! ich grolle nicht. Wie du
+ 8: Habe ja doch nichts begangen, daß ich Menschen sollte scheun, – welch ein törichtes Verlangen t
+ 9: Meine Laute hab’ ich gehängt an die Wand, Hab’ sie umschlungen mit einem grünen Band — Ich kann
+10: Das weiß ich längst. Ich sah dich ja im Traume, Und sah die Nacht in deines Herzens Raume, Und 
+######## centred: variance PC1..5 = 7.2 / 6.6 / 5.3 / 4.7 / 4.5 % 
+eta2 (share of the PC explained by cycle): 0 / 0 / 0 / 0 / 0 
+--- centred PC1: stanza ends --- 
+       end        cycle                         title  score
+    <char>       <char>                        <char>  <num>
+ 1:      - dichterliebe       Die alten, bösen Lieder -0.406
+ 2:      - dichterliebe       Die alten, bösen Lieder -0.342
+ 3:      -    muellerin                     Der Jäger -0.339
+ 4:      - dichterliebe Das ist ein Flöten und Geigen -0.314
+ 5:      -  winterreise                 Der Leiermann -0.293
+ 6:      +    muellerin    Mit dem grünen Lautenbande  0.236
+ 7:      +  winterreise                    Erstarrung  0.242
+ 8:      +    muellerin                      Ungeduld  0.246
+ 9:      +  winterreise                Frühlingstraum  0.250
+10:      +  winterreise                Auf dem Flusse  0.270
+                                                                                               text
+                                                                                             <char>
+ 1: Und holt mir auch zwölf Riesen, Die müssen noch stärker seyn Als wie der starke Christoph Im Do
+ 2: Und holt eine Todtenbahre, Von Brettern fest und dick; Auch muß sie seyn noch länger Als wie zu
+ 3: Doch besser, du bliebest im Walde dazu, Und ließest die Mühlen und Müller in Ruh’. Was taugen d
+ 4: Das ist ein Klingen und Dröhnen Von Pauken und Schallmei’n; Dazwischen schluchzen und stöhnen D
+ 5:             Keiner mag ihn hören, keiner sieht ihn an, und die Hunde knurren um den alten Mann.
+ 6: „Schad’ um das schöne grüne Band, Daß es verbleicht hier an der Wand, Ich hab’ das Grün so gern
+ 7: Mein Herz ist wie erstorben, kalt starrt ihr Bild darin: schmilzt je das Herz mir wieder, fließ
+ 8: Ich schnitt' es gern in alle Rinden ein, Ich grüb' es gern in jeden Kieselstein, Ich möcht' es 
+ 9: Die Augen schließ ich wieder, noch schlägt das Herz so warm, Wann grünt ihr Blätter am Fenster?
+10: In deine Decke grab ich mit einem spitzen Stein den Namen meiner Liebsten und Stund und Tag hin
+--- centred PC2: stanza ends --- 
+       end        cycle                          title  score
+    <char>       <char>                         <char>  <num>
+ 1:      -  winterreise                      Täuschung -0.330
+ 2:      -    muellerin                          Mein! -0.318
+ 3:      - dichterliebe Die Rose, die Lilie, die Taube -0.312
+ 4:      -    muellerin                      Der Jäger -0.285
+ 5:      -  winterreise                Die Nebensonnen -0.269
+ 6:      +    muellerin                    Das Wandern  0.187
+ 7:      +    muellerin                 Trockne Blumen  0.202
+ 8:      +    muellerin        Der Müller und der Bach  0.220
+ 9:      +    muellerin                 Trockne Blumen  0.231
+10:      +    muellerin        Der Müller und der Bach  0.236
+                                                                                               text
+                                                                                             <char>
+ 1: Ein Licht tanzt freundlich vor mir her, ich folg ihm nach die Kreuz und Quer; ich folg ihm gern
+ 2: Bächlein, laß dein Rauschen sein! Räder, stellt eur Brausen ein! All’ ihr muntern Waldvögelein,
+ 3: Die Rose, die Lilie, die Taube, die Sonne, Die liebt’ ich einst alle in Liebeswonne. Ich lieb’ 
+ 4: Was sucht denn der Jäger am Mühlbach hier? Bleib’, trotziger Jäger, in deinem Revier! Hier gieb
+ 5: Drei Sonnen sah ich am Himmel stehn, hab lang’ und fest sie angesehn; und sie auch standen da s
+ 6: Vom Wasser haben wir’s gelernt, Vom Wasser! Das hat nicht Rast bei Tag und Nacht, Ist stets auf
+ 7:                     Dann Blümlein alle, Heraus, heraus! Der Mai ist kommen, Der Winter ist aus.
+ 8:          Da springen drei Rosen, Halb roth, halb weiß, Die welken nicht wieder, Aus Dornenreis.
+ 9:                 Und Lenz wird kommen, Und Winter wird gehn, Und Blümlein werden Im Grase stehn,
+10:           Da halten die Englein Die Augen sich zu, Und schluchzen und singen Die Seele zu Ruh’.
+--- centred PC3: stanza ends --- 
+       end        cycle                     title  score
+    <char>       <char>                    <char>  <num>
+ 1:      -    muellerin           Die liebe Farbe -0.322
+ 2:      -  winterreise                 Die Krähe -0.301
+ 3:      -    muellerin            Die böse Farbe -0.292
+ 4:      -  winterreise             Das Wirtshaus -0.276
+ 5:      - dichterliebe Ich hab im Traum geweinet -0.245
+ 6:      +    muellerin                    Wohin?  0.232
+ 7:      +  winterreise                 Rückblick  0.237
+ 8:      +  winterreise          Gefrorene Tränen  0.238
+ 9:      + dichterliebe         Aus alten Märchen  0.257
+10:      +    muellerin               Tränenregen  0.264
+                                                                                               text
+                                                                                             <char>
+ 1: Grabt mir ein Grab im Wasen, Deckt mich mit grünem Rasen, Mein Schatz hat ’s Grün so gern. Kein
+ 2: Krähe, wunderliches Tier, willst mich nicht verlassen? Meinst wohl bald als Beute hier meinen L
+ 3: Ach Grün, du böse Farbe du, Was siehst mich immer an, So stolz, so keck, so schadenfroh, Mich a
+ 4: Auf einen Totenacker hat mich mein Weg gebracht. Allhier will ich einkehren, hab ich bei mir ge
+ 5: Ich hab’ im Traum’ geweinet, Mir träumt’ du verließest mich. Ich wachte auf, und ich weinte Noc
+ 6: Laß singen, Gesell, laß rauschen, Und wandre fröhlich nach! Es gehn ja Mühlenräder In jedem kla
+ 7: Die runden Lindenbäume blühten, die klaren Rinnen rauschten hell, und ach, zwei Mädchenaugen gl
+ 8: Und dringt doch aus der Quelle der Brust so glühend heiß, als wolltet ihr zerschmelzen des ganz
+ 9: Und laute Quellen brechen Aus wildem Marmorstein, Und seltsam in den Bächen Strahlt fort der Wi
+10: Und über den Wolken und Sternen, Da rieselte munter der Bach, Und rief mit Singen und Klingen: 

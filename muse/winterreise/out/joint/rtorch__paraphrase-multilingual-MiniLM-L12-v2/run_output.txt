@@ -1,0 +1,162 @@
+=== joint | rtorch: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 | 60 songs, 213 stanzas === 
+R2_cycle (variance explained by the cycle means): 0.1 
+nn_same_cycle: 0.683  (chance 0.331) 
+cosine between cycle means:
+             muellerin winterreise dichterliebe
+muellerin        1.000       0.911        0.924
+winterreise      0.911       1.000        0.881
+dichterliebe     0.924       0.881        1.000
+######## raw: variance PC1..5 = 11 / 8.5 / 7 / 5.7 / 5.4 % 
+eta2 (share of the PC explained by cycle): 0.46 / 0.18 / 0.05 / 0.14 / 0 
+--- raw PC1: stanza ends --- 
+       end        cycle                          title  score
+    <char>       <char>                         <char>  <num>
+ 1:      -  winterreise                           Rast -0.502
+ 2:      -  winterreise               Gefrorene Tränen -0.457
+ 3:      -  winterreise                           Rast -0.437
+ 4:      -  winterreise                 Der Lindenbaum -0.430
+ 5:      -  winterreise                      Rückblick -0.421
+ 6:      + dichterliebe   Ich will meine Seele tauchen  0.371
+ 7:      +    muellerin             Des Müllers Blumen  0.372
+ 8:      + dichterliebe     Aus meinen Tränen sprießen  0.398
+ 9:      + dichterliebe   Im Rhein, im heiligen Strome  0.451
+10:      + dichterliebe Die Rose, die Lilie, die Taube  0.483
+                                                                                               text
+                                                                                             <char>
+ 1: Die Füße frugen nicht nach Rast, es war zu kalt zum Stehen, der Rücken fühlte keine Last, der S
+ 2:   Gefrorne Tropfen fallen von meinen Wangen ab: ob es mir denn entgangen, daß ich geweinet hab?
+ 3: Nun merk ich erst, wie müd ich bin, da ich zur Ruh mich lege; das Wandern hielt mich munter hin
+ 4: Die kalten Winde bliesen mir grad ins Angesicht, der Hut flog mir vom Kopfe, ich wendete mich n
+ 5: Es brennt mir unter beiden Sohlen, tret ich auch schon auf Eis und Schnee, ich möcht nicht wied
+ 6: Ich will meine Seele tauchen In den Kelch der Lilie hinein; Die Lilie soll klingend hauchen Ein
+ 7: Am Bach viel kleine Blumen stehn, Aus hellen blauen Augen sehn; Der Bach der ist des Müllers Fr
+ 8: Und wenn du mich lieb hast, Kindchen, Schenk’ ich dir die Blumen all’, Und vor deinem Fenster s
+ 9: Es schweben Blumen und Englein Um unsre liebe Frau; Die Augen, die Lippen, die Wänglein, Die gl
+10: Die Rose, die Lilie, die Taube, die Sonne, Die liebt’ ich einst alle in Liebeswonne. Ich lieb’ 
+--- raw PC2: stanza ends --- 
+       end        cycle                      title  score
+    <char>       <char>                     <char>  <num>
+ 1:      -  winterreise             Frühlingstraum -0.404
+ 2:      -  winterreise             Frühlingstraum -0.401
+ 3:      - dichterliebe Im wunderschönen Monat Mai -0.399
+ 4:      - dichterliebe    Und wüßten's die Blumen -0.322
+ 5:      - dichterliebe  Ich hab im Traum geweinet -0.313
+ 6:      + dichterliebe    Die alten, bösen Lieder  0.337
+ 7:      +    muellerin                  Der Jäger  0.359
+ 8:      +  winterreise              Der Leiermann  0.388
+ 9:      +    muellerin       Eifersucht und Stolz  0.455
+10:      +    muellerin                  Der Jäger  0.491
+                                                                                               text
+                                                                                             <char>
+ 1: Ich träumte von bunten Blumen, so wie sie wohl blühen im Mai, ich träumte von grünen Wiesen, vo
+ 2: Ich träumte von Lieb um Liebe, von einer schönen Maid, von Herzen und von Küssen, von Wonne und
+ 3: Im wunderschönen Monat Mai, Als alle Knospen sprangen, Da ist in meinem Herzen Die Liebe aufgeg
+ 4: Und wüßten’s die Blumen, die kleinen, Wie tief verwundet mein Herz, Sie würden mit mir weinen, 
+ 5: Ich hab’ im Traum’ geweinet, Mir träumt’ du verließest mich. Ich wachte auf, und ich weinte Noc
+ 6: Und holt eine Todtenbahre, Von Brettern fest und dick; Auch muß sie seyn noch länger Als wie zu
+ 7: Doch besser, du bliebest im Walde dazu, Und ließest die Mühlen und Müller in Ruh’. Was taugen d
+ 8:        Drüben hinterm Dorfe steht ein Leiermann, und mit starren Fingern dreht er, was er kann.
+ 9: Wohin so schnell, so kraus, so wild, mein lieber Bach? Eilst du voll Zorn dem frechen Bruder Jä
+10: Was sucht denn der Jäger am Mühlbach hier? Bleib’, trotziger Jäger, in deinem Revier! Hier gieb
+--- raw PC3: stanza ends --- 
+       end        cycle                        title  score
+    <char>       <char>                       <char>  <num>
+ 1:      - dichterliebe            Aus alten Märchen -0.452
+ 2:      - dichterliebe   Aus meinen Tränen sprießen -0.412
+ 3:      - dichterliebe  Am leuchtenden Sommermorgen -0.373
+ 4:      -  winterreise                   Erstarrung -0.365
+ 5:      -    muellerin      Der Müller und der Bach -0.340
+ 6:      +  winterreise                   Erstarrung  0.379
+ 7:      + dichterliebe    Ich hab im Traum geweinet  0.381
+ 8:      + dichterliebe Hör ich das Liedchen klingen  0.408
+ 9:      + dichterliebe      Und wüßten's die Blumen  0.488
+10:      + dichterliebe  Wenn ich in deine Augen seh  0.523
+                                                                                               text
+                                                                                             <char>
+ 1: Wo bunte Blumen blühen Im goldnen Abendlicht’, Und lieblich duftend glühen, Mit bräutlichem Ges
+ 2: Aus meinen Thränen sprießen Viel blühende Blumen hervor, Und meine Seufzer werden Ein Nachtigal
+ 3: Am leuchtenden Sommermorgen Geh’ ich im Garten herum. Es flüstern und sprechen die Blumen, Ich 
+ 4: Wo find ich eine Blüte, wo find ich grünes Gras? die Blumen sind erstorben, der Rasen sieht so 
+ 5:            Da muß in die Wolken Der Vollmond gehn, Damit seine Thränen Die Menschen nicht sehn.
+ 6: Soll denn kein Angedenken ich nehmen mit von hier? Wenn meine Schmerzen schweigen, wer sagt mir
+ 7: Ich hab’ im Traum’ geweinet, Mir träumt’ du verließest mich. Ich wachte auf, und ich weinte Noc
+ 8: Hör’ ich das Liedchen klingen, Das einst die Liebste sang, So will mir die Brust zerspringen, V
+ 9: Die alle können’s nicht wissen, Nur Eine kennt meinen Schmerz; Sie hat ja selbst zerrissen, Zer
+10: Wenn ich mich lehn’ an deine Brust, Kommt’s über mich wie Himmelslust; Doch wenn du sprichst: i
+######## centred: variance PC1..5 = 8.8 / 8 / 7.3 / 6 / 5.5 % 
+eta2 (share of the PC explained by cycle): 0 / 0 / 0 / 0 / 0 
+--- centred PC1: stanza ends --- 
+       end        cycle                          title  score
+    <char>       <char>                         <char>  <num>
+ 1:      - dichterliebe Ein Jüngling liebt ein Mädchen -0.458
+ 2:      - dichterliebe        Die alten, bösen Lieder -0.429
+ 3:      - dichterliebe        Die alten, bösen Lieder -0.399
+ 4:      - dichterliebe Ein Jüngling liebt ein Mädchen -0.370
+ 5:      - dichterliebe        Und wüßten's die Blumen -0.347
+ 6:      + dichterliebe    Am leuchtenden Sommermorgen  0.366
+ 7:      +    muellerin             Des Müllers Blumen  0.380
+ 8:      + dichterliebe     Aus meinen Tränen sprießen  0.401
+ 9:      + dichterliebe              Aus alten Märchen  0.406
+10:      +  winterreise                 Frühlingstraum  0.495
+                                                                                               text
+                                                                                             <char>
+ 1: Es ist eine alte Geschichte, Doch bleibt sie immer neu; Und wem sie just passiret, Dem bricht d
+ 2: Und holt eine Todtenbahre, Von Brettern fest und dick; Auch muß sie seyn noch länger Als wie zu
+ 3: Die sollen den Sarg forttragen, Und senken in’s Meer hinab; Denn solchem großen Sarge Gebührt e
+ 4: Das Mädchen heurathet aus Aerger Den ersten besten Mann, Der ihr in den Weg gelaufen; Der Jüngl
+ 5: Die alle können’s nicht wissen, Nur Eine kennt meinen Schmerz; Sie hat ja selbst zerrissen, Zer
+ 6: Am leuchtenden Sommermorgen Geh’ ich im Garten herum. Es flüstern und sprechen die Blumen, Ich 
+ 7: Am Bach viel kleine Blumen stehn, Aus hellen blauen Augen sehn; Der Bach der ist des Müllers Fr
+ 8: Aus meinen Thränen sprießen Viel blühende Blumen hervor, Und meine Seufzer werden Ein Nachtigal
+ 9: Wo bunte Blumen blühen Im goldnen Abendlicht’, Und lieblich duftend glühen, Mit bräutlichem Ges
+10: Ich träumte von bunten Blumen, so wie sie wohl blühen im Mai, ich träumte von grünen Wiesen, vo
+--- centred PC2: stanza ends --- 
+       end        cycle                          title  score
+    <char>       <char>                         <char>  <num>
+ 1:      -    muellerin                    Tränenregen -0.423
+ 2:      - dichterliebe      Ich hab im Traum geweinet -0.421
+ 3:      -    muellerin                          Halt! -0.401
+ 4:      -  winterreise               Gefrorene Tränen -0.352
+ 5:      -    muellerin                    Tränenregen -0.341
+ 6:      + dichterliebe        Die alten, bösen Lieder  0.342
+ 7:      +  winterreise                  Der Leiermann  0.360
+ 8:      + dichterliebe Ein Jüngling liebt ein Mädchen  0.366
+ 9:      +  winterreise                     Gute Nacht  0.374
+10:      +  winterreise                  Der Leiermann  0.492
+                                                                                               text
+                                                                                             <char>
+ 1: Und in den Bach versunken Der ganze Himmel schien, Und wollte mich mit hinunter In seine Tiefe 
+ 2: Ich hab’ im Traum’ geweinet, Mir träumt’ du verließest mich. Ich wachte auf, und ich weinte Noc
+ 3: Eine Mühle seh’ ich blinken Aus den Erlen heraus, Durch Rauschen und Singen Bricht Rädergebraus
+ 4:   Gefrorne Tropfen fallen von meinen Wangen ab: ob es mir denn entgangen, daß ich geweinet hab?
+ 5: Da gingen die Augen mir über, Da ward es im Spiegel so kraus; Sie sprach: Es kommt ein Regen, A
+ 6: Und holt mir auch zwölf Riesen, Die müssen noch stärker seyn Als wie der starke Christoph Im Do
+ 7:             Keiner mag ihn hören, keiner sieht ihn an, und die Hunde knurren um den alten Mann.
+ 8: Ein Jüngling liebt ein Mädchen, Die hat einen Andern erwählt; Der Andre liebt eine Andre, Und h
+ 9: Was soll ich länger weilen, daß man mich trieb hinaus? Laß irre Hunde heulen vor ihres Herren H
+10:        Drüben hinterm Dorfe steht ein Leiermann, und mit starren Fingern dreht er, was er kann.
+--- centred PC3: stanza ends --- 
+       end        cycle                        title  score
+    <char>       <char>                       <char>  <num>
+ 1:      -    muellerin                  Tränenregen -0.518
+ 2:      - dichterliebe            Aus alten Märchen -0.479
+ 3:      - dichterliebe      Die alten, bösen Lieder -0.470
+ 4:      - dichterliebe Im Rhein, im heiligen Strome -0.425
+ 5:      - dichterliebe      Die alten, bösen Lieder -0.423
+ 6:      +  winterreise                   Erstarrung  0.333
+ 7:      +    muellerin               Der Neugierige  0.335
+ 8:      +  winterreise                         Mut!  0.369
+ 9:      + dichterliebe  Wenn ich in deine Augen seh  0.422
+10:      +  winterreise                     Die Post  0.435
+                                                                                               text
+                                                                                             <char>
+ 1: Der Mond war auch gekommen, Die Sternlein hinterdrein, Und schauten so traulich zusammen In den
+ 2: Und laute Quellen brechen Aus wildem Marmorstein, Und seltsam in den Bächen Strahlt fort der Wi
+ 3: Und holt eine Todtenbahre, Von Brettern fest und dick; Auch muß sie seyn noch länger Als wie zu
+ 4: Im Rhein, im heiligen Strome, Da spiegelt sich in den Well’n, Mit seinem großen Dome, Das große
+ 5: Und holt mir auch zwölf Riesen, Die müssen noch stärker seyn Als wie der starke Christoph Im Do
+ 6: Soll denn kein Angedenken ich nehmen mit von hier? Wenn meine Schmerzen schweigen, wer sagt mir
+ 7: O Bächlein meiner Liebe, Was bist du wunderlich! Will’s ja nicht weiter sagen, Sag’, Bächlein, 
+ 8: Fliegt der Schnee mir ins Gesicht, schüttl ich ihn herunter. Wenn mein Herz im Busen spricht, s
+ 9: Wenn ich mich lehn’ an deine Brust, Kommt’s über mich wie Himmelslust; Doch wenn du sprichst: i
+10: Die Post bringt keinen Brief für dich. Was drängst du denn so wunderlich, mein Herz, mein Herz?

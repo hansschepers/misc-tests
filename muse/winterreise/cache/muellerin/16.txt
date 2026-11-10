@@ -1,0 +1,60 @@
+{{Textdaten
+|VORIGER=Erster Schmerz, letzter Scherz
+|NÄCHSTER=Die böse Farbe
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Die liebe Farbe
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 17
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Seite|17||DE_M%C3%BCller_Gedicht_1906_017.png}} '''Die liebe Farbe.'''
+
+In Grün will ich mich kleiden,
+In grüne Thränenweiden,
+Mein Schatz hat ’s Grün so gern.
+Will suchen einen Zypressenhain,
+{{Zeile|5}}Eine Heide von grünem Rosmarein,
+Mein Schatz hat ’s Grün so gern.
+
+{{Idt}}Wohlauf zum fröhlichen Jagen!
+Wohlauf durch Heid’ und Hagen!
+Mein Schatz hat ’s Jagen so gern.
+{{Zeile|10}}Das Wild, das ich jage, das ist der Tod,
+Die Heide, die heiß’ ich die Liebesnoth,
+Mein Schatz hat ’s Jagen so gern.
+
+{{Idt}}Grabt mir ein Grab im Wasen,
+Deckt mich mit grünem Rasen,
+{{Zeile|15}}Mein Schatz hat ’s Grün so gern.
+Kein Kreuzlein schwarz, kein Blümlein bunt,
+Grün, Alles grün so rings und rund!
+Mein Schatz hat ’s Grün so gern.
+</poem>
+
+
+{{Linie}}
+
+
+{{SORTIERUNG:liebe Farbe #Die}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

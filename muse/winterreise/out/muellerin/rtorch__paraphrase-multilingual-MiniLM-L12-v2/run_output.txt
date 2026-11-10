@@ -1,0 +1,145 @@
+=== Die schöne Müllerin (Müller / Schubert 1823) | rtorch: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 === 
+84 stanza units over 20 songs 
+     song                      title                   title_en  tempo n_stanza
+    <int>                     <char>                     <char> <char>    <int>
+ 1:     1                Das Wandern                  Wandering   <NA>        5
+ 2:     2                     Wohin?                   Whither?   <NA>        6
+ 3:     3                      Halt!                      Halt!   <NA>        3
+ 4:     4     Danksagung an den Bach        Thanks to the Brook   <NA>        5
+ 5:     5              Am Feierabend                 After Work   <NA>        2
+ 6:     6             Der Neugierige        The Inquisitive One   <NA>        5
+ 7:     7                   Ungeduld                 Impatience   <NA>        4
+ 8:     8                 Morgengruß           Morning Greeting   <NA>        4
+ 9:     9         Des Müllers Blumen       The Miller's Flowers   <NA>        4
+10:    10                Tränenregen              Rain of Tears   <NA>        7
+11:    11                      Mein!                      Mine!   <NA>        1
+12:    12                      Pause                      Pause   <NA>        2
+13:    13 Mit dem grünen Lautenbande With the Green Lute Ribbon   <NA>        3
+14:    14                  Der Jäger                 The Hunter   <NA>        2
+15:    15       Eifersucht und Stolz         Jealousy and Pride   <NA>        1
+16:    16            Die liebe Farbe         The Beloved Colour   <NA>        3
+17:    17             Die böse Farbe         The Hateful Colour   <NA>        6
+18:    18             Trockne Blumen           Withered Flowers   <NA>        8
+19:    19    Der Müller und der Bach   The Miller and the Brook   <NA>        8
+20:    20      Des Baches Wiegenlied        The Brook's Lullaby   <NA>        5
+     song                      title                   title_en  tempo n_stanza
+    <int>                     <char>                     <char> <char>    <int>
+
+PCA variance explained (PC1..3): 0.17 0.124 0.101 
+UMAP seed stability (cor of 2-D distances, 5 seeds): 0.34 0.73 
+Designed axes nature_self x hope_despair: cos between them = -0.03 
+--- PC1: stanzas at the ends --- 
+       end unit_id                      title  score
+    <char>  <char>                     <char>  <num>
+ 1:      -    10.2                Tränenregen -0.452
+ 2:      -    10.3                Tränenregen -0.346
+ 3:      -    10.1                Tränenregen -0.345
+ 4:      -    10.5                Tränenregen -0.343
+ 5:      -    10.7                Tränenregen -0.335
+ 6:      +    17.2             Die böse Farbe  0.467
+ 7:      +    16.3            Die liebe Farbe  0.474
+ 8:      +    17.1             Die böse Farbe  0.493
+ 9:      +    13.2 Mit dem grünen Lautenbande  0.550
+10:      +    16.1            Die liebe Farbe  0.604
+                                                                                                                        text
+                                                                                                                      <char>
+ 1: Der Mond war auch gekommen, Die Sternlein hinterdrein, Und schauten so traulich zusammen In den silbernen Spiegel hinein
+ 2:             Ich sah nach keinem Monde, Nach keinem Sternenschein, Ich schaute nach ihrem Bilde, Nach ihren Augen allein.
+ 3:     Wir saßen so traulich beisammen Im kühlen Erlendach, Wir schauten so traulich zusammen Hinab in den rieselnden Bach.
+ 4:                    Und in den Bach versunken Der ganze Himmel schien, Und wollte mich mit hinunter In seine Tiefe ziehn.
+ 5:   Da gingen die Augen mir über, Da ward es im Spiegel so kraus; Sie sprach: Es kommt ein Regen, Ade, ich geh’ nach Haus.
+ 6: Ich möchte die grünen Blätter all’ Pflücken von jedem Zweig, Ich möchte die grünen Gräser all’ Weinen ganz todtenbleich.
+ 7: Grabt mir ein Grab im Wasen, Deckt mich mit grünem Rasen, Mein Schatz hat ’s Grün so gern. Kein Kreuzlein schwarz, kein 
+ 8: Ich möchte ziehn in die Welt hinaus, Hinaus in die weite Welt, Wenn’s nur so grün, so grün nicht wär’ Da draußen in Wald
+ 9: Ist auch dein ganzer Liebster weiß, Soll Grün doch haben seinen Preis, Und ich auch hab’ es gern. Weil unsre Lieb’ ist i
+10: In Grün will ich mich kleiden, In grüne Thränenweiden, Mein Schatz hat ’s Grün so gern. Will suchen einen Zypressenhain,
+--- PC2: stanzas at the ends --- 
+       end unit_id                      title  score
+    <char>  <char>                     <char>  <num>
+ 1:      -    15.1       Eifersucht und Stolz -0.434
+ 2:      -    14.1                  Der Jäger -0.393
+ 3:      -     1.1                Das Wandern -0.324
+ 4:      -     1.3                Das Wandern -0.297
+ 5:      -    14.2                  Der Jäger -0.271
+ 6:      +    17.2             Die böse Farbe  0.317
+ 7:      +     9.1         Des Müllers Blumen  0.318
+ 8:      +    16.1            Die liebe Farbe  0.320
+ 9:      +    10.2                Tränenregen  0.343
+10:      +    13.2 Mit dem grünen Lautenbande  0.365
+                                                                                                                        text
+                                                                                                                      <char>
+ 1: Wohin so schnell, so kraus, so wild, mein lieber Bach? Eilst du voll Zorn dem frechen Bruder Jäger nach? Kehr’ um, kehr’
+ 2: Was sucht denn der Jäger am Mühlbach hier? Bleib’, trotziger Jäger, in deinem Revier! Hier giebt es kein Wild zu jagen f
+ 3:     Das Wandern ist des Müllers Lust, Das Wandern! Das muß ein schlechter Müller sein, Dem niemals fiel das Wandern ein,
+ 4: Das sehn wir auch den Rädern ab, Den Rädern! Die gar nicht gerne stille stehn, Die sich mein Tag nicht müde drehn, Die R
+ 5: Doch besser, du bliebest im Walde dazu, Und ließest die Mühlen und Müller in Ruh’. Was taugen die Fischlein im grünen Ge
+ 6: Ich möchte die grünen Blätter all’ Pflücken von jedem Zweig, Ich möchte die grünen Gräser all’ Weinen ganz todtenbleich.
+ 7: Am Bach viel kleine Blumen stehn, Aus hellen blauen Augen sehn; Der Bach der ist des Müllers Freund, Und hellblau Liebch
+ 8: In Grün will ich mich kleiden, In grüne Thränenweiden, Mein Schatz hat ’s Grün so gern. Will suchen einen Zypressenhain,
+ 9: Der Mond war auch gekommen, Die Sternlein hinterdrein, Und schauten so traulich zusammen In den silbernen Spiegel hinein
+10: Ist auch dein ganzer Liebster weiß, Soll Grün doch haben seinen Preis, Und ich auch hab’ es gern. Weil unsre Lieb’ ist i
+--- PC3: stanzas at the ends --- 
+       end unit_id                   title  score
+    <char>  <char>                  <char>  <num>
+ 1:      -     7.4                Ungeduld -0.348
+ 2:      -     6.5          Der Neugierige -0.326
+ 3:      -     7.2                Ungeduld -0.289
+ 4:      -     7.1                Ungeduld -0.289
+ 5:      -     4.5  Danksagung an den Bach -0.259
+ 6:      +    10.5             Tränenregen  0.284
+ 7:      +    19.2 Der Müller und der Bach  0.301
+ 8:      +    10.4             Tränenregen  0.335
+ 9:      +    10.1             Tränenregen  0.341
+10:      +    10.2             Tränenregen  0.440
+                                                                                                                        text
+                                                                                                                      <char>
+ 1: Ich meint', es müßt' in meinen Augen stehn, Auf meinen Wangen müßt' man's brennen sehn, Zu lesen wär's auf meinem stumme
+ 2:           O Bächlein meiner Liebe, Was bist du wunderlich! Will’s ja nicht weiter sagen, Sag’, Bächlein, liebt sie mich?
+ 3: Ich möcht' mir ziehen einen jungen Staar, Bis daß er spräch' die Worte rein und klar, Bis er sie spräch' mit meines Mund
+ 4: Ich schnitt' es gern in alle Rinden ein, Ich grüb' es gern in jeden Kieselstein, Ich möcht' es sä'n auf jedes frische Be
+ 5:                                         Nach Arbeit ich frug, Nun hab ich genug Für die Hände, fürs Herze Vollauf genug!
+ 6:                    Und in den Bach versunken Der ganze Himmel schien, Und wollte mich mit hinunter In seine Tiefe ziehn.
+ 7:                                     Da muß in die Wolken Der Vollmond gehn, Damit seine Thränen Die Menschen nicht sehn.
+ 8: Und sahe sie nicken und blicken Herauf aus dem seligen Bach, Die Blümlein am Ufer, die blauen, Sie nickten und blickten 
+ 9:     Wir saßen so traulich beisammen Im kühlen Erlendach, Wir schauten so traulich zusammen Hinab in den rieselnden Bach.
+10: Der Mond war auch gekommen, Die Sternlein hinterdrein, Und schauten so traulich zusammen In den silbernen Spiegel hinein
+
+Songs by PC3:
+     song                      title                   title_en    PC3
+    <int>                     <char>                     <char>  <num>
+ 1:     7                   Ungeduld                 Impatience -0.326
+ 2:     6             Der Neugierige        The Inquisitive One -0.322
+ 3:     4     Danksagung an den Bach        Thanks to the Brook -0.244
+ 4:     9         Des Müllers Blumen       The Miller's Flowers -0.150
+ 5:    11                      Mein!                      Mine! -0.131
+ 6:     5              Am Feierabend                 After Work -0.122
+ 7:     8                 Morgengruß           Morning Greeting -0.057
+ 8:    12                      Pause                      Pause -0.048
+ 9:    19    Der Müller und der Bach   The Miller and the Brook -0.044
+10:    18             Trockne Blumen           Withered Flowers -0.035
+11:    20      Des Baches Wiegenlied        The Brook's Lullaby -0.011
+12:     3                      Halt!                      Halt!  0.111
+13:    13 Mit dem grünen Lautenbande With the Green Lute Ribbon  0.114
+14:     1                Das Wandern                  Wandering  0.121
+15:    16            Die liebe Farbe         The Beloved Colour  0.124
+16:    14                  Der Jäger                 The Hunter  0.137
+17:     2                     Wohin?                   Whither?  0.142
+18:    15       Eifersucht und Stolz         Jealousy and Pride  0.178
+19:    17             Die böse Farbe         The Hateful Colour  0.228
+20:    10                Tränenregen              Rain of Tears  0.336
+     song                      title                   title_en    PC3
+    <int>                     <char>                     <char>  <num>
+
+Path length (sum of consecutive cosine distances) vs 20000 random orders:
+      order path_length null_mean null_sd       z p_shorter
+     <char>       <num>     <num>   <num>   <num>     <num>
+1: composer      5.5149    6.1492  0.2398 -2.6454    0.0068
+
+Largest steps:
+    song                       from                         to step_dist
+   <int>                     <char>                     <char>     <num>
+1:    10                Tränenregen                      Mein!     0.475
+2:    15       Eifersucht und Stolz            Die liebe Farbe     0.450
+3:    12                      Pause Mit dem grünen Lautenbande     0.434
+4:    13 Mit dem grünen Lautenbande                  Der Jäger     0.428
+5:     9         Des Müllers Blumen                Tränenregen     0.366

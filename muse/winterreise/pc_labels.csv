@@ -11,3 +11,17 @@ dichterliebe,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,
 dichterliebe,api,voyage-4-large,PC1,private grief in dreams,loud spectacle: wedding and coffin
 dichterliebe,api,voyage-4-large,PC2,May and flowers,weeping and the grave
 dichterliebe,api,voyage-4-large,PC3,the story told (irony),enchanted garden and fairy tale
+muellerin,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC1,rain of tears: moon and mirror,green: the colour
+muellerin,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC2,hunter and jealousy,green and flowers
+muellerin,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC3,impatience: proclaim her name,the brook's depths
+muellerin,api,voyage-4-large,PC1,hunter and jealousy,green grave and withered flowers
+muellerin,api,voyage-4-large,PC2,following the brook,the green ribbon
+muellerin,api,voyage-4-large,PC3,longing to proclaim it,the rival hunter
+joint_raw,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC1,Winterreise: cold and weary,flowers and love
+joint_raw,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC2,dreams of May,hunter and the outsider
+joint_raw,api,voyage-4-large,PC1,Winterreise: grave and grey head,flowers and May
+joint_raw,api,voyage-4-large,PC2,tears,Müllerin's hunter and jealousy
+joint_centred,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC1,irony and the coffin,flower dreams
+joint_centred,rtorch,sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2,PC2,tears and water,the outsider
+joint_centred,api,voyage-4-large,PC1,loud outward spectacle,intimate inner longing
+joint_centred,api,voyage-4-large,PC2,illusion and possession,nature's consolation

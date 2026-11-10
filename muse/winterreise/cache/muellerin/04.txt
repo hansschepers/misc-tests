@@ -1,0 +1,63 @@
+{{Textdaten
+|VORIGER=Halt!
+|NÄCHSTER=Am Feierabend
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Danksagung an den Bach
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 6-7
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Seite|6||DE_M%C3%BCller_Gedicht_1906_006.png}}'''Danksagung an den Bach.'''
+
+War es also gemeint,
+Mein rauschender Freund?
+Dein Singen, dein Klingen,
+War es also gemeint?
+
+{{Zeile|5}}{{Idt}}Zur Müllerin hin!
+So lautet der Sinn.
+Gelt, hab’ ich’s verstanden?
+Zur Müllerin hin!
+
+{{Idt}}{{Seite|7||DE_M%C3%BCller_Gedicht_1906_007.png}}Hat '''sie''' dich geschickt?
+{{Zeile|10}}Oder hast mich berückt?
+Das möcht ich noch wissen,
+Ob '''sie''' dich geschickt.
+
+{{Idt}}Nun wie’s auch mag sein,
+Ich gebe mich drein:
+{{Zeile|15}}Was ich such, hab ich funden,
+Wie’s immer mag sein.
+
+{{Idt}}Nach Arbeit ich frug,
+Nun hab ich genug
+Für die Hände, fürs Herze
+{{Zeile|20}}Vollauf genug! 
+</poem>
+
+
+{{Linie}}
+
+
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

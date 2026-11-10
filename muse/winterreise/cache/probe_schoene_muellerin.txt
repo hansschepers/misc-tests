@@ -1,0 +1,158 @@
+{{Textdaten
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Die schöne Müllerin
+|SUBTITEL=
+|HERKUNFT=Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 1–23
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|VERLAG=B. Behrs Verlag
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=Die schöne Müllerin
+|GND=4464648-3
+|BILD=DE Müller Gedicht 1906 001.png
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=1823 von [[Franz Schubert]] als Liederzyklus vertont 
+|BEARBEITUNGSSTAND=fertig
+}}
+
+{{Seite|1||DE Müller Gedicht 1906 001.png}}
+{{LineCenterSize|110|20|Gedichte}}
+{{LineCenterSize|100|20|aus den hinterlassenen Papieren}}
+{{LineCenterSize|100|20|eines}}
+{{LineCenterSize|100|20|reisenden Waldhornisten}}
+{{LineCenterSize|100|20|I}}
+{{LineCenterSize|100|20|1820 (datiert 1821)}}
+{{LineCenterSize|100|20|Zweite Auflage 1826}}
+
+{{Linie|5|15|15}}
+
+{{LineCenterSize|100|20|Seinem}}
+{{LineCenterSize|100|20|hoch verehrten und innig geliebten}}
+{{LineCenterSize|100|20|Freunde}}
+{{LineCenterSize|100|20|Ludwig Tieck}}
+{{LineCenterSize|100|20|zum Danke}}
+{{LineCenterSize|100|20|für mannigfache Belehrung und Ermunterung}}
+{{LineCenterSize|100|20|gewidmet}}
+{{LineCenterSize|100|20|von dem Herausgeber.}}
+
+{{Seite|3||DE Müller Gedicht 1906 003.png}}
+{{LineCenterSize|110|20|Die schöne Müllerin.}}
+{{LineCenterSize|100|20|(Im Winter zu lesen.)}}
+
+== Inhalt ==
+
+{| align="left" width="500"
+| 
+| align="right" | <small>Seite</small>
+|-
+| [[Der Dichter, als Prolog]]
+| align="right" | 3
+|-
+| [[Wanderschaft]]
+| align="right" | 4
+|-
+| [[Wohin]]
+| align="right" | 5
+|-
+| [[Halt!]]
+| align="right" | 6
+|-
+| [[Danksagung an den Bach]]
+| align="right" | 6
+|-
+| [[Am Feierabend]]
+| align="right" | 7
+|-
+| [[Der Neugierige]]
+| align="right" | 8
+|-
+| [[Das Mühlenleben]]
+| align="right" | 8
+|-
+| [[Ungeduld]]
+| align="right" | 10
+|-
+| [[Morgengruß]]
+| align="right" | 10
+|-
+| [[Des Müllers Blumen]]
+| align="right" | 11
+|-
+| [[Thränenregen]]
+| align="right" | 12
+|-
+| [[Mein!]]
+| align="right" | 13
+|-
+| [[Pause]]
+| align="right" | 13
+|-
+| [[Mit dem grünen Lautenbande]]
+| align="right" | 14
+|-
+| [[Der Jäger (Müller)|Der Jäger]]
+| align="right" | 14
+|-
+| [[Eifersucht und Stolz]]
+| align="right" | 15
+|-
+| [[Erster Schmerz, letzter Scherz]]
+| align="right" | 15
+|-
+| [[Die liebe Farbe]]
+| align="right" | 17
+|-
+| [[Die böse Farbe]]
+| align="right" | 17
+|-
+| [[Blümlein Vergißmein]]
+| align="right" | 18
+|-
+| [[Trockne Blumen]]
+| align="right" | 19
+|-
+| [[Der Müller und der Bach]]
+| align="right" | 20
+|-
+| [[Des Baches Wiegenlied]]
+| align="right" | 21
+|-
+| [[Der Dichter, als Epilog]]
+| align="right" | 22
+|}
+
+<br clear="all" />
+
+== Anmerkungen ==
+1823 vertonte [[Franz Schubert]] die Gedichte als Liederzyklus für Singstimme und Klavier. Die Gedichte
+* ''Der Dichter, als Prolog''
+* ''Das Mühlenleben''
+* ''Erster Schmerz, letzter Scherz''
+* ''Blümlein Vergißmein''
+* ''Der Dichter, als Epilog''
+schloss Schubert in seine Vertonung nicht ein.
+
+Der 1824 erschienene zweite Band der ''Gedichte aus den hinterlassenen Papieren eines reisenden Waldhornisten'' enthält neben der ebenfalls von Schubert vertonten ''[[Winterreise]]'', die als Fortsetzung der schönen Müllerin aufgefasst werden kann, noch weitere Liederzyklen.
+
+
+{|{{Prettytable}}
+| '''Editionsrichtlinien:'''
+* Als Grundlage dienen die [[Wikisource:Editionsrichtlinien|Editionsrichtlinien]] von Wikisource.
+* Den Gedichten wurden Zeilenzahlen hinzugefügt
+* G e s p e r r t gedruckte Wörter werden '''fett''' wiedergegeben.
+|}
+
+----
+
+{{Projektfortschritt|Die schöne Müllerin}}
+
+{{SORTIERUNG:schone Mullerin #Die}}
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin| ]]

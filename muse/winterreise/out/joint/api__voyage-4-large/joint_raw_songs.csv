@@ -1,0 +1,61 @@
+cycle,song,title,title_en,PC1,PC2
+muellerin,1,Das Wandern,Wandering,-0.0894504499670032,0.152641500320889
+muellerin,2,Wohin?,Whither?,-0.0182831962628483,0.173943226340031
+muellerin,3,Halt!,Halt!,0.0313886039102749,0.204110794789245
+muellerin,4,Danksagung an den Bach,Thanks to the Brook,-0.169054615042653,0.040126892140082
+muellerin,5,Am Feierabend,After Work,0.0399649354315305,0.263970040767448
+muellerin,6,Der Neugierige,The Inquisitive One,0.143948544182806,0.00022166877488982
+muellerin,7,Ungeduld,Impatience,0.176027944555561,-0.0586192511538107
+muellerin,8,Morgengruß,Morning Greeting,0.191650879441669,0.0967396424171897
+muellerin,9,Des Müllers Blumen,The Miller's Flowers,0.223086373765417,-0.0647237310016817
+muellerin,10,Tränenregen,Rain of Tears,0.0561750953629716,0.0231209827692613
+muellerin,11,Mein!,Mine!,0.210819970432511,0.392986377315459
+muellerin,12,Pause,Pause,0.212183771438972,0.0578642892787021
+muellerin,13,Mit dem grünen Lautenbande,With the Green Lute Ribbon,0.196565708118908,-0.0402852974392831
+muellerin,14,Der Jäger,The Hunter,0.0947574591284132,0.487219432235145
+muellerin,15,Eifersucht und Stolz,Jealousy and Pride,0.11568051073655,0.487579677689703
+muellerin,16,Die liebe Farbe,The Beloved Colour,0.156312500343074,0.00172918266634938
+muellerin,17,Die böse Farbe,The Hateful Colour,0.0743528468436383,-0.0247881752340124
+muellerin,18,Trockne Blumen,Withered Flowers,0.0836244157437127,-0.126814120828202
+muellerin,19,Der Müller und der Bach,The Miller and the Brook,0.106512858802291,-0.118482916594582
+muellerin,20,Des Baches Wiegenlied,The Brook's Lullaby,0.151904760046809,0.136755102895611
+winterreise,1,Gute Nacht,Good Night,-0.0841254053460186,0.0503006303854388
+winterreise,2,Die Wetterfahne,The Weathervane,-0.25542764602597,-0.0429795478931883
+winterreise,3,Gefrorene Tränen,Frozen Tears,-0.157911378773684,-0.200358477162742
+winterreise,4,Erstarrung,Numbness,-0.0775363401071282,-0.201720196876315
+winterreise,5,Der Lindenbaum,The Linden Tree,-0.173439186609354,-0.044292191871654
+winterreise,6,Wasserflut,Flood,-0.0923661725201951,-0.115342234202109
+winterreise,7,Auf dem Flusse,On the River,-0.0691204529404312,-0.0738570874392326
+winterreise,8,Rückblick,Looking Back,-0.118400075289555,-0.0097561152590713
+winterreise,9,Irrlicht,Will-o'-the-Wisp,-0.244236194872246,0.0220237460666187
+winterreise,10,Rast,Rest,-0.292874155040688,-0.0248880052785372
+winterreise,11,Frühlingstraum,Dream of Spring,-0.0411835461746286,-0.123796925633489
+winterreise,12,Einsamkeit,Loneliness,-0.128891716926263,-0.0138752672754809
+winterreise,13,Die Post,The Post,-0.164291768743559,-0.0849362239974403
+winterreise,14,Der greise Kopf,The Grey Head,-0.311457735302966,-0.0543007994606159
+winterreise,15,Die Krähe,The Crow,-0.315567116989052,0.0445872012342765
+winterreise,16,Letzte Hoffnung,Last Hope,-0.088994781351239,-0.156986532008895
+winterreise,17,Im Dorfe,In the Village,-0.219036599497404,0.0286481432015007
+winterreise,18,Der stürmische Morgen,The Stormy Morning,-0.263715956410869,-0.105191166087052
+winterreise,19,Täuschung,Delusion,-0.0480124851640067,0.177863236427895
+winterreise,20,Der Wegweiser,The Signpost,-0.335484155119049,0.0868587106455562
+winterreise,21,Das Wirtshaus,The Inn,-0.387762965981143,-0.0124217335114479
+winterreise,22,Mut!,Courage!,-0.182486431840409,-0.0154986554411921
+winterreise,23,Die Nebensonnen,The Mock Suns,0.0324443477863327,0.0246000984214218
+winterreise,24,Der Leiermann,The Hurdy-Gurdy Man,-0.293439504167659,0.15325453624044
+dichterliebe,1,Im wunderschönen Monat Mai,In the wondrous month of May,0.23544584270747,-0.0914224628925238
+dichterliebe,2,Aus meinen Tränen sprießen,From my tears spring,0.190203424173255,-0.143642561538724
+dichterliebe,3,"Die Rose, die Lilie, die Taube","The rose, the lily, the dove",0.284104997779011,-0.00513615713279518
+dichterliebe,4,Wenn ich in deine Augen seh,When I look into your eyes,0.238171965613275,-0.179414475892917
+dichterliebe,5,Ich will meine Seele tauchen,I will dip my soul,0.230079410665827,-0.112195069736862
+dichterliebe,6,"Im Rhein, im heiligen Strome","In the Rhine, the holy river",0.155748210472901,-0.0740529265173988
+dichterliebe,7,Ich grolle nicht,I bear no grudge,0.108916391894839,-0.119791050179952
+dichterliebe,8,Und wüßten's die Blumen,And if the little flowers knew,0.135295757552981,-0.178582507404565
+dichterliebe,9,Das ist ein Flöten und Geigen,There is a fluting and fiddling,0.0862223264588694,0.0287795822060708
+dichterliebe,10,Hör ich das Liedchen klingen,When I hear the little song,0.123670651410257,-0.113266800636389
+dichterliebe,11,Ein Jüngling liebt ein Mädchen,A youth loves a maiden,0.0946046667430595,-0.0477867598944286
+dichterliebe,12,Am leuchtenden Sommermorgen,On a bright summer morning,0.136186232479278,0.037790058988666
+dichterliebe,13,Ich hab im Traum geweinet,I wept in my dream,0.152992621123925,-0.232585786787342
+dichterliebe,14,Allnächtlich im Traume,Nightly in my dreams,0.200432961632125,-0.139671464367507
+dichterliebe,15,Aus alten Märchen,From old fairy tales,0.045487358680234,0.00263569589669779
+dichterliebe,16,"Die alten, bösen Lieder","The old, evil songs",-0.0924143129927263,-0.0248877754831483

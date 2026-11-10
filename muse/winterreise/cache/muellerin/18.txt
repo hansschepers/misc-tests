@@ -1,0 +1,75 @@
+{{Textdaten
+|VORIGER=Blümlein Vergißmein
+|NÄCHSTER=Der Müller und der Bach
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Trockne Blumen
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 19-20
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Seite|19||DE_M%C3%BCller_Gedicht_1906_019.png}}'''Trockne Blumen.'''
+
+Ihr Blümlein alle,
+Die sie mir gab,
+Euch soll man legen
+Mit mir in's Grab.
+
+{{Zeile|5}}{{Idt}}Wie seht ihr alle
+Mich an so weh,
+Als ob ihr wüßtet,
+Wie mir gescheh'?
+
+{{Idt}}Ihr Blümlein alle,
+{{Zeile|10}}Wie welk, wie blaß?
+Ihr Blümlein alle,
+Wovon so naß?
+
+{{Idt}}Ach, Thränen machen
+Nicht maiengrün,
+{{Zeile|15}}Machen todte Liebe
+Nicht wieder blühn.
+
+{{Idt}}{{Seite|20||DE_M%C3%BCller_Gedicht_1906_020.png}}Und Lenz wird kommen,
+Und Winter wird gehn,
+Und Blümlein werden
+{{Zeile|20}}Im Grase stehn,
+
+{{Idt}}Und Blümlein liegen
+In meinem Grab,
+Die Blümlein alle,
+Die sie mir gab.
+
+{{Zeile|25}}{{Idt}}Und wenn sie wandelt
+Am Hügel vorbei,
+Und denkt im Herzen:
+Der meint' es treu!
+
+{{Idt}}Dann Blümlein alle,
+{{Zeile|30}}Heraus, heraus!
+Der Mai ist kommen,
+Der Winter ist aus.
+</poem>
+
+
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

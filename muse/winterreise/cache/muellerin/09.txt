@@ -1,0 +1,67 @@
+{{Textdaten
+|VORIGER=Morgengruß
+|NÄCHSTER=Thränenregen
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Des Müllers Blumen
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 11-12
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=Berlin
+|VERLAG=B. Behr
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Seite|11||DE_M%C3%BCller_Gedicht_1906_011.png}} '''Des Müllers Blumen.'''
+
+Am Bach viel kleine Blumen stehn,
+Aus hellen blauen Augen sehn;
+Der Bach der ist des Müllers Freund,
+Und hellblau Liebchens Auge scheint,
+{{Zeile|5}}Drum sind es meine Blumen.
+
+{{Idt}}Dicht unter ihrem Fensterlein
+Da pflanz' ich meine Blumen ein,
+Da ruft ihr zu, wenn Alles schweigt,
+Wenn sich ihr Haupt zum Schlummer neigt,
+{{Zeile|10}}Ihr wißt ja, was ich meine.
+
+{{Idt}}Und wenn sie thät die Äuglein zu,
+Und schläft in süßer, süßer Ruh',
+Dann lispelt als ein Traumgesicht
+Ihr zu: Vergiß, vergiß mein nicht!
+{{Zeile|15}}Das ist es, was ich meine.
+
+{{Idt}}{{Seite|12||DE_M%C3%BCller_Gedicht_1906_012.png}} Und schließt sie früh die Laden auf,
+Dann schaut mit Liebesblick hinauf:
+Der Thau in euren Äugelein,
+Das sollen meine Thränen sein,
+{{Zeile|20}}Die will [ich]<ref>Fehlt im Druck</ref> auf euch weinen.
+</poem>
+
+
+{{Linie}}
+
+
+==Erläuterungen (Wikisource)==
+<references/>
+
+{{SORTIERUNG:Mullers Blumen #Des}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

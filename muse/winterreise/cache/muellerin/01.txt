@@ -1,0 +1,71 @@
+{{Textdaten
+|VORIGER=Der Dichter, als Prolog
+|NÄCHSTER=Wohin
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Wanderschaft
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 4-5
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Erstveröffentlichung in ''Gaben der Milde. Hrg. F. W. Gubitz. 4. Bd. Berlin, 1818.'' Außerdem vertont von Carl Friedrich Zöllner und Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+
+{{Idt}}{{Idt}}{{Idt}}{{Seite|4||DE_M%C3%BCller_Gedicht_1906_004.png}} '''Wanderschaft.'''
+
+Das Wandern ist des Müllers Lust,
+{{Idt}}{{Idt}}Das Wandern!
+Das muß ein schlechter Müller sein,
+Dem niemals fiel das Wandern ein,
+{{Zeile|5}}{{Idt}}{{Idt}}Das Wandern.
+
+Vom Wasser haben wir’s gelernt,
+{{Idt}}{{Idt}}Vom Wasser!
+Das hat nicht Rast bei Tag und Nacht,
+Ist stets auf Wanderschaft bedacht,
+{{Zeile|10}}{{Idt}}{{Idt}}Das Wasser.
+
+{{Seite|5||DE_M%C3%BCller_Gedicht_1906_005.png}} Das sehn wir auch den Rädern ab,
+{{Idt}}{{Idt}}Den Rädern!
+Die gar nicht gerne stille stehn,
+Die sich mein Tag nicht müde drehn,
+{{Zeile|15}}{{Idt}}{{Idt}}Die Räder.
+
+Die Steine selbst, so schwer sie sind,
+{{Idt}}{{Idt}}Die Steine!
+Sie tanzen mit den muntern Reihn
+Und wollen gar noch schneller sein,
+{{Zeile|20}}{{Idt}}{{Idt}}Die Steine.
+
+O Wandern, Wandern, meine Lust,
+{{Idt}}{{Idt}}O Wandern!
+Herr Meister und Frau Meisterin,
+Laßt mich in Frieden weiter ziehn
+{{Zeile|25}}{{Idt}}{{Idt}}Und wandern.
+
+</poem>
+
+
+{{Linie}}
+
+
+[[Kategorie:Deutschland]]
+[[Kategorie:19. Jahrhundert]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Lied]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

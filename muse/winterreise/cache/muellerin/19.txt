@@ -1,0 +1,80 @@
+{{Textdaten
+|VORIGER=Trockne Blumen
+|NÄCHSTER=Des Baches Wiegenlied
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Der Müller und der Bach
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 20-21
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=Berlin
+|VERLAG=B. Behr
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{SeitePR1|20|DE_M%C3%BCller_Gedicht_1906_020.png}} '''Der Müller und der Bach.'''
+
+{{Idt}}{{Idt}}'''Der Müller.'''
+Wo ein treues Herze
+In Liebe vergeht.
+Da welken die Lilien
+{{Zeile|5}}Auf jedem Beet.
+
+{{Idt}}Da muß in die Wolken
+Der Vollmond gehn,
+Damit seine Thränen
+Die Menschen nicht sehn.
+
+{{Zeile|10}}{{Idt}}Da halten die Englein
+Die Augen sich zu,
+Und schluchzen und singen
+Die Seele zu Ruh’.
+     
+{{SeitePR1|21|DE_M%C3%BCller_Gedicht_1906_021.png}}{{Idt}}{{Idt}} '''Der Bach.'''
+{{Zeile|15}}{{Idt}}Und wenn sich die Liebe
+Dem Schmerz entringt,
+Ein Sternlein, ein neues,
+Am Himmel erblinkt.
+
+{{Idt}}Da springen drei Rosen,
+{{Zeile|20}}Halb roth, halb weiß,
+Die welken nicht wieder,
+Aus Dornenreis.
+
+{{Idt}}Und die Engelein schneiden
+Die Flügel sich ab,
+{{Zeile|25}}Und gehn alle Morgen
+Zur Erde hinab.
+     
+{{Idt}}{{Idt}}'''Der Müller.'''
+{{Idt}}Ach, Bächlein, liebes Bächlein,
+Du meinst es so gut:
+{{Zeile|30}}Ach, Bächlein, aber weißt du,
+Wie Liebe thut?
+
+{{Idt}}Ach, unten, da unten,
+Die kühle Ruh’!
+Ach, Bächlein, liebes Bächlein,
+{{Zeile|35}}So singe nur zu.
+</poem>
+
+{{SORTIERUNG:Muller und der Bach #Der}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

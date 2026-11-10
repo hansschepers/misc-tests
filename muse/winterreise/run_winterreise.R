@@ -77,7 +77,8 @@ cat("\nSongs by PC3:\n")
 print(songs[order(PC3), .(song, title, title_en, PC3 = round(PC3, 3))])
 
 # 5. is the composer's order a 'path'? ----------------------------------
-orders <- setNames(list(seq_len(n_song), TXT$alt_order), c("composer", TXT$alt_order_name))
+orders <- list(composer = seq_len(n_song))
+if (!is.null(TXT$alt_order)) orders[[TXT$alt_order_name]] <- TXT$alt_order
 tst <- test_order(V, orders)
 cat("\nPath length (sum of consecutive cosine distances) vs 20000 random orders:\n")
 print(tst[, lapply(.SD, function(x) if (is.numeric(x)) round(x, 4) else x)])

@@ -1,0 +1,63 @@
+{{Textdaten
+|VORIGER=Mit dem grünen Lautenbande
+|NÄCHSTER=Eifersucht und Stolz
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Der Jäger
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 14-15
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Idt}}{{Idt}}{{Seite|14||DE_M%C3%BCller_Gedicht_1906_014.png}} '''Der Jäger.'''
+
+Was sucht denn der Jäger am Mühlbach hier?
+Bleib’, trotziger Jäger, in deinem Revier!
+Hier giebt es kein Wild zu jagen für dich,
+Hier wohnt nur ein Rehlein, ein zahmes, für mich.
+{{Zeile|5}}Und willst du das zärtliche Rehlein sehn,
+So laß deine Büchsen im Walde stehn,
+{{Seite|15||DE_M%C3%BCller_Gedicht_1906_015.png}} Und laß deine klaffenden Hunde zu Haus,
+Und laß auf dem Horne den Saus und Braus,
+Und scheere vom Kinne das struppige Haar,
+{{Zeile|10}}Sonst scheut sich im Garten das Rehlein fürwahr.
+
+Doch besser, du bliebest im Walde dazu,
+Und ließest die Mühlen und Müller in Ruh’.
+Was taugen die Fischlein im grünen Gezweig?
+Was will denn das Eichhorn im bläulichen Teich?
+{{Zeile|15}}Drum bleibe, du trotziger Jäger, im Hain,
+Und laß mich mit meinen drei Rädern allein;
+Und willst meinem Schätzchen dich machen beliebt,
+So wisse, mein Freund, was ihr Herzchen betrübt:
+Die Eber, die kommen zu Nacht aus dem Hain,
+{{Zeile|20}}Und brechen in ihren Kohlgarten ein,
+Und treten und wühlen herum in dem Feld:
+Die Eber die schieße, du Jägerheld!
+</poem>
+
+
+{{Linie}}
+
+{{SORTIERUNG:Jager #Der #Muller}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Jagd]]
+[[Kategorie:Die schöne Müllerin]]

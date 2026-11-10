@@ -1,0 +1,68 @@
+{{Textdaten
+|VORIGER=Die liebe Farbe
+|NÄCHSTER=Blümlein Vergißmein
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Die böse Farbe
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 17-18
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Seite|17||DE_M%C3%BCller_Gedicht_1906_017.png}} '''Die böse Farbe.'''
+
+Ich möchte ziehn in die Welt hinaus,
+Hinaus in die weite Welt,
+Wenn’s nur so grün, so grün nicht wär’
+Da draußen in Wald und Feld!
+
+{{Zeile|5}}{{Idt}}Ich möchte die grünen Blätter all’
+Pflücken von jedem Zweig,
+Ich möchte die grünen Gräser all’
+Weinen ganz todtenbleich.
+
+{{Idt}}{{Seite|18||DE_M%C3%BCller_Gedicht_1906_018.png}} Ach Grün, du böse Farbe du,
+{{Zeile|10}}Was siehst mich immer an,
+So stolz, so keck, so schadenfroh,
+Mich armen weißen Mann?
+
+{{Idt}}Ich möchte liegen vor ihrer Thür,
+In Sturm und Regen und Schnee,
+{{Zeile|15}}Und singen ganz leise bei Tag und Nacht
+Das eine Wörtchen Ade!
+
+{{Idt}}Horch, wenn im Wald ein Jagdhorn ruft,
+Da klingt ihr Fensterlein,
+Und schaut sie auch nach mir nicht aus,
+{{Zeile|20}}Darf ich doch schauen hinein.
+
+{{Idt}}O binde von der Stirn dir ab
+Das grüne, grüne Band,
+Ade, Ade! und reiche mir
+Zum Abschied deine Hand!
+</poem>
+
+
+{{Linie}}
+
+{{SORTIERUNG:bose Farbe #Die}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

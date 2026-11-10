@@ -1,0 +1,54 @@
+{{Textdaten
+|VORIGER=Wohin
+|NÄCHSTER=Danksagung an den Bach
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Halt!
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe, S. 6
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=Berlin
+|VERLAG=Behr
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von [[Franz Schubert]].
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>{{SeitePR1|6|DE_M%C3%BCller_Gedicht_1906_006.png}}{{Idt}}{{Idt}}{{Idt}}'''Halt!'''
+
+Eine Mühle seh’ ich blinken
+Aus den Erlen heraus,
+Durch Rauschen und Singen
+Bricht Rädergebraus.
+
+{{Zeile|5}}{{Idt}}Ei willkommen, ei willkommen,
+Süßer Mühlengesang!
+Und das Haus, wie so traulich!
+Und die Fenster, wie blank!
+
+{{Idt}}Und die Sonne, wie helle
+{{Zeile|10}}Vom Himmel sie scheint!
+Ei, Bächlein, liebes Bächlein,
+War es also gemeint? 
+</poem>
+
+
+{{Linie}}
+
+
+{{SORTIERUNG:Halt}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

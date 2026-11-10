@@ -1,0 +1,210 @@
+===== Wanderschaft ===== 
+ {{Textdaten
+|VORIGER=Der Dichter, als Prolog
+|NÄCHSTER=Wohin
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Wanderschaft
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 4-5
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Erstveröffentlichung in ''Gaben der Milde. Hrg. F. W. Gubitz. 4. Bd. Berlin, 1818.'' Außerdem vertont von Carl Friedrich Zöllner und Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+
+{{Idt}}{{Idt}}{{Idt}}{{Seite|4||DE_M%C3%BCller_Gedicht_1906_004.png}} '''Wanderschaft.'''
+
+Das Wandern ist des Müllers Lust,
+{{Idt}}{{Idt}}Das Wandern!
+Das muß ein schlechter Müller sein,
+Dem niemals fiel das Wandern ein,
+{{Zeile|5}}{{Idt}}{{Idt}}Das Wandern.
+
+Vom Wasser haben wir’s gelernt,
+{{Idt}}{{Idt}}Vom Wasser!
+Das hat nicht Rast bei Tag und Nacht,
+Ist stets auf Wanderschaft bedacht,
+{{Zeile|10}}{{Idt}}{{Idt}}Das Wasser.
+
+{{Seite|5||DE_M%C3%BCller_Gedicht_1906_005.png}} Das sehn wir auch den Rädern ab,
+{{Idt}}{{Idt}}Den Rädern!
+Die gar nicht gerne stille stehn,
+Die sich mein Tag nicht müde drehn,
+{{Zeile|15}}{{Idt}}{{Idt}}Die Räder.
+
+Die Steine selbst, so schwer sie sind,
+{{Idt}}{{Idt}}Die Steine!
+Sie tanzen mit den muntern Reihn
+Und wollen gar noch schneller sein,
+{{Zeile|20}}{{Idt}}{{Idt}}Die Steine.
+
+O Wandern, Wandern, meine Lust,
+{{Idt}}{{Idt}}O Wandern!
+Herr Meister und Frau Meisterin,
+Laßt mich in Frieden weiter ziehn
+{{Zeile|25}}{{Idt}}{{Idt}}Und wandern.
+
+</poem>
+
+
+{{Linie}}
+
+
+[[Kategorie:Deutschland]]
+[[Kategorie:19. Jahrhundert]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Lied]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]] 
+===== Thränenregen ===== 
+ {{Textdaten
+|VORIGER=Des Müllers Blumen
+|NÄCHSTER=Mein!
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Thränenregen
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 12-13
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Seite|12||DE_M%C3%BCller_Gedicht_1906_012.png}}'''Thränenregen.'''
+
+Wir saßen so traulich beisammen
+Im kühlen Erlendach,
+Wir schauten so traulich zusammen
+Hinab in den rieselnden Bach.
+
+{{Zeile|5}}{{Idt}}Der Mond war auch gekommen,
+Die Sternlein hinterdrein,
+Und schauten so traulich zusammen
+In den silbernen Spiegel hinein.
+
+{{Idt}}Ich sah nach keinem Monde,
+{{Zeile|10}}Nach keinem Sternenschein,
+Ich schaute nach ihrem Bilde,
+Nach ihren Augen allein.
+
+{{Idt}}Und sahe sie nicken und blicken
+Herauf aus dem seligen Bach,
+{{Zeile|15}}Die Blümlein am Ufer, die blauen,
+Sie nickten und blickten ihr nach.
+
+{{Idt}}Und in den Bach versunken
+Der ganze Himmel schien,
+Und wollte mich mit hinunter
+{{Zeile|20}}In seine Tiefe ziehn.
+
+{{Idt}}Und über den Wolken und Sternen,
+Da rieselte munter der Bach,
+Und rief mit Singen und Klingen:
+Geselle, Geselle, mir nach!
+
+{{Zeile|25}}{{Idt}}{{Seite|13||DE_M%C3%BCller_Gedicht_1906_013.png}}Da gingen die Augen mir über,
+Da ward es im Spiegel so kraus;
+Sie sprach: Es kommt ein Regen,
+Ade, ich geh’ nach Haus.
+</poem>
+
+
+{{Linie}}
+
+
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]] 
+===== Der Jäger (Müller) ===== 
+ {{Textdaten
+|VORIGER=Mit dem grünen Lautenbande
+|NÄCHSTER=Eifersucht und Stolz
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Der Jäger
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 14-15
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Idt}}{{Idt}}{{Seite|14||DE_M%C3%BCller_Gedicht_1906_014.png}} '''Der Jäger.'''
+
+Was sucht denn der Jäger am Mühlbach hier?
+Bleib’, trotziger Jäger, in deinem Revier!
+Hier giebt es kein Wild zu jagen für dich,
+Hier wohnt nur ein Rehlein, ein zahmes, für mich.
+{{Zeile|5}}Und willst du das zärtliche Rehlein sehn,
+So laß deine Büchsen im Walde stehn,
+{{Seite|15||DE_M%C3%BCller_Gedicht_1906_015.png}} Und laß deine klaffenden Hunde zu Haus,
+Und laß auf dem Horne den Saus und Braus,
+Und scheere vom Kinne das struppige Haar,
+{{Zeile|10}}Sonst scheut sich im Garten das Rehlein fürwahr.
+
+Doch besser, du bliebest im Walde dazu,
+Und ließest die Mühlen und Müller in Ruh’.
+Was taugen die Fischlein im grünen Gezweig?
+Was will denn das Eichhorn im bläulichen Teich?
+{{Zeile|15}}Drum bleibe, du trotziger Jäger, im Hain,
+Und laß mich mit meinen drei Rädern allein;
+Und willst meinem Schätzchen dich machen beliebt,
+So wisse, mein Freund, was ihr Herzchen betrübt:
+Die Eber, die kommen zu Nacht aus dem Hain,
+{{Zeile|20}}Und brechen in ihren Kohlgarten ein,
+Und treten und wühlen herum in dem Feld:
+Die Eber die schieße, du Jägerheld!
+</poem>
+
+
+{{Linie}}
+
+{{SORTIERUNG:Jager #Der #Muller}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Jagd]]
+[[Kategorie:Die schöne Müllerin]] 

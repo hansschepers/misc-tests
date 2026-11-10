@@ -1,0 +1,55 @@
+{{Textdaten
+|VORIGER=Thränenregen
+|NÄCHSTER=Pause
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Mein!
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 13
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Seite|13||DE_M%C3%BCller_Gedicht_1906_013.png}}'''Mein!'''
+
+Bächlein, laß dein Rauschen sein!
+Räder, stellt eur Brausen ein!
+All’ ihr muntern Waldvögelein,
+Groß und klein,
+{{Zeile|5}}Endet eure Melodein!
+Durch den Hain
+Aus und ein
+Schalle heut’ ein Reim allein:
+Die geliebte Müllerin ist '''mein!'''
+{{Zeile|10}}'''Mein!'''
+Frühling, sind das alle deine Blümelein?
+Sonne, hast du keinen hellern Schein?
+Ach, so muß ich ganz allein,
+Mit dem seligen Worte '''mein''',
+{{Zeile|15}}Unverstanden in der weiten Schöpfung sein!
+</poem>
+
+
+{{Linie}}
+
+
+{{SORTIERUNG:Mein}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

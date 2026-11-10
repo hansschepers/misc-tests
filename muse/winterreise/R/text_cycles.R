@@ -10,6 +10,8 @@ wiki_wikitext <- function(page, cache_file, host = "de.wikisource.org") {
   b <- request(glue("https://{host}/w/api.php")) |>
     req_url_query(action = "parse", page = page, prop = "wikitext", format = "json", redirects = 1) |>
     req_user_agent("song-cycle-semantic-path/0.1 (R httr2)") |>
+    req_throttle(capacity = 1, fill_time_s = 1) |>   # wikimedia rate limit: ~1 request/s
+    req_retry(max_tries = 5) |>                       # honours Retry-After on 429
     req_perform() |>
     resp_body_json()
   if (!is.null(b$error)) stop(glue("wikisource '{page}': {b$error$info}"))
@@ -26,14 +28,19 @@ extract_poem <- function(wikitext) sub("(?s).*?<poem>(.*?)</poem>.*", "\\1", wik
 # one <poem> body -> list(tempo, lines = data.table(stanza, line)). Blank line = stanza break;
 # a line wholly in ''italics'' = performance marking (Schubert/Friedlaender), kept apart.
 poem_lines <- function(poem) {
-  poem <- gsub("\\{\\{[^}]*\\}\\}", "", poem)   # {{idt}}, {{Zeile|5}}, ...
+  poem <- gsub("\\{\\{[^}]*\\}\\}", "", poem)   # {{idt}}, {{Zeile|5}}, {{Seite|4||x.png}} ...
+  poem <- gsub("<ref[^>]*>.*?</ref>|<ref[^>]*/>", "", poem, perl = TRUE)
   ln <- strsplit(poem, "\n")[[1]]
   ln <- trimws(gsub("[\\h]+", " ", ln, perl = TRUE))
+  ln <- ln[!grepl("^'''[^']+'''$", ln)]          # bold title line (Hatfield edition)
   is_tempo <- grepl("^''.*''$", ln)
   tempo <- if (any(is_tempo)) gsub("''", "", ln[is_tempo][1]) else NA_character_
   ln <- ln[!is_tempo]
+  ln <- gsub("'{2,}", "", ln)                   # inline emphasis ('''sie''' = gesperrt) -> plain
   st <- cumsum(ln == "" & c(TRUE, head(ln, -1) != ""))
   keep <- ln != ""
+  bad <- ln[keep][grepl("\\{\\{|\\}\\}|\\[\\[|<[a-z/]|^[0-9 ]+$|''", ln[keep])]
+  if (length(bad)) stop(glue("poem_lines: markup/number left in text: {paste(head(bad, 3), collapse = ' | ')}"))
   list(tempo = tempo, lines = data.table(stanza = match(st[keep], unique(st[keep])), line = ln[keep]))
 }
 
@@ -122,6 +129,34 @@ load_dichterliebe <- function(cache_dir) {
        heine_no = heine_no)
 }
 
+# ---- Die schöne Müllerin: Müller (Hatfield 1906 critical ed.), one page per poem ---------
+# Schubert set 20 of Müller's 25, in Müller's order (omitted: Prolog, Das Mühlenleben,
+# Erster Schmerz letzter Scherz, Blümlein Vergißmein, Epilog) -> no alternative order to test.
+muellerin_songs <- function() {
+  data.table(
+    song = 1:20
+    , title = c("Das Wandern", "Wohin?", "Halt!", "Danksagung an den Bach", "Am Feierabend",
+                "Der Neugierige", "Ungeduld", "Morgengruß", "Des Müllers Blumen", "Tränenregen",
+                "Mein!", "Pause", "Mit dem grünen Lautenbande", "Der Jäger", "Eifersucht und Stolz",
+                "Die liebe Farbe", "Die böse Farbe", "Trockne Blumen", "Der Müller und der Bach",
+                "Des Baches Wiegenlied")
+    , page = c("Wanderschaft", "Wohin", "Halt!", "Danksagung an den Bach", "Am Feierabend",
+               "Der Neugierige", "Ungeduld", "Morgengruß", "Des Müllers Blumen", "Thränenregen",
+               "Mein!", "Pause", "Mit dem grünen Lautenbande", "Der Jäger (Müller)", "Eifersucht und Stolz",
+               "Die liebe Farbe", "Die böse Farbe", "Trockne Blumen", "Der Müller und der Bach",
+               "Des Baches Wiegenlied"))
+}
+
+load_muellerin <- function(cache_dir) {
+  S <- muellerin_songs()
+  lines <- rbindlist(lapply(S$song, function(i) {
+    wt <- wiki_wikitext(S$page[i], file.path(cache_dir, "muellerin", glue("{sprintf('%02d', i)}.txt")))
+    pl <- poem_lines(extract_poem(wt))
+    data.table(song = i, title = S$title[i], tempo = pl$tempo, pl$lines)
+  }))
+  list(lines = lines, alt_order_name = NULL, alt_order = NULL)
+}
+
 cycle_config <- function(cycle) {
   switch(cycle
     , winterreise = list(
@@ -140,5 +175,13 @@ cycle_config <- function(cycle) {
             "I bear no grudge", "And if the little flowers knew", "There is a fluting and fiddling",
             "When I hear the little song", "A youth loves a maiden", "On a bright summer morning",
             "I wept in my dream", "Nightly in my dreams", "From old fairy tales", "The old, evil songs"))
+    , muellerin = list(
+        load = load_muellerin, label = "Die schöne Müllerin (Müller / Schubert 1823)"
+        , composer_order = "Schubert's order (= Müller's, 5 poems omitted)"
+        , title_en = c("Wandering", "Whither?", "Halt!", "Thanks to the Brook", "After Work",
+            "The Inquisitive One", "Impatience", "Morning Greeting", "The Miller's Flowers", "Rain of Tears",
+            "Mine!", "Pause", "With the Green Lute Ribbon", "The Hunter", "Jealousy and Pride",
+            "The Beloved Colour", "The Hateful Colour", "Withered Flowers", "The Miller and the Brook",
+            "The Brook's Lullaby"))
     , stop(glue("unknown cycle '{cycle}'")))
 }

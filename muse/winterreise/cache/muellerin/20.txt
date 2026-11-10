@@ -1,0 +1,74 @@
+{{Textdaten
+|VORIGER=Der Müller und der Bach
+|NÄCHSTER=Der Dichter, als Epilog
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Des Baches Wiegenlied
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 21-22
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=Berlin
+|VERLAG=B. Behr
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Seite|21||DE_M%C3%BCller_Gedicht_1906_021.png}} '''Des Baches Wiegenlied.'''
+
+Gute Ruh’, gute Ruh’!
+Thu’ die Augen zu!
+Wandrer, du müder, du bist zu Haus.
+Die Treu' ist hier,
+{{Zeile|5}}Sollst liegen bei mir,
+Bis das Meer will trinken die Bächlein aus.
+
+{{Idt}}Will betten dich kühl,
+Auf weichem Pfühl,
+In dem blauen krystallenen Kämmerlein.
+{{Zeile|10}}Heran, heran,
+Was wiegen kann,
+Woget und wieget den Knaben mir ein!
+
+{{Idt}}{{Seite|22||DE_M%C3%BCller_Gedicht_1906_022.png}} Wenn ein Jagdhorn schallt
+Aus dem grünen Wald,
+{{Zeile|15}}Will ich sausen und brausen wohl um dich her.
+Blickt nicht herein,
+Blaue Blümelein!
+Ihr macht meinem Schläfer die Träume so schwer.
+
+{{Idt}}Hinweg, hinweg
+{{Zeile|20}}Von dem Mühlensteg,
+Böses Mägdlein, daß ihn dein Schatten nicht weckt!
+Wirf mir herein
+Dein Tüchlein fein,
+Daß ich die Augen ihm halte bedeckt!
+
+{{Zeile|25}}{{Idt}}Gute Nacht, gute Nacht!
+Bis Alles wacht,
+Schlaf’ aus deine Freude, schlaf’ aus dein Leid!
+Der Vollmond steigt,
+Der Nebel weicht,
+Und der Himmel da oben, wie ist er so weit!
+</poem>
+
+
+{{Linie}}
+
+{{SORTIERUNG:Baches Wiegenlied #Des}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

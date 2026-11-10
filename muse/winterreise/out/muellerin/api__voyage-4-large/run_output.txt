@@ -1,0 +1,145 @@
+=== Die schöne Müllerin (Müller / Schubert 1823) | api: voyage-4-large === 
+84 stanza units over 20 songs 
+     song                      title                   title_en  tempo n_stanza
+    <int>                     <char>                     <char> <char>    <int>
+ 1:     1                Das Wandern                  Wandering   <NA>        5
+ 2:     2                     Wohin?                   Whither?   <NA>        6
+ 3:     3                      Halt!                      Halt!   <NA>        3
+ 4:     4     Danksagung an den Bach        Thanks to the Brook   <NA>        5
+ 5:     5              Am Feierabend                 After Work   <NA>        2
+ 6:     6             Der Neugierige        The Inquisitive One   <NA>        5
+ 7:     7                   Ungeduld                 Impatience   <NA>        4
+ 8:     8                 Morgengruß           Morning Greeting   <NA>        4
+ 9:     9         Des Müllers Blumen       The Miller's Flowers   <NA>        4
+10:    10                Tränenregen              Rain of Tears   <NA>        7
+11:    11                      Mein!                      Mine!   <NA>        1
+12:    12                      Pause                      Pause   <NA>        2
+13:    13 Mit dem grünen Lautenbande With the Green Lute Ribbon   <NA>        3
+14:    14                  Der Jäger                 The Hunter   <NA>        2
+15:    15       Eifersucht und Stolz         Jealousy and Pride   <NA>        1
+16:    16            Die liebe Farbe         The Beloved Colour   <NA>        3
+17:    17             Die böse Farbe         The Hateful Colour   <NA>        6
+18:    18             Trockne Blumen           Withered Flowers   <NA>        8
+19:    19    Der Müller und der Bach   The Miller and the Brook   <NA>        8
+20:    20      Des Baches Wiegenlied        The Brook's Lullaby   <NA>        5
+     song                      title                   title_en  tempo n_stanza
+    <int>                     <char>                     <char> <char>    <int>
+
+PCA variance explained (PC1..3): 0.161 0.129 0.091 
+UMAP seed stability (cor of 2-D distances, 5 seeds): 0.41 0.87 
+Designed axes nature_self x hope_despair: cos between them = 0.04 
+--- PC1: stanzas at the ends --- 
+       end unit_id                      title  score
+    <char>  <char>                     <char>  <num>
+ 1:      -    15.1       Eifersucht und Stolz -0.467
+ 2:      -    14.1                  Der Jäger -0.437
+ 3:      -    14.2                  Der Jäger -0.410
+ 4:      -    11.1                      Mein! -0.351
+ 5:      -     5.1              Am Feierabend -0.216
+ 6:      +    16.3            Die liebe Farbe  0.237
+ 7:      +    18.4             Trockne Blumen  0.245
+ 8:      +    18.6             Trockne Blumen  0.251
+ 9:      +    13.2 Mit dem grünen Lautenbande  0.278
+10:      +    19.4    Der Müller und der Bach  0.299
+                                                                                                                        text
+                                                                                                                      <char>
+ 1: Wohin so schnell, so kraus, so wild, mein lieber Bach? Eilst du voll Zorn dem frechen Bruder Jäger nach? Kehr’ um, kehr’
+ 2: Was sucht denn der Jäger am Mühlbach hier? Bleib’, trotziger Jäger, in deinem Revier! Hier giebt es kein Wild zu jagen f
+ 3: Doch besser, du bliebest im Walde dazu, Und ließest die Mühlen und Müller in Ruh’. Was taugen die Fischlein im grünen Ge
+ 4: Bächlein, laß dein Rauschen sein! Räder, stellt eur Brausen ein! All’ ihr muntern Waldvögelein, Groß und klein, Endet eu
+ 5: Hätt’ ich tausend Arme zu rühren! Könnt’ ich brausend Die Räder führen! Könnt’ ich wehen Durch alle Haine! Könnt’ ich dr
+ 6: Grabt mir ein Grab im Wasen, Deckt mich mit grünem Rasen, Mein Schatz hat ’s Grün so gern. Kein Kreuzlein schwarz, kein 
+ 7:                                              Ach, Thränen machen Nicht maiengrün, Machen todte Liebe Nicht wieder blühn.
+ 8:                                                  Und Blümlein liegen In meinem Grab, Die Blümlein alle, Die sie mir gab.
+ 9: Ist auch dein ganzer Liebster weiß, Soll Grün doch haben seinen Preis, Und ich auch hab’ es gern. Weil unsre Lieb’ ist i
+10:                              Und wenn sich die Liebe Dem Schmerz entringt, Ein Sternlein, ein neues, Am Himmel erblinkt.
+--- PC2: stanzas at the ends --- 
+       end unit_id                      title  score
+    <char>  <char>                     <char>  <num>
+ 1:      -     2.3                     Wohin? -0.278
+ 2:      -     2.6                     Wohin? -0.270
+ 3:      -    10.6                Tränenregen -0.256
+ 4:      -     3.3                      Halt! -0.239
+ 5:      -     3.2                      Halt! -0.222
+ 6:      +    16.3            Die liebe Farbe  0.297
+ 7:      +    13.3 Mit dem grünen Lautenbande  0.321
+ 8:      +    13.2 Mit dem grünen Lautenbande  0.323
+ 9:      +    16.1            Die liebe Farbe  0.346
+10:      +    13.1 Mit dem grünen Lautenbande  0.380
+                                                                                                                        text
+                                                                                                                      <char>
+ 1:             Hinunter und immer weiter, Und immer dem Bache nach, Und immer frischer rauschte, Und immer heller der Bach.
+ 2:                 Laß singen, Gesell, laß rauschen, Und wandre fröhlich nach! Es gehn ja Mühlenräder In jedem klaren Bach.
+ 3: Und über den Wolken und Sternen, Da rieselte munter der Bach, Und rief mit Singen und Klingen: Geselle, Geselle, mir nac
+ 4:                     Und die Sonne, wie helle Vom Himmel sie scheint! Ei, Bächlein, liebes Bächlein, War es also gemeint?
+ 5:             Ei willkommen, ei willkommen, Süßer Mühlengesang! Und das Haus, wie so traulich! Und die Fenster, wie blank!
+ 6: Grabt mir ein Grab im Wasen, Deckt mich mit grünem Rasen, Mein Schatz hat ’s Grün so gern. Kein Kreuzlein schwarz, kein 
+ 7: Nun schlingst du in die Locken dein Das grüne Band gefällig ein, Du hast ja ’s Grün so gern. Dann weiß ich, wo die Hoffn
+ 8: Ist auch dein ganzer Liebster weiß, Soll Grün doch haben seinen Preis, Und ich auch hab’ es gern. Weil unsre Lieb’ ist i
+ 9: In Grün will ich mich kleiden, In grüne Thränenweiden, Mein Schatz hat ’s Grün so gern. Will suchen einen Zypressenhain,
+10: „Schad’ um das schöne grüne Band, Daß es verbleicht hier an der Wand, Ich hab’ das Grün so gern!“ So sprachst du, Liebch
+--- PC3: stanzas at the ends --- 
+       end unit_id                 title  score
+    <char>  <char>                <char>  <num>
+ 1:      -     5.1         Am Feierabend -0.365
+ 2:      -    12.1                 Pause -0.276
+ 3:      -     7.3              Ungeduld -0.238
+ 4:      -     7.4              Ungeduld -0.228
+ 5:      -     7.1              Ungeduld -0.227
+ 6:      +    15.1  Eifersucht und Stolz  0.169
+ 7:      +    18.3        Trockne Blumen  0.177
+ 8:      +    20.4 Des Baches Wiegenlied  0.185
+ 9:      +    14.2             Der Jäger  0.236
+10:      +    14.1             Der Jäger  0.300
+                                                                                                                        text
+                                                                                                                      <char>
+ 1: Hätt’ ich tausend Arme zu rühren! Könnt’ ich brausend Die Räder führen! Könnt’ ich wehen Durch alle Haine! Könnt’ ich dr
+ 2: Meine Laute hab’ ich gehängt an die Wand, Hab’ sie umschlungen mit einem grünen Band — Ich kann nicht mehr singen, mein 
+ 3: Den Morgenwinden möcht' ich's hauchen ein, Ich möcht' es säuseln durch den regen Hain; O, leuchtet' es aus jedem Blumens
+ 4: Ich meint', es müßt' in meinen Augen stehn, Auf meinen Wangen müßt' man's brennen sehn, Zu lesen wär's auf meinem stumme
+ 5: Ich schnitt' es gern in alle Rinden ein, Ich grüb' es gern in jeden Kieselstein, Ich möcht' es sä'n auf jedes frische Be
+ 6: Wohin so schnell, so kraus, so wild, mein lieber Bach? Eilst du voll Zorn dem frechen Bruder Jäger nach? Kehr’ um, kehr’
+ 7:                                                                     Ihr Blümlein alle, Wie welk, wie blaß? Wovon so naß?
+ 8: Hinweg, hinweg Von dem Mühlensteg, Böses Mägdlein, daß ihn dein Schatten nicht weckt! Wirf mir herein Dein Tüchlein fein
+ 9: Doch besser, du bliebest im Walde dazu, Und ließest die Mühlen und Müller in Ruh’. Was taugen die Fischlein im grünen Ge
+10: Was sucht denn der Jäger am Mühlbach hier? Bleib’, trotziger Jäger, in deinem Revier! Hier giebt es kein Wild zu jagen f
+
+Songs by PC3:
+     song                      title                   title_en    PC3
+    <int>                     <char>                     <char>  <num>
+ 1:     5              Am Feierabend                 After Work -0.317
+ 2:     7                   Ungeduld                 Impatience -0.244
+ 3:    12                      Pause                      Pause -0.225
+ 4:    11                      Mein!                      Mine! -0.203
+ 5:     4     Danksagung an den Bach        Thanks to the Brook -0.118
+ 6:     1                Das Wandern                  Wandering -0.117
+ 7:     2                     Wohin?                   Whither? -0.043
+ 8:     3                      Halt!                      Halt! -0.007
+ 9:    13 Mit dem grünen Lautenbande With the Green Lute Ribbon  0.013
+10:     6             Der Neugierige        The Inquisitive One  0.020
+11:     8                 Morgengruß           Morning Greeting  0.050
+12:    10                Tränenregen              Rain of Tears  0.066
+13:    17             Die böse Farbe         The Hateful Colour  0.072
+14:     9         Des Müllers Blumen       The Miller's Flowers  0.072
+15:    19    Der Müller und der Bach   The Miller and the Brook  0.107
+16:    18             Trockne Blumen           Withered Flowers  0.111
+17:    16            Die liebe Farbe         The Beloved Colour  0.151
+18:    20      Des Baches Wiegenlied        The Brook's Lullaby  0.152
+19:    15       Eifersucht und Stolz         Jealousy and Pride  0.169
+20:    14                  Der Jäger                 The Hunter  0.291
+     song                      title                   title_en    PC3
+    <int>                     <char>                     <char>  <num>
+
+Path length (sum of consecutive cosine distances) vs 20000 random orders:
+      order path_length null_mean null_sd       z p_shorter
+     <char>       <num>     <num>   <num>   <num>     <num>
+1: composer      4.5739     5.274  0.1914 -3.6569     2e-04
+
+Largest steps:
+    song                       from              to step_dist
+   <int>                     <char>          <char>     <num>
+1:    13 Mit dem grünen Lautenbande       Der Jäger     0.444
+2:    15       Eifersucht und Stolz Die liebe Farbe     0.379
+3:    11                      Mein!           Pause     0.352
+4:    10                Tränenregen           Mein!     0.349
+5:     5              Am Feierabend  Der Neugierige     0.336

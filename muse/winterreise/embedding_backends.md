@@ -163,6 +163,47 @@ PC, smaller cosine distances overall: path lengths 6.9 vs 8.9). The MiniLM PCs a
 "peakier", so easier to name but possibly overfitting to wording. Neither is "right"; the
 agreement table is the quality signal.
 
+### 2026-11-10: Die schöne Müllerin added; joint space of all three cycles
+
+**Text:** Müller, Hatfield 1906 critical edition on de.wikisource, one page per poem.
+Schubert's 20 of Müller's 25, in Müller's order, so there is no alternative order to
+test. The wikitext is full of `{{Zeile|5}}` line counters and `{{Seite|..}}` page markers,
+which are stripped. `'''sie'''` (spaced-out emphasis) becomes plain text. `poem_lines()`
+now STOPS if any markup or a bare number survives.
+
+Wikimedia rate limit: two parallel runs fetching 20 pages each got HTTP 429. The fetcher
+is now throttled to 1 request/s and retries; it fetches only once (cached).
+
+**Path test: Müllerin is the only significantly smooth cycle.**
+
+| cycle | z (rtorch) | z (voyage) | reading |
+|---|---|---|---|
+| Die schöne Müllerin | **-2.65 (p = 0.007)** | **-3.66 (p = 0.0002)** | a narrative: each song follows from the last |
+| Dichterliebe | -0.76 | -0.79 | mildly continuous |
+| Winterreise | +0.36 | +0.63 | ordered by contrast, not drift |
+
+**Joint space (`run_joint.R <backend>`, outputs in `out/joint/<run>/`):**
+
+- The embeddings do not change when the cycles are embedded together; each text is
+  encoded on its own. Only the PROJECTION is joint.
+- How cornered are the cycles? The cycle means are very similar (cosine 0.88-0.95), and
+  the cycle explains only 10-12 % of song variance. But **68-72 % of songs have their
+  nearest neighbour in their own cycle** (chance 33 %). Each cycle has its own
+  neighbourhood inside a shared space.
+- **raw PCA:** PC1 is mostly the cycle (eta² = 0.46 rtorch / 0.68 voyage). One end is
+  Winterreise (cold, weariness, grave, grey head); the other is the flowers and May of
+  Dichterliebe and Müllerin. PC2 picks out Müllerin's hunter/jealousy episode (14-15)
+  as its own corner. So **yes: corners**, and the first axes are spent on telling the
+  cycles apart.
+  - Also seen: Winterreise's opening (Gute Nacht) sits next to Müllerin's opening (Das
+    Wandern). Both begin with wandering.
+- **centred PCA** (each cycle minus its own mean; eta² = 0 by construction) gives
+  shared axes of motion WITHIN a cycle. In both backends, **Der Leiermann and Die alten,
+  bösen Lieder (the two closing songs) share an extreme pole.** rtorch calls it "the
+  outsider"; voyage calls it "loud outward spectacle" (coffin, wedding music, hunter,
+  hurdy-gurdy man) against "intimate inner longing". Both cycles end by turning outward,
+  towards a figure or an object, away from the self.
+
 ## Ideas parked
 
 - Colour the ribbon by a NAMED axis (anchor axis, or PCs aligned to a reference run)

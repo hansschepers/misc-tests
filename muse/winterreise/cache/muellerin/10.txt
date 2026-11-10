@@ -1,0 +1,73 @@
+{{Textdaten
+|VORIGER=Des Müllers Blumen
+|NÄCHSTER=Mein!
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Thränenregen
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 12-13
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=B. Behrs Verlag, Berlin
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Seite|12||DE_M%C3%BCller_Gedicht_1906_012.png}}'''Thränenregen.'''
+
+Wir saßen so traulich beisammen
+Im kühlen Erlendach,
+Wir schauten so traulich zusammen
+Hinab in den rieselnden Bach.
+
+{{Zeile|5}}{{Idt}}Der Mond war auch gekommen,
+Die Sternlein hinterdrein,
+Und schauten so traulich zusammen
+In den silbernen Spiegel hinein.
+
+{{Idt}}Ich sah nach keinem Monde,
+{{Zeile|10}}Nach keinem Sternenschein,
+Ich schaute nach ihrem Bilde,
+Nach ihren Augen allein.
+
+{{Idt}}Und sahe sie nicken und blicken
+Herauf aus dem seligen Bach,
+{{Zeile|15}}Die Blümlein am Ufer, die blauen,
+Sie nickten und blickten ihr nach.
+
+{{Idt}}Und in den Bach versunken
+Der ganze Himmel schien,
+Und wollte mich mit hinunter
+{{Zeile|20}}In seine Tiefe ziehn.
+
+{{Idt}}Und über den Wolken und Sternen,
+Da rieselte munter der Bach,
+Und rief mit Singen und Klingen:
+Geselle, Geselle, mir nach!
+
+{{Zeile|25}}{{Idt}}{{Seite|13||DE_M%C3%BCller_Gedicht_1906_013.png}}Da gingen die Augen mir über,
+Da ward es im Spiegel so kraus;
+Sie sprach: Es kommt ein Regen,
+Ade, ich geh’ nach Haus.
+</poem>
+
+
+{{Linie}}
+
+
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

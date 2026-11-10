@@ -1,0 +1,59 @@
+{{Textdaten
+|VORIGER=Mein!
+|NÄCHSTER=Mit dem grünen Lautenbande
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Pause
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 13-14
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=Berlin
+|VERLAG=B. Behrs 
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{Idt}}{{Idt}}{{Seite|13||DE_M%C3%BCller_Gedicht_1906_013.png}} '''Pause.'''
+
+Meine Laute hab’ ich gehängt an die Wand,
+Hab’ sie umschlungen mit einem grünen Band —
+Ich kann nicht mehr singen, mein Herz ist zu voll,
+Weiß nicht, wie ich’s in Reime zwingen soll.
+{{Zeile|5}}Meiner Sehnsucht allerheißesten Schmerz
+Durft’ ich aushauchen in Liederscherz,
+Und wie ich klagte so süß und fein,
+Meint’ ich doch, mein Leiden wär’ nicht klein.
+Ei, wie groß ist wohl meines Glückes Last,
+{{Zeile|10}}Daß kein Klang auf Erden es in sich faßt?
+
+{{Idt}}Nun, liebe Laute, ruh’ an dem Nagel hier!
+Und weht ein Lüftchen über die Saiten dir,
+Und streift eine Biene mit ihren Flügeln dich,
+Da wird mir so bange und es durchschauert mich.
+{{Zeile|15}}{{Seite|14||DE_M%C3%BCller_Gedicht_1906_014.png}} Warum ließ ich das Band auch hängen so lang’?
+Oft fliegt’s um die Saiten mit seufzendem Klang.
+Ist es der Nachklang meiner Liebespein?
+Soll es das Vorspiel neuer Lieder sein?
+</poem>
+
+
+{{Linie}}
+
+
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

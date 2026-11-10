@@ -1,0 +1,52 @@
+{{Textdaten
+|VORIGER=Der Jäger (Müller)
+|NÄCHSTER=Erster Schmerz, letzter Scherz
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Eifersucht und Stolz
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 15
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=Berlin
+|VERLAG=B. Behr
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+{{SeitePR1|15|DE_M%C3%BCller_Gedicht_1906_015.png}}'''Eifersucht und Stolz.'''
+
+Wohin so schnell, so kraus, so wild, mein lieber Bach?
+Eilst du voll Zorn dem frechen Bruder Jäger nach?
+Kehr’ um, kehr’ um, und schilt erst deine Müllerin
+Für ihren leichten, losen, kleinen Flattersinn.
+{{Zeile|5}}Sahst du sie gestern Abend nicht am Thore stehn,
+Mit langem Halse nach der großen Straße sehn?
+Wenn von dem Fang der Jäger lustig zieht nach Haus,
+Da steckt kein sittsam Kind den Kopf zum Fenster ’naus.
+Geh’, Bächlein, hin und sag’ ihr das, doch sag’ ihr nicht,
+{{Zeile|10}}Hörst du, kein Wort, von meinem traurigen Gesicht;
+Sag’ ihr: Er schnitzt bei mir sich eine Pfeif’ aus Rohr,
+Und bläst den Kindern schöne Tänz’ und Lieder vor.
+</poem>
+
+
+{{Linie}}
+
+
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]

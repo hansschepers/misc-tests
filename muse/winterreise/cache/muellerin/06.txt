@@ -1,0 +1,66 @@
+{{Textdaten
+|VORIGER=Am Feierabend
+|NÄCHSTER=Das Mühlenleben
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Der Neugierige
+|SUBTITEL=
+|HERKUNFT='''[[Die schöne Müllerin]]''', in: Gedichte von Wilhelm Müller. Vollständige kritische Ausgabe.<br /> S. 8
+|HERAUSGEBER=James Taft Hatfield
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=
+|ERSCHEINUNGSJAHR=1906
+|ERSCHEINUNGSORT=Berlin
+|VERLAG=B. Behr
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|WIKIPEDIA=
+|BILD=
+|QUELLE=[[commons:Category:Müller - Gedichte (1906)|Scans bei Commons]]
+|KURZBESCHREIBUNG=
+|SONSTIGES=Vertont von Franz Schubert.
+|BEARBEITUNGSSTAND=fertig
+}}
+<poem>
+
+{{SeitePR1|8|DE_Müller_Gedicht_1906_008.png}}{{Idt2|20}}'''Der Neugierige.'''
+
+Ich frage keine Blume,
+Ich frage keinen Stern,
+Sie können mir nicht sagen,
+Was ich erführ’ so gern.
+
+{{Zeile|5}}{{Idt}}Ich bin ja auch kein Gärtner,
+Die Sterne stehn zu hoch;
+Mein Bächlein will ich fragen,
+Ob mich mein Herz belog.
+
+{{Idt}}O Bächlein meiner Liebe,
+{{Zeile|10}}Wie bist du heut’ so stumm!
+Will ja nur Eines wissen,
+Ein Wörtchen um und um.
+
+{{Idt}}Ja, heißt das eine Wörtchen,
+Das andre heißet Nein,
+{{Zeile|15}}Die beiden Wörtchen schließen
+Die ganze Welt mir ein.
+
+{{Idt}}O Bächlein meiner Liebe,
+Was bist du wunderlich!
+Will’s ja nicht weiter sagen,
+{{Zeile|20}}Sag’, Bächlein, liebt sie mich? 
+</poem>
+
+
+{{Linie}}
+
+{{SORTIERUNG:Neugierige #Der}}
+[[Kategorie:Deutschland]]
+[[Kategorie:1820er Jahre]]
+[[Kategorie:Gedicht]]
+[[Kategorie:Musik]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Deutsche Philologie]]
+[[Kategorie:Wilhelm Müller]]
+[[Kategorie:Die schöne Müllerin]]
