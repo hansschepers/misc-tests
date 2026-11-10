@@ -1,0 +1,11 @@
+[1] "torch"       "tok"         "hfhub"       "safetensors" "uwot"       
+package 'torch' successfully unpacked and MD5 sums checked
+package 'tok' successfully unpacked and MD5 sums checked
+package 'hfhub' successfully unpacked and MD5 sums checked
+package 'safetensors' successfully unpacked and MD5 sums checked
+package 'uwot' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\Lenovo\AppData\Local\Temp\RtmpWO0ADx\downloaded_packages
+      torch         tok       hfhub safetensors        uwot 
+       TRUE        TRUE        TRUE        TRUE        TRUE 

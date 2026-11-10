@@ -1,0 +1,757 @@
+{{Textdaten
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Winterreise
+|SUBTITEL=
+|HERKUNFT=Franz Schubert – Gesänge für eine Singstimme mit Klavierbegleitung
+|HERAUSGEBER=[[Max Friedlaender]]
+|VERLAG=Edition Peters 9023
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=1821–1822
+|ERSCHEINUNGSJAHR=unbekannt (1890–1900)
+|ERSCHEINUNGSORT=
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=
+|QUELLE=Schubert, Hg. Friedlaender: PDF der Partitur [http://conquest.imslp.info/files/imglnks/usimg/9/92/IMSLP00414-Schubert_-_Winterreise.pdf ISMLP] = {{Co|Schubert_Winterreise_Friedlaender.pdf}}; [https://www.themorgan.org/music/manuscript/115668 Faksimile Morgan Library]; Notendruck kritische Ausgabe (Mandyczewski) {{MDZ|00045004-1}}
+|KURZBESCHREIBUNG=Als Liederzyklus für Singstimme und Klavier im Februar und Oktober 1827 von [[Franz Schubert]] komponiert und als op. 89 (D 911) veröffentlicht. Zu anderen Textfassungen siehe '''[[Winterreise]]'''.
+|SONSTIGES=
+|WIKIPEDIA=Winterreise
+|BEARBEITUNGSSTAND=fertig
+}}
+
+== 1. Gute Nacht ==
+<poem>
+''Mäßig.''
+
+Fremd bin ich eingezogen,
+fremd zieh ich wieder aus.
+Der Mai war mir gewogen
+mit manchem Blumenstrauß.
+Das Mädchen sprach von Liebe,
+die Mutter gar von Eh,
+das Mädchen sprach von Liebe,
+die Mutter gar von Eh –
+nun ist die Welt so trübe,
+der Weg gehüllt in Schnee,
+nun ist die Welt so trübe,
+der Weg gehüllt in Schnee.
+
+Ich kann zu meiner Reisen
+nicht wählen mit der Zeit,
+muß selbst den Weg mir weisen
+in dieser Dunkelheit.
+Es zieht ein Mondenschatten
+als mein Gefährte mit,
+es zieht ein Mondenschatten
+als mein Gefährte mit,
+und auf den weißen Matten
+such ich des Wildes Tritt,
+und auf den weißen Matten
+such ich des Wildes Tritt.
+ 
+Was soll ich länger weilen,
+daß man mich trieb hinaus?
+Laß irre Hunde heulen
+vor ihres Herren Haus!
+Die Liebe liebt das Wandern –
+Gott hat sie so gemacht –
+von einem zu dem andern –
+Gott hat sie so gemacht.
+Die Liebe liebt das Wandern –
+fein Liebchen, gute Nacht, –
+von einem zu dem andern –
+fein Liebchen, gute Nacht! 
+
+Will dich im Traum nicht stören,
+wär schad um deine Ruh,
+sollst meinen Tritt nicht hören –
+sacht, sacht die Türe zu!
+Schreib im Vorübergehen
+ans Tor dir: gute Nacht,
+damit du mögest sehen,
+an dich hab ich gedacht.
+Schreib im Vorübergehen
+ans Tor dir: gute Nacht,
+damit du mögest sehen,
+an dich hab ich gedacht,
+an dich hab ich gedacht.
+</poem>
+
+== 2. Die Wetterfahne ==
+<poem>
+''Ziemlich geschwind.''
+
+Der Wind spielt mit der Wetterfahne
+auf meines schönen Liebchens Haus.
+Da dacht ich schon in meinem Wahne,
+sie pfiff’ den armen Flüchtling aus.
+ 
+Er hätt es eher bemerken sollen,
+des Hauses aufgestecktes Schild,
+so hätt er nimmer suchen wollen
+im Haus ein treues Frauenbild.
+ 
+Der Wind spielt drinnen mit den Herzen,
+wie auf dem Dach, nur nicht so laut.
+Was fragen sie nach meinen Schmerzen?
+ihr Kind ist eine reiche Braut.
+Der Wind spielt drinnen mit den Herzen,
+wie auf dem Dach, nur nicht so laut.
+Was fragen sie nach meinen Schmerzen?
+was fragen sie nach meinen Schmerzen?
+ihr Kind ist eine reiche Braut.
+
+</poem>
+
+== 3. Gefrorene Tränen ==
+<poem>
+''Nicht zu langsam.''
+
+Gefrorne Tropfen fallen
+von meinen Wangen ab:
+ob es mir denn entgangen,
+daß ich geweinet hab?
+daß ich geweinet hab?
+ 
+Ei Tränen, meine Tränen,
+und seid ihr gar so lau,
+daß ihr erstarrt zu Eise,
+wie kühler Morgentau?
+ 
+Und dringt doch aus der Quelle
+der Brust so glühend heiß,
+als wolltet ihr zerschmelzen
+des ganzen Winters Eis, 
+des ganzen Winters Eis, –
+ihr dringt doch aus der Quelle
+der Brust so glühend heiß,
+als wolltet ihr zerschmelzen
+des ganzen Winters Eis, 
+des ganzen Winters Eis! 
+</poem>
+
+== 4. Erstarrung ==
+<poem>
+''Ziemlich schnell.''
+
+Ich such im Schnee vergebens
+nach ihrer Tritte Spur,
+wo sie an meinem Arme
+durchstrich die grüne Flur.
+Ich such im Schnee vergebens
+nach ihrer Tritte Spur,
+wo sie an meinem Arme
+durchstrich die grüne Flur.
+ 
+Ich will den Boden küssen,
+durchdringen Eis und Schnee
+mit meinen heißen Tränen,
+bis ich die Erde, die Erde seh
+ich will den Boden küssen,
+durchdringen Eis und Schnee
+mit meinen heißen Tränen,
+bis ich die Erde, die Erde seh.
+ 
+Wo find ich eine Blüte,
+wo find ich grünes Gras?
+die Blumen sind erstorben,
+der Rasen sieht so blaß,
+die Blumen sind erstorben,
+der Rasen sieht so blaß.
+Wo find ich eine Blüte,
+wo find ich grünes Gras?
+ 
+Soll denn kein Angedenken
+ich nehmen mit von hier?
+Wenn meine Schmerzen schweigen,
+wer sagt mir dann von ihr?
+Soll denn kein Angedenken
+ich nehmen mit von hier?
+Wenn meine Schmerzen schweigen,
+wer sagt mir dann von ihr?
+ 
+Mein Herz ist wie erstorben,
+kalt starrt ihr Bild darin:
+schmilzt je das Herz mir wieder,
+fließt auch ihr Bild, ihr Bild dahin.
+Mein Herz ist wie erstorben,
+kalt starrt ihr Bild darin,
+schmilzt je das Herz mir wieder,
+fließt auch ihr Bild, ihr Bild dahin,
+fließt auch ihr Bild dahin.
+</poem>
+
+== 5. Der Lindenbaum ==
+<poem>
+''Mäßig.''
+
+Am Brunnen vor dem Tore
+da steht ein Lindenbaum;
+ich träumt’ in seinem Schatten
+so manchen süßen Traum.
+
+Ich schnitt in seine Rinde
+so manches liebe Wort;
+es zog in Freud und Leide
+zu ihm mich immer fort.
+
+Ich mußt auch heute wandern
+vorbei in tiefer Nacht,
+da hab ich noch im Dunkel
+die Augen zugemacht.
+
+Und seine Zweige rauschten,
+als riefen sie mir zu:
+komm her zu mir, Geselle,
+hier findst du deine Ruh!
+ 
+Die kalten Winde bliesen
+mir grad ins Angesicht,
+der Hut flog mir vom Kopfe,
+ich wendete mich nicht.
+ 
+Nun bin ich manche Stunde
+entfernt von jenem Ort,
+und immer hör ich’s rauschen:
+du fändest Ruhe dort!
+Nun bin ich manche Stunde
+entfernt von jenem Ort,
+und immer hör ich’s rauschen:
+du fändest Ruhe dort,
+du fändest Ruhe dort!
+</poem>
+
+== 6. Wasserflut ==
+<poem>
+''Langsam.''
+
+Manche Trän aus meinen Augen
+ist gefallen in den Schnee:
+seine kalten Flocken saugen
+durstig ein das heiße Weh,
+durstig ein das heiße Weh.
+ 
+Wenn die Gräser sprossen wollen,
+weht daher ein lauer Wind,
+und das Eis zerspringt in Schollen,
+und der weiche Schnee zerrinnt,
+und der weiche Schnee zerrinnt.
+ 
+Schnee, du weißt von meinem Sehnen,
+sag, wohin doch geht dein Lauf?
+Folge nach nur meinen Tränen,
+nimmt dich bald das Bächlein auf,
+nimmt dich bald das Bächlein auf.
+ 
+Wirst mit ihm die Stadt durchziehen,
+muntre Straßen ein und aus;
+fühlst du meine Tränen glühen,
+da ist meiner Liebsten Haus,
+da ist meiner Liebsten Haus.
+</poem>
+
+== 7. Auf dem Flusse ==
+<poem>
+''Langsam.''
+
+Der du so lustig rauschtest,
+du heller, wilder Fluß,
+wie still bist du geworden,
+gibst keinen Scheidegruß.
+Mit harter, starrer Rinde
+hast du dich überdeckt,
+liegst kalt und unbeweglich
+im Sande ausgestreckt.
+ 
+In deine Decke grab ich
+mit einem spitzen Stein
+den Namen meiner Liebsten
+und Stund und Tag hinein:
+den Tag des ersten Grußes,
+den Tag, an dem ich ging;
+um Nam und Zahlen windet
+sich ein zerbrochner Ring.
+ 
+Mein Herz, in diesem Bache
+erkennst du nun dein Bild?
+Ob’s unter seiner Rinde
+wohl auch so reißend schwillt,
+ob’s wohl auch so reißend schwillt?
+Mein Herz, in diesem Bache
+erkennst du nun dein Bild?
+Ob’s unter seiner Rinde
+wohl auch so reißend schwillt,
+ob’s wohl auch so reißend schwillt,
+ob’s wohl auch so reißend schwillt?
+</poem>
+
+== 8. Rückblick ==
+<poem>
+''Nicht zu geschwind.''
+
+Es brennt mir unter beiden Sohlen,
+tret ich auch schon auf Eis und Schnee,
+ich möcht nicht wieder Atem holen,
+bis ich nicht mehr die Türme seh,
+hab mich an jedem Stein gestoßen,
+so eilt’ ich zu der Stadt hinaus;
+die Krähen warfen Bäll und Schloßen
+auf meinen Hut von jedem Haus,
+die Krähen warfen Bäll und Schloßen
+auf meinen Hut von jedem Haus.
+
+Wie anders hast du mich empfangen,
+du Stadt der Unbeständigkeit!
+an deinen blanken Fenstern sangen
+die Lerch und Nachtigall im Streit.
+ 
+Die runden Lindenbäume blühten,
+die klaren Rinnen rauschten hell,
+und ach, zwei Mädchenaugen glühten! –
+da war’s geschehn um dich, Gesell!
+und ach, zwei Mädchenaugen glühten! –
+da war’s geschehn um dich, Gesell!
+ 
+Kömmt mir der Tag in die Gedanken,
+möcht ich noch einmal rückwärts sehn,
+möcht ich zurücke wieder wanken,
+vor ihrem Hause stille stehn,
+kömmt mir der Tag in die Gedanken,
+möcht ich noch einmal rückwärts sehn,
+möcht ich zurücke wieder wanken,
+vor ihrem Hause stille stehn,
+vor ihrem Hause stille stehn.
+</poem>
+
+== 9. Irrlicht ==
+<poem>
+''Langsam.''
+
+In die tiefsten Felsengründe
+lockte mich ein Irrlicht hin:
+Wie ich einen Ausgang finde,
+liegt nicht schwer mir in dem Sinn,
+liegt nicht schwer mir in dem Sinn.
+ 
+Bin gewohnt das Irregehen,
+’s führt ja jeder Weg zum Ziel:
+unsre Freuden, unsre Leiden,
+alles eines Irrlichts Spiel,
+alles eines Irrlichts Spiel!
+ 
+Durch des Bergstroms trockne Rinnen
+wind ich ruhig mich hinab –
+jeder Strom wird’s Meer gewinnen,
+jedes Leiden auch ein Grab,
+jeder Strom wird’s Meer gewinnen,
+jedes Leiden auch ein Grab.
+</poem>
+
+== 10. Rast ==
+<poem>
+''Mäßig.''
+
+Nun merk ich erst, wie müd ich bin,
+da ich zur Ruh mich lege;
+das Wandern hielt mich munter hin
+auf unwirtbarem Wege.
+
+Die Füße frugen nicht nach Rast,
+es war zu kalt zum Stehen,
+der Rücken fühlte keine Last,
+der Sturm half fort mich wehen,
+der Rücken fühlte keine Last,
+der Sturm half fort mich wehen.
+ 
+In eines Köhlers engem Haus
+hab’ Obdach ich gefunden;
+doch meine Glieder ruhn nicht aus:
+so brennen ihre Wunden.
+
+Auch du, mein Herz, in Kampf und Sturm
+so wild und so verwegen,
+fühlst in der Still erst deinen Wurm
+mit heißem Stich sich regen,
+fühlst in der Still erst deinen Wurm
+mit heißem Stich sich regen!
+</poem>
+
+== 11. Frühlingstraum ==
+<poem>
+''Etwas bewegt.''
+
+Ich träumte von bunten Blumen,
+so wie sie wohl blühen im Mai,
+ich träumte von grünen Wiesen,
+von lustigem Vogelgeschrei,
+von lustigem Vogelgeschrei.
+ 
+Und als die Hähne krähten,
+da ward mein Auge wach;
+da war es kalt und finster,
+es schrieen die Raben vom Dach,
+da war es kalt und finster,
+es schrieen die Raben vom Dach.
+ 
+Doch an den Fensterscheiben,
+wer malte die Blätter da?
+doch an den Fensterscheiben,
+wer malte die Blätter da?
+Ihr lacht wohl über den Träumer,
+der Blumen im Winter sah,
+der Blumen im Winter sah?
+
+Ich träumte von Lieb um Liebe,
+von einer schönen Maid,
+von Herzen und von Küssen,
+von Wonne und Seligkeit,
+von Wonne und Seligkeit.
+ 
+Und als die Hähne krähten,
+da ward mein Herze wach;
+nun sitz ich hier alleine
+und denke dem Traume nach,
+nun sitz ich hier alleine
+und denke dem Traume nach.
+ 
+Die Augen schließ ich wieder,
+noch schlägt das Herz so warm,
+Die Augen schließ ich wieder,
+noch schlägt das Herz so warm.
+Wann grünt ihr Blätter am Fenster?
+wann halt ich mein Liebchen im Arm,
+wann halt ich mein Liebchen im Arm?
+</poem>
+
+== 12. Einsamkeit ==
+<poem>
+''Langsam.''
+
+Wie eine trübe Wolke
+durch heitre Lüfte geht,
+wenn in der Tanne Wipfel
+ein mattes Lüftchen weht:
+so zieh ich meine Straße
+dahin mit trägem Fuß,
+durch helles, frohes Leben,
+einsam und ohne Gruß.
+ 
+Ach, daß die Luft so ruhig!
+ach, daß die Welt so licht!
+Als noch die Stürme tobten,
+war ich so elend, so elend nicht.
+Ach, daß die Luft so ruhig!
+ach, daß die Welt so licht!
+Als noch die Stürme tobten,
+war ich so elend, so elend nicht.
+</poem>
+
+== 13. Die Post ==
+<poem>
+''Etwas geschwind.''
+
+Von der Straße her ein Posthorn klingt.
+Was hat es, daß es so hoch aufspringt,
+mein Herz?
+was hat es, daß es so hoch aufspringt,
+mein Herz, mein Herz?
+ 
+Die Post bringt keinen Brief für dich.
+Was drängst du denn so wunderlich,
+mein Herz, mein Herz?
+Die Post bringt keinen Brief für dich,
+mein Herz, mein Herz,
+was drängst du denn so wunderlich,
+mein Herz, mein Herz?
+ 
+Nun ja, die Post kommt aus der Stadt,
+wo ich ein liebes Liebchen hatt,
+mein Herz!
+wo ich ein liebes Liebchen hatt,
+mein Herz, mein Herz!
+ 
+Willst wohl einmal hinübersehn
+und fragen, wie es dort mag gehn,
+mein Herz, mein Herz?
+Willst wohl einmal hinübersehn,
+mein Herz, mein Herz,
+und fragen, wie es dort mag gehn,
+mein Herz, mein Herz?
+</poem>
+
+== 14. Der greise Kopf ==
+<poem>
+''Etwas langsam.''
+
+Der Reif hat einen weißen Schein
+mir übers Haar gestreuet;
+Da glaubt’ ich schon ein Greis zu sein
+und hab mich sehr gefreuet.
+ 
+Doch bald ist er hinweggetaut,
+hab wieder schwarze Haare,
+daß mir’s vor meiner Jugend graut –
+wie weit noch bis zur Bahre!
+wie weit noch bis zur Bahre!
+ 
+Vom Abendrot zum Morgenlicht
+ward mancher Kopf zum Greise.
+Wer glaubt’s? und meiner ward es nicht
+auf dieser ganzen Reise!
+auf dieser ganzen Reise!
+</poem>
+
+== 15. Die Krähe ==
+<poem>
+''Etwas langsam.''
+
+Eine Krähe war mit mir
+aus der Stadt gezogen,
+ist bis heute für und für
+um mein Haupt geflogen.
+ 
+Krähe, wunderliches Tier,
+willst mich nicht verlassen?
+Meinst wohl bald als Beute hier
+meinen Leib zu fassen?
+ 
+Nun, es wird nicht weit mehr gehn
+an dem Wanderstabe.
+Krähe, laß mich endlich sehn
+Treue bis zum Grabe,
+Krähe, laß mich endlich sehn
+Treue bis zum Grabe!
+</poem>
+
+== 16. Letzte Hoffnung ==
+<poem>
+''Nicht zu geschwind.''
+
+Hie und da ist an den Bäumen
+manches bunte Blatt zu sehn,
+und ich bleibe vor den Bäumen
+oftmals in Gedanken stehn.
+ 
+Schaue nach dem einen Blatte,
+hänge meine Hoffnung dran;
+spielt der Wind mit meinem Blatte,
+zittr ich, was ich zittern kann.
+ 
+Ach, und fällt das Blatt zu Boden,
+fällt mit ihm die Hoffnung ab,
+fall ich selber mit zu Boden,
+wein, wein auf meiner Hoffnung Grab,
+wein, wein auf meiner Hoffnung Grab.
+</poem>
+
+== 17. Im Dorfe ==
+<poem>
+''Etwas langsam.''
+
+Es bellen die Hunde, es rasseln die Ketten;
+es schlafen die Menschen in ihren Betten,
+träumen sich manches, was sie nicht haben,
+tun sich im Guten und Argen erlaben;
+und morgen früh ist alles zerflossen. –
+Je nun, je nun, sie haben ihr Teil genossen,
+und hoffen, und hoffen, was sie noch übrig ließen,
+doch wieder zu finden, 
+doch wieder zu finden auf ihren Kissen.
+
+Bellt mich nur fort, ihr wachen Hunde,
+laßt mich nicht ruhn in der Schlummerstunde!
+Ich bin zu Ende mit allen Träumen, –
+was will ich unter den Schläfern säumen?
+Ich bin zu Ende mit allen Träumen, –
+was will ich unter den Schläfern säumen?
+</poem>
+
+== 18. Der stürmische Morgen ==
+<poem>
+''Ziemlich geschwind, doch kräftig.''
+
+Wie hat der Sturm zerrissen
+des Himmels graues Kleid!
+die Wolkenfetzen flattern
+umher in mattem Streit,
+umher in mattem Streit.
+ 
+Und rote Feuerflammen
+ziehn zwischen ihnen hin:
+das nenn ich einen Morgen
+so recht nach meinem Sinn!
+ 
+Mein Herz sieht an dem Himmel
+gemalt sein eignes Bild,
+es ist nichts als der Winter,
+es ist nichts als der Winter,
+der Winter kalt und wild!
+</poem>
+
+== 19. Täuschung ==
+<poem>
+''Etwas geschwind.''
+
+Ein Licht tanzt freundlich vor mir her, 
+ich folg ihm nach die Kreuz und Quer;
+ich folg ihm gern und seh’s ihm an,
+daß es verlockt den Wandersmann.
+Ach! wer wie ich so elend ist,
+gibt gern sich hin der bunten List,
+die hinter Eis und Nacht und Graus
+ihm weist ein helles, warmes Haus
+und eine liebe Seele drin –
+nur Täuschung ist für mich Gewinn!
+</poem>
+
+== 20. Der Wegweiser ==
+<poem>
+''Mäßig.''
+
+Was vermeid ich denn die Wege,
+wo die andern Wandrer gehn,
+suche mir versteckte Stege
+durch verschneite Felsenhöhn?
+suche mir versteckte Stege
+durch verschneite Felsenhöhn, 
+durch Felsenhöhn?
+ 
+Habe ja doch nichts begangen,
+daß ich Menschen sollte scheun, –
+daß ich Menschen sollte scheun, –
+welch ein törichtes Verlangen
+treibt mich in die Wüsteneien,
+treibt mich in die Wüstenein?
+ 
+Weiser stehen auf den Wegen,
+weisen auf die Städte zu,
+und ich wandre sonder Maßen,
+ohne Ruh, und suche Ruh,
+und ich wandre sonder Maßen,
+ohne Ruh, und suche Ruh,
+und suche Ruh.
+ 
+Einen Weiser seh ich stehen
+unverrückt vor meinem Blick;
+eine Straße muß ich gehen,
+eine Straße muß ich gehen,
+die noch keiner ging zurück.
+Einen Weiser seh ich stehen
+unverrückt vor meinem Blick;
+eine Straße muß ich gehen,
+die noch keiner ging zurück,
+die noch keiner ging zurück.
+</poem>
+
+== 21. Das Wirtshaus ==
+<poem>
+''Sehr langsam.''
+
+Auf einen Totenacker 
+hat mich mein Weg gebracht.
+Allhier will ich einkehren,
+hab ich bei mir gedacht.
+
+Ihr grünen Totenkränze 
+könnt wohl die Zeichen sein,
+die müde Wandrer laden 
+ins kühle Wirtshaus ein.
+ 
+Sind denn in diesem Hause 
+die Kammern all besetzt?
+bin matt zum Niedersinken
+bin tödlich schwer verletzt.
+
+O unbarmherzge Schenke, 
+doch weisest du mich ab?
+Nun weiter denn, nur weiter, 
+mein treuer Wanderstab,
+nun weiter denn, nur weiter, 
+mein treuer Wanderstab!
+</poem>
+
+== 22. Mut! ==
+<poem>
+''Ziemlich geschwind, kräftig.''
+
+Fliegt der Schnee mir ins Gesicht,
+schüttl ich ihn herunter.
+Wenn mein Herz im Busen spricht,
+sing ich hell und munter;
+höre nicht, was es mir sagt,
+habe keine Ohren;
+fühle nicht, was es mir klagt,
+Klagen ist für Toren.
+ 
+Lustig in die Welt hinein
+gegen Wind und Wetter!
+will kein Gott auf Erden sein,
+sind wir selber Götter!
+Lustig in die Welt hinein
+gegen Wind und Wetter!
+will kein Gott auf Erden sein,
+sind wir selber Götter!
+</poem>
+
+== 23. Die Nebensonnen ==
+<poem>
+''Nicht zu langsam.''
+
+Drei Sonnen sah ich am Himmel stehn,
+hab lang’ und fest sie angesehn;
+und sie auch standen da so stier,
+als wollten sie nicht weg von mir.
+Ach, meine Sonnen seid ihr nicht!
+schaut andern doch ins Angesicht!
+Ja, neulich hatt ich auch wohl drei;
+nun sind hinab die besten zwei.
+Ging nur die dritt erst hinterdrein!
+Im Dunkeln wird mir wohler sein.
+</poem>
+
+== 24. Der Leiermann ==
+<poem>
+''Etwas langsam.''
+
+Drüben hinterm Dorfe 
+steht ein Leiermann,
+und mit starren Fingern 
+dreht er, was er kann.
+
+Barfuß auf dem Eise 
+wankt er hin und her,
+und sein kleiner Teller 
+bleibt ihm immer leer,
+und sein kleiner Teller 
+bleibt ihm immer leer.
+ 
+Keiner mag ihn hören, 
+keiner sieht ihn an,
+und die Hunde knurren
+um den alten Mann.
+
+Und er läßt es gehen 
+alles, wie es will,
+dreht, und seine Leier 
+steht ihm nimmer still,
+dreht, und seine Leier 
+steht ihm nimmer still.
+
+Wunderlicher Alter, 
+soll ich mit dir gehn?
+Willst zu meinen Liedern 
+deine Leier drehn?
+</poem>
+
+
+[[Kategorie:Deutschland]]
+[[Kategorie:19. Jahrhundert]]
+[[Kategorie:Lied]]
+[[Kategorie:Neuhochdeutsch]]
+[[Kategorie:Musik]]
+[[Kategorie:Wilhelm Müller]]
+
+[[ru:Шарманщик (Мюллер/Анненский)]]
+[[uk:Шарманщик (Мюллер/Отрошенко)]]

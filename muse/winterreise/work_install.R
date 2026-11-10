@@ -1,0 +1,13 @@
+sink("C:/Users/Lenovo/Documents/misc-tests/muse/winterreise/work_install_output.txt", split = TRUE)
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+pk <- c("torch", "tok", "hfhub", "safetensors", "uwot")
+need <- pk[!sapply(pk, requireNamespace, quietly = TRUE)]
+print(need)
+if (length(need)) install.packages(need)
+print(sapply(pk, requireNamespace, quietly = TRUE))
+Sys.setenv(TORCH_INSTALL = "1")
+library(torch)
+if (!torch_is_installed()) install_torch()
+print(torch_is_installed())
+print(torch_randn(2, 3))
+sink()

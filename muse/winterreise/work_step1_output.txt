@@ -1,0 +1,123 @@
+     song                 title                             tempo n_stanza
+    <int>                <char>                            <char>    <int>
+ 1:     1            Gute Nacht                            Mäßig.        4
+ 2:     2       Die Wetterfahne               Ziemlich geschwind.        3
+ 3:     3      Gefrorene Tränen                 Nicht zu langsam.        3
+ 4:     4            Erstarrung                 Ziemlich schnell.        5
+ 5:     5        Der Lindenbaum                            Mäßig.        6
+ 6:     6            Wasserflut                          Langsam.        4
+ 7:     7        Auf dem Flusse                          Langsam.        3
+ 8:     8             Rückblick               Nicht zu geschwind.        4
+ 9:     9              Irrlicht                          Langsam.        3
+10:    10                  Rast                            Mäßig.        4
+11:    11        Frühlingstraum                     Etwas bewegt.        6
+12:    12            Einsamkeit                          Langsam.        2
+13:    13              Die Post                  Etwas geschwind.        4
+14:    14       Der greise Kopf                    Etwas langsam.        3
+15:    15             Die Krähe                    Etwas langsam.        3
+16:    16       Letzte Hoffnung               Nicht zu geschwind.        3
+17:    17              Im Dorfe                    Etwas langsam.        2
+18:    18 Der stürmische Morgen Ziemlich geschwind, doch kräftig.        3
+19:    19             Täuschung                  Etwas geschwind.        1
+20:    20         Der Wegweiser                            Mäßig.        4
+21:    21         Das Wirtshaus                     Sehr langsam.        4
+22:    22                  Mut!      Ziemlich geschwind, kräftig.        2
+23:    23       Die Nebensonnen                 Nicht zu langsam.        1
+24:    24         Der Leiermann                    Etwas langsam.        5
+     song                 title                             tempo n_stanza
+    <int>                <char>                            <char>    <int>
+     sung  uniq
+    <int> <int>
+ 1:    49    32
+ 2:    17    12
+ 3:    19    13
+ 4:    41    21
+ 5:    29    24
+ 6:    20    16
+ 7:    27    21
+ 8:    29    20
+ 9:    16    12
+10:    20    16
+11:    36    24
+12:    16    12
+13:    24    14
+14:    14    12
+15:    14    12
+16:    13    12
+17:    15    13
+18:    14    12
+19:    10    10
+20:    30    19
+21:    18    16
+22:    16    12
+23:    10    10
+24:    24    20
+     sung  uniq
+    <int> <int>
+
+ 82 stanza units
+    unit_id n_lines_sung n_lines_unique
+     <char>        <int>          <int>
+ 1:     1.1           12              8
+ 2:     1.2           12              8
+ 3:     1.3           12              8
+ 4:     1.4           13              8
+ 5:     5.1            4              4
+ 6:     5.2            4              4
+ 7:     5.3            4              4
+ 8:     5.4            4              4
+ 9:     5.5            4              4
+10:     5.6            9              4
+11:    24.1            4              4
+12:    24.2            6              4
+13:    24.3            4              4
+14:    24.4            6              4
+15:    24.5            4              4
+                                                                                                                                                                                                                     text
+                                                                                                                                                                                                                   <char>
+ 1:     Fremd bin ich eingezogen, fremd zieh ich wieder aus. Der Mai war mir gewogen mit manchem Blumenstrauß. Das Mädchen sprach von Liebe, die Mutter gar von Eh, nun ist die Welt so trübe, der Weg gehüllt in Schnee,
+ 2:      Ich kann zu meiner Reisen nicht wählen mit der Zeit, muß selbst den Weg mir weisen in dieser Dunkelheit. Es zieht ein Mondenschatten als mein Gefährte mit, und auf den weißen Matten such ich des Wildes Tritt,
+ 3:    Was soll ich länger weilen, daß man mich trieb hinaus? Laß irre Hunde heulen vor ihres Herren Haus! Die Liebe liebt das Wandern – Gott hat sie so gemacht – von einem zu dem andern – fein Liebchen, gute Nacht, –
+ 4: Will dich im Traum nicht stören, wär schad um deine Ruh, sollst meinen Tritt nicht hören – sacht, sacht die Türe zu! Schreib im Vorübergehen ans Tor dir: gute Nacht, damit du mögest sehen, an dich hab ich gedacht.
+ 5:                                                                                                               Am Brunnen vor dem Tore da steht ein Lindenbaum; ich träumt’ in seinem Schatten so manchen süßen Traum.
+ 6:                                                                                                                   Ich schnitt in seine Rinde so manches liebe Wort; es zog in Freud und Leide zu ihm mich immer fort.
+ 7:                                                                                                                    Ich mußt auch heute wandern vorbei in tiefer Nacht, da hab ich noch im Dunkel die Augen zugemacht.
+ 8:                                                                                                                Und seine Zweige rauschten, als riefen sie mir zu: komm her zu mir, Geselle, hier findst du deine Ruh!
+ 9:                                                                                                                  Die kalten Winde bliesen mir grad ins Angesicht, der Hut flog mir vom Kopfe, ich wendete mich nicht.
+10:                                                                                                                 Nun bin ich manche Stunde entfernt von jenem Ort, und immer hör ich’s rauschen: du fändest Ruhe dort!
+11:                                                                                                                              Drüben hinterm Dorfe steht ein Leiermann, und mit starren Fingern dreht er, was er kann.
+12:                                                                                                                              Barfuß auf dem Eise wankt er hin und her, und sein kleiner Teller bleibt ihm immer leer,
+13:                                                                                                                                   Keiner mag ihn hören, keiner sieht ihn an, und die Hunde knurren um den alten Mann.
+14:                                                                                                                               Und er läßt es gehen alles, wie es will, dreht, und seine Leier steht ihm nimmer still,
+15:                                                                                                                                Wunderlicher Alter, soll ich mit dir gehn? Willst zu meinen Liedern deine Leier drehn?
+embed_texts[rtorch:sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2]: 5 new texts in 3.4 s 
+                                                 Ich bin so müde und will nur schlafen.
+Ich bin so müde und will nur schlafen.                                            1.000
+I am so tired and just want to sleep.                                             0.970
+Erschöpft möchte ich mich hinlegen und ruhen.                                     0.708
+Die Post bringt heute einen Brief aus der Stadt.                                  0.076
+Der Lindenbaum am Brunnen vor dem Tore.                                           0.109
+                                                 I am so tired and just want to sleep.
+Ich bin so müde und will nur schlafen.                                           0.970
+I am so tired and just want to sleep.                                            1.000
+Erschöpft möchte ich mich hinlegen und ruhen.                                    0.650
+Die Post bringt heute einen Brief aus der Stadt.                                 0.080
+Der Lindenbaum am Brunnen vor dem Tore.                                          0.107
+                                                 Erschöpft möchte ich mich hinlegen und ruhen.
+Ich bin so müde und will nur schlafen.                                                   0.708
+I am so tired and just want to sleep.                                                    0.650
+Erschöpft möchte ich mich hinlegen und ruhen.                                            1.000
+Die Post bringt heute einen Brief aus der Stadt.                                         0.020
+Der Lindenbaum am Brunnen vor dem Tore.                                                  0.192
+                                                 Die Post bringt heute einen Brief aus der Stadt.
+Ich bin so müde und will nur schlafen.                                                      0.076
+I am so tired and just want to sleep.                                                       0.080
+Erschöpft möchte ich mich hinlegen und ruhen.                                               0.020
+Die Post bringt heute einen Brief aus der Stadt.                                            1.000
+Der Lindenbaum am Brunnen vor dem Tore.                                                     0.149
+                                                 Der Lindenbaum am Brunnen vor dem Tore.
+Ich bin so müde und will nur schlafen.                                             0.109
+I am so tired and just want to sleep.                                              0.107
+Erschöpft möchte ich mich hinlegen und ruhen.                                      0.192
+Die Post bringt heute einen Brief aus der Stadt.                                   0.149
+Der Lindenbaum am Brunnen vor dem Tore.                                            1.000

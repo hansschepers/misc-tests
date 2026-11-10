@@ -1,0 +1,112 @@
+      httr2    jsonlite     stringr  data.table        uwot     ggplot2 
+       TRUE        TRUE        TRUE        TRUE       FALSE        TRUE 
+    ggrepel viridisLite  reticulate        text   fastTextR    word2vec 
+       TRUE        TRUE        TRUE       FALSE       FALSE       FALSE 
+      irlba     ggforce 
+       TRUE        TRUE 
+[1] "no ollama server"
+17743 chars
+{{Textdaten
+|AUTOR=[[Wilhelm Müller]]
+|TITEL=Winterreise
+|SUBTITEL=
+|HERKUNFT=Franz Schubert – Gesänge für eine Singstimme mit Klavierbegleitung
+|HERAUSGEBER=[[Max Friedlaender]]
+|VERLAG=Edition Peters 9023
+|AUFLAGE=
+|ENTSTEHUNGSJAHR=1821–1822
+|ERSCHEINUNGSJAHR=unbekannt (1890–1900)
+|ERSCHEINUNGSORT=
+|ÜBERSETZER=
+|ORIGINALTITEL=
+|ORIGINALSUBTITEL=
+|ORIGINALHERKUNFT=
+|BILD=
+|QUELLE=Schubert, Hg. Friedlaender: PDF der Partitur [http://conquest.imslp.info/files/imglnks/usimg/9/92/IMSLP00414-Schubert_-_Winterreise.pdf ISMLP] = {{Co|Schubert_Winterreise_Friedlaender.pdf}}; [https://www.themorgan.org/music/manuscript/115668 Faksimile Morgan Library]; Notendruck kritische Ausgabe (Mandyczewski) {{MDZ|00045004-1}}
+|KURZBESCHREIBUNG=Als Liederzyklus für Singstimme und Klavier im Februar und Oktober 1827 von [[Franz Schubert]] komponiert und als op. 89 (D 911) veröffentlicht. Zu anderen Textfassungen siehe '''[[Winterreise]]'''.
+|SONSTIGES=
+|WIKIPEDIA=Winterreise
+|BEARBEITUNGSSTAND=fertig
+}}
+
+== 1. Gute Nacht ==
+<poem>
+''Mäßig.''
+
+Fremd bin ich eingezogen,
+fremd zieh ich wieder aus.
+Der Mai war mir gewogen
+mit manchem Blumenstrauß.
+Das Mädchen sprach von Liebe,
+die Mutter gar von Eh,
+das Mädchen sprach von Liebe,
+die Mutter gar von Eh –
+nun ist die Welt so trübe,
+der Weg gehüllt in Schnee,
+nun ist die Welt so trübe,
+der Weg gehüllt in Schnee.
+
+Ich kann zu meiner Reisen
+nicht wählen mit der Zeit,
+muß selbst den Weg mir weisen
+in dieser Dunkelheit.
+Es zieht ein Mondenschatten
+als mein Gefährte mit,
+es zieht ein Mondenschatten
+als mein Gefährte mit,
+und auf den weißen Matten
+such ich des Wildes Tritt,
+und auf den weißen Matten
+such ich des Wildes Tritt.
+ 
+Was soll ich länger weilen,
+daß man mich trieb hinaus?
+Laß irre Hunde heulen
+vor ihres Herren Haus!
+Die Liebe liebt das Wandern –
+Gott hat sie so gemacht –
+von einem zu dem andern –
+Gott hat sie so gemacht.
+Die Liebe liebt das Wandern –
+fein Liebchen, gute Nacht, –
+von einem zu dem andern –
+fein Liebchen, gute Nacht! 
+
+Will dich im Traum nicht stören,
+wär schad um deine Ruh,
+sollst meinen Tritt nicht hören –
+sacht, sacht die Türe zu!
+Schreib im Vorübergehen
+ans Tor dir: gute Nacht,
+damit du mögest sehen,
+an dich hab ich gedacht.
+Schreib im Vorübergehen
+ans Tor dir: gute Nacht,
+damit du mögest sehen,
+an dich hab ich gedacht,
+an dich hab ich gedacht.
+</poem>
+
+== 2. Die Wetterfahne ==
+<poem>
+''Ziemlich geschwind.''
+
+Der Wind spielt mit der Wetterfahne
+auf meines schönen Liebchens Haus.
+Da dacht ich schon in meinem Wahne,
+sie pfiff’ den armen Flüchtling aus.
+ 
+Er hätt es eher bemerken sollen,
+des Hauses aufgestecktes Schild,
+so hätt er nimmer suchen wollen
+im Haus ein treues Frauenbild.
+ 
+Der Wind spielt drinnen mit den Herzen,
+wie auf dem Dach, nur nicht so laut.
+Was fragen sie nach meinen Schmerzen?
+ihr Kind ist eine reiche Braut.
+Der Wind spielt drinnen mit den Herzen,
+wie auf dem Dach, nur nicht so laut.
+Was fragen sie nach meinen Schmerzen?
+was fragen sie nach meinen Schmerzen?
+ihr Kind ist eine reiche Brau[1] FALSE FALSE FALSE

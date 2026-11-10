@@ -1,0 +1,86 @@
+[1] TRUE
+torch_tensor
+-0.6005  0.4249
+ 0.0484 -0.1520
+[ CPUFloatType{2,2} ]
+List of 20
+ $ _name_or_path               : chr "old_models/paraphrase-multilingual-MiniLM-L12-v2/0_Transformer"
+ $ architectures               : chr "BertModel"
+ $ attention_probs_dropout_prob: num 0.1
+ $ gradient_checkpointing      : logi FALSE
+ $ hidden_act                  : chr "gelu"
+ $ hidden_dropout_prob         : num 0.1
+ $ hidden_size                 : int 384
+ $ initializer_range           : num 0.02
+ $ intermediate_size           : int 1536
+ $ layer_norm_eps              : num 1e-12
+ $ max_position_embeddings     : int 512
+ $ model_type                  : chr "bert"
+ $ num_attention_heads         : int 12
+ $ num_hidden_layers           : int 12
+ $ pad_token_id                : int 0
+ $ position_embedding_type     : chr "absolute"
+ $ transformers_version        : chr "4.7.0"
+ $ type_vocab_size             : int 2
+ $ use_cache                   : logi TRUE
+ $ vocab_size                  : int 250037
+List of 5
+ $ word_embedding_dimension         : int 384
+ $ pooling_mode_cls_token           : logi FALSE
+ $ pooling_mode_mean_tokens         : logi TRUE
+ $ pooling_mode_max_tokens          : logi FALSE
+ $ pooling_mode_mean_sqrt_len_tokens: logi FALSE
+200 tensors
+ [1] "embeddings.position_ids"                          
+ [2] "embeddings.LayerNorm.bias"                        
+ [3] "embeddings.LayerNorm.weight"                      
+ [4] "embeddings.position_embeddings.weight"            
+ [5] "embeddings.token_type_embeddings.weight"          
+ [6] "embeddings.word_embeddings.weight"                
+ [7] "encoder.layer.0.attention.output.LayerNorm.bias"  
+ [8] "encoder.layer.0.attention.output.LayerNorm.weight"
+ [9] "encoder.layer.0.attention.output.dense.bias"      
+[10] "encoder.layer.0.attention.output.dense.weight"    
+[11] "encoder.layer.0.attention.self.key.bias"          
+[12] "encoder.layer.0.attention.self.key.weight"        
+[13] "encoder.layer.0.attention.self.query.bias"        
+[14] "encoder.layer.0.attention.self.query.weight"      
+[15] "encoder.layer.0.attention.self.value.bias"        
+[16] "encoder.layer.0.attention.self.value.weight"      
+[17] "encoder.layer.0.intermediate.dense.bias"          
+[18] "encoder.layer.0.intermediate.dense.weight"        
+[19] "encoder.layer.0.output.LayerNorm.bias"            
+[20] "encoder.layer.0.output.LayerNorm.weight"          
+[21] "encoder.layer.0.output.dense.bias"                
+[22] "encoder.layer.0.output.dense.weight"              
+[23] "encoder.layer.1.attention.output.LayerNorm.bias"  
+[24] "encoder.layer.1.attention.output.LayerNorm.weight"
+[25] "encoder.layer.1.attention.output.dense.bias"      
+[1] "encoder.layer.9.intermediate.dense.bias"  
+[2] "encoder.layer.9.intermediate.dense.weight"
+[3] "encoder.layer.9.output.LayerNorm.bias"    
+[4] "encoder.layer.9.output.LayerNorm.weight"  
+[5] "encoder.layer.9.output.dense.bias"        
+[6] "encoder.layer.9.output.dense.weight"      
+[7] "pooler.dense.bias"                        
+[8] "pooler.dense.weight"                      
+                          embeddings.position_ids 
+                                          "1x512" 
+                        embeddings.LayerNorm.bias 
+                                            "384" 
+                      embeddings.LayerNorm.weight 
+                                            "384" 
+            embeddings.position_embeddings.weight 
+                                        "512x384" 
+          embeddings.token_type_embeddings.weight 
+                                          "2x384" 
+                embeddings.word_embeddings.weight 
+                                     "250037x384" 
+  encoder.layer.0.attention.output.LayerNorm.bias 
+                                            "384" 
+encoder.layer.0.attention.output.LayerNorm.weight 
+                                            "384" 
+ [1]      0 174533   2394    654    599  94491      4   6474     71  32392
+[11]    127    654   4077   1312      5      2
+NULL
+ [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
